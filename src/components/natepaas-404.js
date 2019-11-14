@@ -1,9 +1,1 @@
-define(["./natepaas-app.js"],function(_natepaasApp){"use strict";class NatePaas404 extends _natepaasApp.PageViewElement{static get styles(){return[_natepaasApp.SharedStyles]}render(){return _natepaasApp.html$2`
-      <section>
-        <h2>Oops! You hit a 404</h2>
-        <p>
-          The page you're looking for does not seem to exist. Head back
-          <a href="/">home</a> and try again?
-        </p>
-      </section>
-    `}}window.customElements.define("natepaas-404",NatePaas404)});
+define(["./natepaas-app.js"],function(_natepaasApp){"use strict";function _templateObject_293d08d0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n      <section>\n        <h2>Oops! You hit a 404</h2>\n        <p>\n          The page you're looking for does not seem to exist. Head back\n          <a href=\"/\">home</a> and try again?\n        </p>\n      </section>\n    "]);_templateObject_293d08d0072d11eaac4ad73c7775be10=function _templateObject_293d08d0072d11eaac4ad73c7775be10(){return data};return data}var NatePaas404=/*#__PURE__*/function(_PageViewElement){babelHelpers.inherits(NatePaas404,_PageViewElement);function NatePaas404(){babelHelpers.classCallCheck(this,NatePaas404);return babelHelpers.possibleConstructorReturn(this,babelHelpers.getPrototypeOf(NatePaas404).apply(this,arguments))}babelHelpers.createClass(NatePaas404,[{key:"render",value:function render(){return(0,_natepaasApp.html$2)(_templateObject_293d08d0072d11eaac4ad73c7775be10())}}],[{key:"styles",get:function get(){return[_natepaasApp.SharedStyles]}}]);return NatePaas404}(_natepaasApp.PageViewElement);window.customElements.define("natepaas-404",NatePaas404)});

@@ -1,22 +1,13 @@
-define(["exports","./natepaas-app.js"],function(_exports,_natepaasApp){"use strict";Object.defineProperty(_exports,"__esModule",{value:!0});_exports._composedTreeContains=_composedTreeContains;_exports._getScrollInfo=_getScrollInfo;_exports._getScrollableNodes=_getScrollableNodes;_exports._getScrollingNode=_getScrollingNode;_exports._hasCachedLockedElement=_hasCachedLockedElement;_exports._hasCachedUnlockedElement=_hasCachedUnlockedElement;_exports._lockScrollInteractions=_lockScrollInteractions;_exports._scrollInteractionHandler=_scrollInteractionHandler;_exports._shouldPreventScrolling=_shouldPreventScrolling;_exports._unlockScrollInteractions=_unlockScrollInteractions;_exports.elementIsScrollLocked=elementIsScrollLocked;_exports.pushScrollLock=pushScrollLock;_exports.removeScrollLock=removeScrollLock;_exports.register=_exports.currentLockingElement=_exports._unlockedElementCache=_exports._lockingElements=_exports._lockedElementCache=_exports._boundScrollHandler=_exports.PaperRippleBehavior=_exports.PaperMenuButton=_exports.PaperItemBehaviorImpl=_exports.PaperItemBehavior=_exports.PaperInputHelper=_exports.PaperInputBehaviorImpl=_exports.PaperInputBehavior=_exports.PaperInputAddonBehavior=_exports.PaperInkyFocusBehaviorImpl=_exports.PaperInkyFocusBehavior=_exports.PaperCheckedElementBehaviorImpl=_exports.PaperCheckedElementBehavior=_exports.PaperButtonBehaviorImpl=_exports.PaperButtonBehavior=_exports.NeonAnimationRunnerBehaviorImpl=_exports.NeonAnimationRunnerBehavior=_exports.NeonAnimationBehavior=_exports.NeonAnimatableBehavior=_exports.IronValidatableBehaviorMeta=_exports.IronValidatableBehavior=_exports.IronSelection=_exports.IronSelectableBehavior=_exports.IronOverlayManagerClass=_exports.IronOverlayManager=_exports.IronOverlayBehaviorImpl=_exports.IronOverlayBehavior=_exports.IronMultiSelectableBehaviorImpl=_exports.IronMultiSelectableBehavior=_exports.IronMeta=_exports.IronMenuBehaviorImpl=_exports.IronMenuBehavior=_exports.IronFormElementBehavior=_exports.IronFocusablesHelper=_exports.IronFitBehavior=_exports.IronControlState=_exports.IronCheckedElementBehaviorImpl=_exports.IronCheckedElementBehavior=_exports.IronButtonStateImpl=_exports.IronButtonState=_exports.IronA11yKeysBehavior=_exports.IronA11yAnnouncer=_exports.ADD_GUEST=_exports.$register=_exports.$paperRippleBehavior=_exports.$paperMenuButton=_exports.$paperItemBehavior=_exports.$paperInputBehavior=_exports.$paperInputAddonBehavior=_exports.$paperInkyFocusBehavior=_exports.$paperCheckedElementBehavior=_exports.$paperButtonBehavior=_exports.$neonAnimationRunnerBehavior=_exports.$neonAnimationBehavior=_exports.$neonAnimatableBehavior=_exports.$ironValidatableBehavior=_exports.$ironSelection=_exports.$ironSelectable=_exports.$ironScrollManager=_exports.$ironOverlayManager=_exports.$ironOverlayBehavior=_exports.$ironMultiSelectable=_exports.$ironMeta=_exports.$ironMenuBehavior=_exports.$ironFormElementBehavior=_exports.$ironFocusablesHelper=_exports.$ironFitBehavior=_exports.$ironControlState=_exports.$ironCheckedElementBehavior=_exports.$ironButtonState=_exports.$ironA11yKeysBehavior=_exports.$ironA11yAnnouncer=void 0;// Give the user the choice to opt out of font loading.
-if(!window.polymerSkipLoadingFontRoboto){const link=document.createElement("link");link.rel="stylesheet";link.type="text/css";link.crossOrigin="anonymous";link.href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,300,300italic,400italic,500,500italic,700,700italic";document.head.appendChild(link)}const IronA11yAnnouncer=(0,_natepaasApp.Polymer)({_template:_natepaasApp.html$1`
-    <style>
-      :host {
-        display: inline-block;
-        position: fixed;
-        clip: rect(0px,0px,0px,0px);
-      }
-    </style>
-    <div aria-live$="[[mode]]">[[_text]]</div>
-`,is:"iron-a11y-announcer",properties:{/**
+define(["exports","./natepaas-app.js"],function(_exports,_natepaasApp){"use strict";Object.defineProperty(_exports,"__esModule",{value:!0});_exports._composedTreeContains=_composedTreeContains;_exports._getScrollInfo=_getScrollInfo;_exports._getScrollableNodes=_getScrollableNodes;_exports._getScrollingNode=_getScrollingNode;_exports._hasCachedLockedElement=_hasCachedLockedElement;_exports._hasCachedUnlockedElement=_hasCachedUnlockedElement;_exports._lockScrollInteractions=_lockScrollInteractions;_exports._scrollInteractionHandler=_scrollInteractionHandler;_exports._shouldPreventScrolling=_shouldPreventScrolling;_exports._unlockScrollInteractions=_unlockScrollInteractions;_exports.elementIsScrollLocked=elementIsScrollLocked;_exports.pushScrollLock=pushScrollLock;_exports.removeScrollLock=removeScrollLock;_exports.register=_exports.currentLockingElement=_exports._unlockedElementCache=_exports._lockingElements=_exports._lockedElementCache=_exports._boundScrollHandler=_exports.PaperRippleBehavior=_exports.PaperMenuButton=_exports.PaperItemBehaviorImpl=_exports.PaperItemBehavior=_exports.PaperInputHelper=_exports.PaperInputBehaviorImpl=_exports.PaperInputBehavior=_exports.PaperInputAddonBehavior=_exports.PaperInkyFocusBehaviorImpl=_exports.PaperInkyFocusBehavior=_exports.PaperCheckedElementBehaviorImpl=_exports.PaperCheckedElementBehavior=_exports.PaperButtonBehaviorImpl=_exports.PaperButtonBehavior=_exports.NeonAnimationRunnerBehaviorImpl=_exports.NeonAnimationRunnerBehavior=_exports.NeonAnimationBehavior=_exports.NeonAnimatableBehavior=_exports.IronValidatableBehaviorMeta=_exports.IronValidatableBehavior=_exports.IronSelection=_exports.IronSelectableBehavior=_exports.IronOverlayManagerClass=_exports.IronOverlayManager=_exports.IronOverlayBehaviorImpl=_exports.IronOverlayBehavior=_exports.IronMultiSelectableBehaviorImpl=_exports.IronMultiSelectableBehavior=_exports.IronMeta=_exports.IronMenuBehaviorImpl=_exports.IronMenuBehavior=_exports.IronFormElementBehavior=_exports.IronFocusablesHelper=_exports.IronFitBehavior=_exports.IronControlState=_exports.IronCheckedElementBehaviorImpl=_exports.IronCheckedElementBehavior=_exports.IronButtonStateImpl=_exports.IronButtonState=_exports.IronA11yKeysBehavior=_exports.IronA11yAnnouncer=_exports.ADD_GUEST=_exports.$register=_exports.$paperRippleBehavior=_exports.$paperMenuButton=_exports.$paperItemBehavior=_exports.$paperInputBehavior=_exports.$paperInputAddonBehavior=_exports.$paperInkyFocusBehavior=_exports.$paperCheckedElementBehavior=_exports.$paperButtonBehavior=_exports.$neonAnimationRunnerBehavior=_exports.$neonAnimationBehavior=_exports.$neonAnimatableBehavior=_exports.$ironValidatableBehavior=_exports.$ironSelection=_exports.$ironSelectable=_exports.$ironScrollManager=_exports.$ironOverlayManager=_exports.$ironOverlayBehavior=_exports.$ironMultiSelectable=_exports.$ironMeta=_exports.$ironMenuBehavior=_exports.$ironFormElementBehavior=_exports.$ironFocusablesHelper=_exports.$ironFitBehavior=_exports.$ironControlState=_exports.$ironCheckedElementBehavior=_exports.$ironButtonState=_exports.$ironA11yKeysBehavior=_exports.$ironA11yAnnouncer=void 0;function _templateObject36_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n        <section>\n          <p class=\"centered\">\n            <paper-spinner active></paper-spinner>\n          </p>\n        </section>"]);_templateObject36_2937b1a0072d11eaac4ad73c7775be10=function _templateObject36_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject35_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral([""]);_templateObject35_2937b1a0072d11eaac4ad73c7775be10=function _templateObject35_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject34_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n                    ",""]);_templateObject34_2937b1a0072d11eaac4ad73c7775be10=function _templateObject34_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject33_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n                    <paper-spinner-lite class=\"white\" active>\n                    </paper-spinner-lite>"]);_templateObject33_2937b1a0072d11eaac4ad73c7775be10=function _templateObject33_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject32_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["<paper-input\n                            name=\"","\"\n                            label=\"","\">\n                          </paper-input>"]);_templateObject32_2937b1a0072d11eaac4ad73c7775be10=function _templateObject32_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject31_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n          <section>\n            <h2>\n              ","\n            </h2>\n            <hr></hr>\n            <p>\n              ","\n              ","\n            </p>\n            <p>\n              <paper-checkbox\n                checked>\n                ","\n                <a href=\"","\">\n                  ","\n                </a>\n              </paper-checkbox>\n            </p>\n            <br></br>\n            <p>\n              <paper-button\n                @click=\"","\"\n                class=\"register-btn\"\n                ?disabled=\"","\">\n                ","\n              </paper-button>\n            </p>\n          </section>"]);_templateObject31_2937b1a0072d11eaac4ad73c7775be10=function _templateObject31_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject30_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral([""]);_templateObject30_2937b1a0072d11eaac4ad73c7775be10=function _templateObject30_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject29_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n          <section>\n            <h2>\n              ","\n            </h2>\n            <div class=\"separator\">\n              <div class=\"icons icons-even\">\n                <div class=\"mauve\">&#9733;</div>\n                <div class=\"navy\">&#9733;</div>\n                <div class=\"plum\">&#9733;</div>\n                <div class=\"rosegold\">&#9733;</div>\n              </div>\n            </div>\n            <p class=\"date\">\n              ","\n            </p>\n          </section>"]);_templateObject29_2937b1a0072d11eaac4ad73c7775be10=function _templateObject29_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject28_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral([""]);_templateObject28_2937b1a0072d11eaac4ad73c7775be10=function _templateObject28_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject27_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n            <h2>\n              ","\n            </h2>\n            <hr></hr>\n            <p>\n              ","\n            </p>\n            <p>\n              ","\n            </p>"]);_templateObject27_2937b1a0072d11eaac4ad73c7775be10=function _templateObject27_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject26_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral([""]);_templateObject26_2937b1a0072d11eaac4ad73c7775be10=function _templateObject26_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject25_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n            <div class=\"centered img\">\n              <img\n                width=\"300px\"\n                src=\"data:image/jpeg;base64, ","\"/>\n            </div>"]);_templateObject25_2937b1a0072d11eaac4ad73c7775be10=function _templateObject25_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject24_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n        <section>\n          ","\n          ","\n        </section>\n\n        ","\n        \n        ","\n      "]);_templateObject24_2937b1a0072d11eaac4ad73c7775be10=function _templateObject24_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject23_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n  <style include=\"paper-spinner-styles\"></style>\n\n  <div id=\"spinnerContainer\" class-name=\"[[__computeContainerClasses(active, __coolingDown)]]\" on-animationend=\"__reset\" on-webkit-animation-end=\"__reset\">\n    <div class=\"spinner-layer\">\n      <div class=\"circle-clipper left\">\n        <div class=\"circle\"></div>\n      </div>\n      <div class=\"circle-clipper right\">\n        <div class=\"circle\"></div>\n      </div>\n    </div>\n  </div>\n"]);_templateObject23_2937b1a0072d11eaac4ad73c7775be10=function _templateObject23_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject22_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n    <style>\n      :host {\n        display: block;\n        padding: 8px 0;\n\n        background: var(--paper-listbox-background-color, var(--primary-background-color));\n        color: var(--paper-listbox-color, var(--primary-text-color));\n\n        @apply --paper-listbox;\n      }\n    </style>\n\n    <slot></slot>\n"]);_templateObject22_2937b1a0072d11eaac4ad73c7775be10=function _templateObject22_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject21_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n    <style include=\"paper-item-shared-styles\">\n      :host {\n        @apply --layout-horizontal;\n        @apply --layout-center;\n        @apply --paper-font-subhead;\n\n        @apply --paper-item;\n      }\n    </style>\n    <slot></slot>\n"]);_templateObject21_2937b1a0072d11eaac4ad73c7775be10=function _templateObject21_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject20_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n    <style include=\"paper-dropdown-menu-shared-styles\"></style>\n\n    <!-- this div fulfills an a11y requirement for combobox, do not remove -->\n    <span role=\"button\"></span>\n    <paper-menu-button id=\"menuButton\" vertical-align=\"[[verticalAlign]]\" horizontal-align=\"[[horizontalAlign]]\" dynamic-align=\"[[dynamicAlign]]\" vertical-offset=\"[[_computeMenuVerticalOffset(noLabelFloat, verticalOffset)]]\" disabled=\"[[disabled]]\" no-animations=\"[[noAnimations]]\" on-iron-select=\"_onIronSelect\" on-iron-deselect=\"_onIronDeselect\" opened=\"{{opened}}\" close-on-activate allow-outside-scroll=\"[[allowOutsideScroll]]\" restore-focus-on-close=\"[[restoreFocusOnClose]]\">\n      <!-- support hybrid mode: user might be using paper-menu-button 1.x which distributes via <content> -->\n      <div class=\"dropdown-trigger\" slot=\"dropdown-trigger\">\n        <paper-ripple></paper-ripple>\n        <!-- paper-input has type=\"text\" for a11y, do not remove -->\n        <paper-input type=\"text\" invalid=\"[[invalid]]\" readonly disabled=\"[[disabled]]\" value=\"[[value]]\" placeholder=\"[[placeholder]]\" error-message=\"[[errorMessage]]\" always-float-label=\"[[alwaysFloatLabel]]\" no-label-float=\"[[noLabelFloat]]\" label=\"[[label]]\">\n          <!-- support hybrid mode: user might be using paper-input 1.x which distributes via <content> -->\n          <iron-icon icon=\"paper-dropdown-menu:arrow-drop-down\" suffix slot=\"suffix\"></iron-icon>\n        </paper-input>\n      </div>\n      <slot id=\"content\" name=\"dropdown-content\" slot=\"dropdown-content\"></slot>\n    </paper-menu-button>\n"]);_templateObject20_2937b1a0072d11eaac4ad73c7775be10=function _templateObject20_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject19_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n    <style>\n      :host {\n        display: inline-block;\n        position: relative;\n        padding: 8px;\n        outline: none;\n\n        @apply --paper-menu-button;\n      }\n\n      :host([disabled]) {\n        cursor: auto;\n        color: var(--disabled-text-color);\n\n        @apply --paper-menu-button-disabled;\n      }\n\n      iron-dropdown {\n        @apply --paper-menu-button-dropdown;\n      }\n\n      .dropdown-content {\n        @apply --shadow-elevation-2dp;\n\n        position: relative;\n        border-radius: 2px;\n        background-color: var(--paper-menu-button-dropdown-background, var(--primary-background-color));\n\n        @apply --paper-menu-button-content;\n      }\n\n      :host([vertical-align=\"top\"]) .dropdown-content {\n        margin-bottom: 20px;\n        margin-top: -10px;\n        top: 10px;\n      }\n\n      :host([vertical-align=\"bottom\"]) .dropdown-content {\n        bottom: 10px;\n        margin-bottom: -10px;\n        margin-top: 20px;\n      }\n\n      #trigger {\n        cursor: pointer;\n      }\n    </style>\n\n    <div id=\"trigger\" on-tap=\"toggle\">\n      <slot name=\"dropdown-trigger\"></slot>\n    </div>\n\n    <iron-dropdown id=\"dropdown\" opened=\"{{opened}}\" horizontal-align=\"[[horizontalAlign]]\" vertical-align=\"[[verticalAlign]]\" dynamic-align=\"[[dynamicAlign]]\" horizontal-offset=\"[[horizontalOffset]]\" vertical-offset=\"[[verticalOffset]]\" no-overlap=\"[[noOverlap]]\" open-animation-config=\"[[openAnimationConfig]]\" close-animation-config=\"[[closeAnimationConfig]]\" no-animations=\"[[noAnimations]]\" focus-target=\"[[_dropdownContent]]\" allow-outside-scroll=\"[[allowOutsideScroll]]\" restore-focus-on-close=\"[[restoreFocusOnClose]]\" on-iron-overlay-canceled=\"__onIronOverlayCanceled\">\n      <div slot=\"dropdown-content\" class=\"dropdown-content\">\n        <slot id=\"content\" name=\"dropdown-content\"></slot>\n      </div>\n    </iron-dropdown>\n"]);_templateObject19_2937b1a0072d11eaac4ad73c7775be10=function _templateObject19_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject18_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n    <style>\n      :host {\n        display: block;\n      }\n\n      :host([focused]) {\n        outline: none;\n      }\n\n      :host([hidden]) {\n        display: none !important;\n      }\n\n      input {\n        /* Firefox sets a min-width on the input, which can cause layout issues */\n        min-width: 0;\n      }\n\n      /* In 1.x, the <input> is distributed to paper-input-container, which styles it.\n      In 2.x the <iron-input> is distributed to paper-input-container, which styles\n      it, but in order for this to work correctly, we need to reset some\n      of the native input's properties to inherit (from the iron-input) */\n      iron-input > input {\n        @apply --paper-input-container-shared-input-style;\n        font-family: inherit;\n        font-weight: inherit;\n        font-size: inherit;\n        letter-spacing: inherit;\n        word-spacing: inherit;\n        line-height: inherit;\n        text-shadow: inherit;\n        color: inherit;\n        cursor: inherit;\n      }\n\n      input:disabled {\n        @apply --paper-input-container-input-disabled;\n      }\n\n      input::-webkit-outer-spin-button,\n      input::-webkit-inner-spin-button {\n        @apply --paper-input-container-input-webkit-spinner;\n      }\n\n      input::-webkit-clear-button {\n        @apply --paper-input-container-input-webkit-clear;\n      }\n\n      input::-webkit-calendar-picker-indicator {\n        @apply --paper-input-container-input-webkit-calendar-picker-indicator;\n      }\n\n      input::-webkit-input-placeholder {\n        color: var(--paper-input-container-color, var(--secondary-text-color));\n      }\n\n      input:-moz-placeholder {\n        color: var(--paper-input-container-color, var(--secondary-text-color));\n      }\n\n      input::-moz-placeholder {\n        color: var(--paper-input-container-color, var(--secondary-text-color));\n      }\n\n      input::-ms-clear {\n        @apply --paper-input-container-ms-clear;\n      }\n\n      input::-ms-reveal {\n        @apply --paper-input-container-ms-reveal;\n      }\n\n      input:-ms-input-placeholder {\n        color: var(--paper-input-container-color, var(--secondary-text-color));\n      }\n\n      label {\n        pointer-events: none;\n      }\n    </style>\n\n    <paper-input-container id=\"container\" no-label-float=\"[[noLabelFloat]]\" always-float-label=\"[[_computeAlwaysFloatLabel(alwaysFloatLabel,placeholder)]]\" auto-validate$=\"[[autoValidate]]\" disabled$=\"[[disabled]]\" invalid=\"[[invalid]]\">\n\n      <slot name=\"prefix\" slot=\"prefix\"></slot>\n\n      <label hidden$=\"[[!label]]\" aria-hidden=\"true\" for$=\"[[_inputId]]\" slot=\"label\">[[label]]</label>\n\n      <!-- Need to bind maxlength so that the paper-input-char-counter works correctly -->\n      <iron-input bind-value=\"{{value}}\" slot=\"input\" class=\"input-element\" id$=\"[[_inputId]]\" maxlength$=\"[[maxlength]]\" allowed-pattern=\"[[allowedPattern]]\" invalid=\"{{invalid}}\" validator=\"[[validator]]\">\n        <input aria-labelledby$=\"[[_ariaLabelledBy]]\" aria-describedby$=\"[[_ariaDescribedBy]]\" disabled$=\"[[disabled]]\" title$=\"[[title]]\" type$=\"[[type]]\" pattern$=\"[[pattern]]\" required$=\"[[required]]\" autocomplete$=\"[[autocomplete]]\" autofocus$=\"[[autofocus]]\" inputmode$=\"[[inputmode]]\" minlength$=\"[[minlength]]\" maxlength$=\"[[maxlength]]\" min$=\"[[min]]\" max$=\"[[max]]\" step$=\"[[step]]\" name$=\"[[name]]\" placeholder$=\"[[placeholder]]\" readonly$=\"[[readonly]]\" list$=\"[[list]]\" size$=\"[[size]]\" autocapitalize$=\"[[autocapitalize]]\" autocorrect$=\"[[autocorrect]]\" on-change=\"_onChange\" tabindex$=\"[[tabIndex]]\" autosave$=\"[[autosave]]\" results$=\"[[results]]\" accept$=\"[[accept]]\" multiple$=\"[[multiple]]\">\n      </iron-input>\n\n      <slot name=\"suffix\" slot=\"suffix\"></slot>\n\n      <template is=\"dom-if\" if=\"[[errorMessage]]\">\n        <paper-input-error aria-live=\"assertive\" slot=\"add-on\">[[errorMessage]]</paper-input-error>\n      </template>\n\n      <template is=\"dom-if\" if=\"[[charCounter]]\">\n        <paper-input-char-counter slot=\"add-on\"></paper-input-char-counter>\n      </template>\n\n    </paper-input-container>\n  "]);_templateObject18_2937b1a0072d11eaac4ad73c7775be10=function _templateObject18_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject17_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n    <style>\n      :host {\n        display: inline-block;\n        visibility: hidden;\n\n        color: var(--paper-input-container-invalid-color, var(--error-color));\n\n        @apply --paper-font-caption;\n        @apply --paper-input-error;\n        position: absolute;\n        left:0;\n        right:0;\n      }\n\n      :host([invalid]) {\n        visibility: visible;\n      }\n\n      #a11yWrapper {\n        visibility: hidden;\n      }\n\n      :host([invalid]) #a11yWrapper {\n        visibility: visible;\n      }\n    </style>\n\n    <!--\n    If the paper-input-error element is directly referenced by an\n    `aria-describedby` attribute, such as when used as a paper-input add-on,\n    then applying `visibility: hidden;` to the paper-input-error element itself\n    does not hide the error.\n\n    For more information, see:\n    https://www.w3.org/TR/accname-1.1/#mapping_additional_nd_description\n    -->\n    <div id=\"a11yWrapper\">\n      <slot></slot>\n    </div>\n"],["\n    <style>\n      :host {\n        display: inline-block;\n        visibility: hidden;\n\n        color: var(--paper-input-container-invalid-color, var(--error-color));\n\n        @apply --paper-font-caption;\n        @apply --paper-input-error;\n        position: absolute;\n        left:0;\n        right:0;\n      }\n\n      :host([invalid]) {\n        visibility: visible;\n      }\n\n      #a11yWrapper {\n        visibility: hidden;\n      }\n\n      :host([invalid]) #a11yWrapper {\n        visibility: visible;\n      }\n    </style>\n\n    <!--\n    If the paper-input-error element is directly referenced by an\n    \\`aria-describedby\\` attribute, such as when used as a paper-input add-on,\n    then applying \\`visibility: hidden;\\` to the paper-input-error element itself\n    does not hide the error.\n\n    For more information, see:\n    https://www.w3.org/TR/accname-1.1/#mapping_additional_nd_description\n    -->\n    <div id=\"a11yWrapper\">\n      <slot></slot>\n    </div>\n"]);_templateObject17_2937b1a0072d11eaac4ad73c7775be10=function _templateObject17_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject16_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n    <style>\n      :host {\n        display: block;\n        padding: 8px 0;\n        @apply --paper-input-container;\n      }\n\n      :host([inline]) {\n        display: inline-block;\n      }\n\n      :host([disabled]) {\n        pointer-events: none;\n        opacity: 0.33;\n\n        @apply --paper-input-container-disabled;\n      }\n\n      :host([hidden]) {\n        display: none !important;\n      }\n\n      [hidden] {\n        display: none !important;\n      }\n\n      .floated-label-placeholder {\n        @apply --paper-font-caption;\n      }\n\n      .underline {\n        height: 2px;\n        position: relative;\n      }\n\n      .focused-line {\n        @apply --layout-fit;\n        border-bottom: 2px solid var(--paper-input-container-focus-color, var(--primary-color));\n\n        -webkit-transform-origin: center center;\n        transform-origin: center center;\n        -webkit-transform: scale3d(0,1,1);\n        transform: scale3d(0,1,1);\n\n        @apply --paper-input-container-underline-focus;\n      }\n\n      .underline.is-highlighted .focused-line {\n        -webkit-transform: none;\n        transform: none;\n        -webkit-transition: -webkit-transform 0.25s;\n        transition: transform 0.25s;\n\n        @apply --paper-transition-easing;\n      }\n\n      .underline.is-invalid .focused-line {\n        border-color: var(--paper-input-container-invalid-color, var(--error-color));\n        -webkit-transform: none;\n        transform: none;\n        -webkit-transition: -webkit-transform 0.25s;\n        transition: transform 0.25s;\n\n        @apply --paper-transition-easing;\n      }\n\n      .unfocused-line {\n        @apply --layout-fit;\n        border-bottom: 1px solid var(--paper-input-container-color, var(--secondary-text-color));\n        @apply --paper-input-container-underline;\n      }\n\n      :host([disabled]) .unfocused-line {\n        border-bottom: 1px dashed;\n        border-color: var(--paper-input-container-color, var(--secondary-text-color));\n        @apply --paper-input-container-underline-disabled;\n      }\n\n      .input-wrapper {\n        @apply --layout-horizontal;\n        @apply --layout-center;\n        position: relative;\n      }\n\n      .input-content {\n        @apply --layout-flex-auto;\n        @apply --layout-relative;\n        max-width: 100%;\n      }\n\n      .input-content ::slotted(label),\n      .input-content ::slotted(.paper-input-label) {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        font: inherit;\n        color: var(--paper-input-container-color, var(--secondary-text-color));\n        -webkit-transition: -webkit-transform 0.25s, width 0.25s;\n        transition: transform 0.25s, width 0.25s;\n        -webkit-transform-origin: left top;\n        transform-origin: left top;\n        /* Fix for safari not focusing 0-height date/time inputs with -webkit-apperance: none; */\n        min-height: 1px;\n\n        @apply --paper-font-common-nowrap;\n        @apply --paper-font-subhead;\n        @apply --paper-input-container-label;\n        @apply --paper-transition-easing;\n      }\n\n      .input-content.label-is-floating ::slotted(label),\n      .input-content.label-is-floating ::slotted(.paper-input-label) {\n        -webkit-transform: translateY(-75%) scale(0.75);\n        transform: translateY(-75%) scale(0.75);\n\n        /* Since we scale to 75/100 of the size, we actually have 100/75 of the\n        original space now available */\n        width: 133%;\n\n        @apply --paper-input-container-label-floating;\n      }\n\n      :host(:dir(rtl)) .input-content.label-is-floating ::slotted(label),\n      :host(:dir(rtl)) .input-content.label-is-floating ::slotted(.paper-input-label) {\n        right: 0;\n        left: auto;\n        -webkit-transform-origin: right top;\n        transform-origin: right top;\n      }\n\n      .input-content.label-is-highlighted ::slotted(label),\n      .input-content.label-is-highlighted ::slotted(.paper-input-label) {\n        color: var(--paper-input-container-focus-color, var(--primary-color));\n\n        @apply --paper-input-container-label-focus;\n      }\n\n      .input-content.is-invalid ::slotted(label),\n      .input-content.is-invalid ::slotted(.paper-input-label) {\n        color: var(--paper-input-container-invalid-color, var(--error-color));\n      }\n\n      .input-content.label-is-hidden ::slotted(label),\n      .input-content.label-is-hidden ::slotted(.paper-input-label) {\n        visibility: hidden;\n      }\n\n      .input-content ::slotted(input),\n      .input-content ::slotted(iron-input),\n      .input-content ::slotted(textarea),\n      .input-content ::slotted(iron-autogrow-textarea),\n      .input-content ::slotted(.paper-input-input) {\n        @apply --paper-input-container-shared-input-style;\n        /* The apply shim doesn't apply the nested color custom property,\n          so we have to re-apply it here. */\n        color: var(--paper-input-container-input-color, var(--primary-text-color));\n        @apply --paper-input-container-input;\n      }\n\n      .input-content ::slotted(input)::-webkit-outer-spin-button,\n      .input-content ::slotted(input)::-webkit-inner-spin-button {\n        @apply --paper-input-container-input-webkit-spinner;\n      }\n\n      .input-content.focused ::slotted(input),\n      .input-content.focused ::slotted(iron-input),\n      .input-content.focused ::slotted(textarea),\n      .input-content.focused ::slotted(iron-autogrow-textarea),\n      .input-content.focused ::slotted(.paper-input-input) {\n        @apply --paper-input-container-input-focus;\n      }\n\n      .input-content.is-invalid ::slotted(input),\n      .input-content.is-invalid ::slotted(iron-input),\n      .input-content.is-invalid ::slotted(textarea),\n      .input-content.is-invalid ::slotted(iron-autogrow-textarea),\n      .input-content.is-invalid ::slotted(.paper-input-input) {\n        @apply --paper-input-container-input-invalid;\n      }\n\n      .prefix ::slotted(*) {\n        display: inline-block;\n        @apply --paper-font-subhead;\n        @apply --layout-flex-none;\n        @apply --paper-input-prefix;\n      }\n\n      .suffix ::slotted(*) {\n        display: inline-block;\n        @apply --paper-font-subhead;\n        @apply --layout-flex-none;\n\n        @apply --paper-input-suffix;\n      }\n\n      /* Firefox sets a min-width on the input, which can cause layout issues */\n      .input-content ::slotted(input) {\n        min-width: 0;\n      }\n\n      .input-content ::slotted(textarea) {\n        resize: none;\n      }\n\n      .add-on-content {\n        position: relative;\n      }\n\n      .add-on-content.is-invalid ::slotted(*) {\n        color: var(--paper-input-container-invalid-color, var(--error-color));\n      }\n\n      .add-on-content.is-highlighted ::slotted(*) {\n        color: var(--paper-input-container-focus-color, var(--primary-color));\n      }\n    </style>\n\n    <div class=\"floated-label-placeholder\" aria-hidden=\"true\" hidden=\"[[noLabelFloat]]\">&nbsp;</div>\n\n    <div class=\"input-wrapper\">\n      <span class=\"prefix\"><slot name=\"prefix\"></slot></span>\n\n      <div class$=\"[[_computeInputContentClass(noLabelFloat,alwaysFloatLabel,focused,invalid,_inputHasContent)]]\" id=\"labelAndInputContainer\">\n        <slot name=\"label\"></slot>\n        <slot name=\"input\"></slot>\n      </div>\n\n      <span class=\"suffix\"><slot name=\"suffix\"></slot></span>\n    </div>\n\n    <div class$=\"[[_computeUnderlineClass(focused,invalid)]]\">\n      <div class=\"unfocused-line\"></div>\n      <div class=\"focused-line\"></div>\n    </div>\n\n    <div class$=\"[[_computeAddOnContentClass(focused,invalid)]]\">\n      <slot name=\"add-on\"></slot>\n    </div>\n"]);_templateObject16_2937b1a0072d11eaac4ad73c7775be10=function _templateObject16_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject15_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n<custom-style>\n  <style is=\"custom-style\">\n    html {\n      --paper-input-container-shared-input-style: {\n        position: relative; /* to make a stacking context */\n        outline: none;\n        box-shadow: none;\n        padding: 0;\n        margin: 0;\n        width: 100%;\n        max-width: 100%;\n        background: transparent;\n        border: none;\n        color: var(--paper-input-container-input-color, var(--primary-text-color));\n        -webkit-appearance: none;\n        text-align: inherit;\n        vertical-align: var(--paper-input-container-input-align, bottom);\n\n        @apply --paper-font-subhead;\n      };\n    }\n  </style>\n</custom-style>\n"]);_templateObject15_2937b1a0072d11eaac4ad73c7775be10=function _templateObject15_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject14_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n    <style>\n      :host {\n        display: inline-block;\n        float: right;\n\n        @apply --paper-font-caption;\n        @apply --paper-input-char-counter;\n      }\n\n      :host([hidden]) {\n        display: none !important;\n      }\n\n      :host(:dir(rtl)) {\n        float: left;\n      }\n    </style>\n\n    <span>[[_charCounterStr]]</span>\n"]);_templateObject14_2937b1a0072d11eaac4ad73c7775be10=function _templateObject14_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject13_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["<custom-style>\n  <style is=\"custom-style\">\n    html {\n\n      /* Shared Styles */\n      --paper-font-common-base: {\n        font-family: 'Roboto', 'Noto', sans-serif;\n        -webkit-font-smoothing: antialiased;\n      };\n\n      --paper-font-common-code: {\n        font-family: 'Roboto Mono', 'Consolas', 'Menlo', monospace;\n        -webkit-font-smoothing: antialiased;\n      };\n\n      --paper-font-common-expensive-kerning: {\n        text-rendering: optimizeLegibility;\n      };\n\n      --paper-font-common-nowrap: {\n        white-space: nowrap;\n        overflow: hidden;\n        text-overflow: ellipsis;\n      };\n\n      /* Material Font Styles */\n\n      --paper-font-display4: {\n        @apply --paper-font-common-base;\n        @apply --paper-font-common-nowrap;\n\n        font-size: 112px;\n        font-weight: 300;\n        letter-spacing: -.044em;\n        line-height: 120px;\n      };\n\n      --paper-font-display3: {\n        @apply --paper-font-common-base;\n        @apply --paper-font-common-nowrap;\n\n        font-size: 56px;\n        font-weight: 400;\n        letter-spacing: -.026em;\n        line-height: 60px;\n      };\n\n      --paper-font-display2: {\n        @apply --paper-font-common-base;\n\n        font-size: 45px;\n        font-weight: 400;\n        letter-spacing: -.018em;\n        line-height: 48px;\n      };\n\n      --paper-font-display1: {\n        @apply --paper-font-common-base;\n\n        font-size: 34px;\n        font-weight: 400;\n        letter-spacing: -.01em;\n        line-height: 40px;\n      };\n\n      --paper-font-headline: {\n        @apply --paper-font-common-base;\n\n        font-size: 24px;\n        font-weight: 400;\n        letter-spacing: -.012em;\n        line-height: 32px;\n      };\n\n      --paper-font-title: {\n        @apply --paper-font-common-base;\n        @apply --paper-font-common-nowrap;\n\n        font-size: 20px;\n        font-weight: 500;\n        line-height: 28px;\n      };\n\n      --paper-font-subhead: {\n        @apply --paper-font-common-base;\n\n        font-size: 16px;\n        font-weight: 400;\n        line-height: 24px;\n      };\n\n      --paper-font-body2: {\n        @apply --paper-font-common-base;\n\n        font-size: 14px;\n        font-weight: 500;\n        line-height: 24px;\n      };\n\n      --paper-font-body1: {\n        @apply --paper-font-common-base;\n\n        font-size: 14px;\n        font-weight: 400;\n        line-height: 20px;\n      };\n\n      --paper-font-caption: {\n        @apply --paper-font-common-base;\n        @apply --paper-font-common-nowrap;\n\n        font-size: 12px;\n        font-weight: 400;\n        letter-spacing: 0.011em;\n        line-height: 20px;\n      };\n\n      --paper-font-menu: {\n        @apply --paper-font-common-base;\n        @apply --paper-font-common-nowrap;\n\n        font-size: 13px;\n        font-weight: 500;\n        line-height: 24px;\n      };\n\n      --paper-font-button: {\n        @apply --paper-font-common-base;\n        @apply --paper-font-common-nowrap;\n\n        font-size: 14px;\n        font-weight: 500;\n        letter-spacing: 0.018em;\n        line-height: 24px;\n        text-transform: uppercase;\n      };\n\n      --paper-font-code2: {\n        @apply --paper-font-common-code;\n\n        font-size: 14px;\n        font-weight: 700;\n        line-height: 20px;\n      };\n\n      --paper-font-code1: {\n        @apply --paper-font-common-code;\n\n        font-size: 14px;\n        font-weight: 500;\n        line-height: 20px;\n      };\n\n    }\n\n  </style>\n</custom-style>"]);_templateObject13_2937b1a0072d11eaac4ad73c7775be10=function _templateObject13_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject12_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["<style>\n  :host {\n    display: inline-block;\n    white-space: nowrap;\n    cursor: pointer;\n    --calculated-paper-checkbox-size: var(--paper-checkbox-size, 18px);\n    /* -1px is a sentinel for the default and is replaced in `attached`. */\n    --calculated-paper-checkbox-ink-size: var(--paper-checkbox-ink-size, -1px);\n    @apply --paper-font-common-base;\n    line-height: 0;\n    -webkit-tap-highlight-color: transparent;\n  }\n\n  :host([hidden]) {\n    display: none !important;\n  }\n\n  :host(:focus) {\n    outline: none;\n  }\n\n  .hidden {\n    display: none;\n  }\n\n  #checkboxContainer {\n    display: inline-block;\n    position: relative;\n    width: var(--calculated-paper-checkbox-size);\n    height: var(--calculated-paper-checkbox-size);\n    min-width: var(--calculated-paper-checkbox-size);\n    margin: var(--paper-checkbox-margin, initial);\n    vertical-align: var(--paper-checkbox-vertical-align, middle);\n    background-color: var(--paper-checkbox-unchecked-background-color, transparent);\n  }\n\n  #ink {\n    position: absolute;\n\n    /* Center the ripple in the checkbox by negative offsetting it by\n     * (inkWidth - rippleWidth) / 2 */\n    top: calc(0px - (var(--calculated-paper-checkbox-ink-size) - var(--calculated-paper-checkbox-size)) / 2);\n    left: calc(0px - (var(--calculated-paper-checkbox-ink-size) - var(--calculated-paper-checkbox-size)) / 2);\n    width: var(--calculated-paper-checkbox-ink-size);\n    height: var(--calculated-paper-checkbox-ink-size);\n    color: var(--paper-checkbox-unchecked-ink-color, var(--primary-text-color));\n    opacity: 0.6;\n    pointer-events: none;\n  }\n\n  #ink:dir(rtl) {\n    right: calc(0px - (var(--calculated-paper-checkbox-ink-size) - var(--calculated-paper-checkbox-size)) / 2);\n    left: auto;\n  }\n\n  #ink[checked] {\n    color: var(--paper-checkbox-checked-ink-color, var(--primary-color));\n  }\n\n  #checkbox {\n    position: relative;\n    box-sizing: border-box;\n    height: 100%;\n    border: solid 2px;\n    border-color: var(--paper-checkbox-unchecked-color, var(--primary-text-color));\n    border-radius: 2px;\n    pointer-events: none;\n    -webkit-transition: background-color 140ms, border-color 140ms;\n    transition: background-color 140ms, border-color 140ms;\n\n    -webkit-transition-duration: var(--paper-checkbox-animation-duration, 140ms);\n    transition-duration: var(--paper-checkbox-animation-duration, 140ms);\n  }\n\n  /* checkbox checked animations */\n  #checkbox.checked #checkmark {\n    -webkit-animation: checkmark-expand 140ms ease-out forwards;\n    animation: checkmark-expand 140ms ease-out forwards;\n\n    -webkit-animation-duration: var(--paper-checkbox-animation-duration, 140ms);\n    animation-duration: var(--paper-checkbox-animation-duration, 140ms);\n  }\n\n  @-webkit-keyframes checkmark-expand {\n    0% {\n      -webkit-transform: scale(0, 0) rotate(45deg);\n    }\n    100% {\n      -webkit-transform: scale(1, 1) rotate(45deg);\n    }\n  }\n\n  @keyframes checkmark-expand {\n    0% {\n      transform: scale(0, 0) rotate(45deg);\n    }\n    100% {\n      transform: scale(1, 1) rotate(45deg);\n    }\n  }\n\n  #checkbox.checked {\n    background-color: var(--paper-checkbox-checked-color, var(--primary-color));\n    border-color: var(--paper-checkbox-checked-color, var(--primary-color));\n  }\n\n  #checkmark {\n    position: absolute;\n    width: 36%;\n    height: 70%;\n    border-style: solid;\n    border-top: none;\n    border-left: none;\n    border-right-width: calc(2/15 * var(--calculated-paper-checkbox-size));\n    border-bottom-width: calc(2/15 * var(--calculated-paper-checkbox-size));\n    border-color: var(--paper-checkbox-checkmark-color, white);\n    -webkit-transform-origin: 97% 86%;\n    transform-origin: 97% 86%;\n    box-sizing: content-box; /* protect against page-level box-sizing */\n  }\n\n  #checkmark:dir(rtl) {\n    -webkit-transform-origin: 50% 14%;\n    transform-origin: 50% 14%;\n  }\n\n  /* label */\n  #checkboxLabel {\n    position: relative;\n    display: inline-block;\n    vertical-align: middle;\n    padding-left: var(--paper-checkbox-label-spacing, 8px);\n    white-space: normal;\n    line-height: normal;\n    color: var(--paper-checkbox-label-color, var(--primary-text-color));\n    @apply --paper-checkbox-label;\n  }\n\n  :host([checked]) #checkboxLabel {\n    color: var(--paper-checkbox-label-checked-color, var(--paper-checkbox-label-color, var(--primary-text-color)));\n    @apply --paper-checkbox-label-checked;\n  }\n\n  #checkboxLabel:dir(rtl) {\n    padding-right: var(--paper-checkbox-label-spacing, 8px);\n    padding-left: 0;\n  }\n\n  #checkboxLabel[hidden] {\n    display: none;\n  }\n\n  /* disabled state */\n\n  :host([disabled]) #checkbox {\n    opacity: 0.5;\n    border-color: var(--paper-checkbox-unchecked-color, var(--primary-text-color));\n  }\n\n  :host([disabled][checked]) #checkbox {\n    background-color: var(--paper-checkbox-unchecked-color, var(--primary-text-color));\n    opacity: 0.5;\n  }\n\n  :host([disabled]) #checkboxLabel  {\n    opacity: 0.65;\n  }\n\n  /* invalid state */\n  #checkbox.invalid:not(.checked) {\n    border-color: var(--paper-checkbox-error-color, var(--error-color));\n  }\n</style>\n\n<div id=\"checkboxContainer\">\n  <div id=\"checkbox\" class$=\"[[_computeCheckboxClass(checked, invalid)]]\">\n    <div id=\"checkmark\" class$=\"[[_computeCheckmarkClass(checked)]]\"></div>\n  </div>\n</div>\n\n<div id=\"checkboxLabel\"><slot></slot></div>"],["<style>\n  :host {\n    display: inline-block;\n    white-space: nowrap;\n    cursor: pointer;\n    --calculated-paper-checkbox-size: var(--paper-checkbox-size, 18px);\n    /* -1px is a sentinel for the default and is replaced in \\`attached\\`. */\n    --calculated-paper-checkbox-ink-size: var(--paper-checkbox-ink-size, -1px);\n    @apply --paper-font-common-base;\n    line-height: 0;\n    -webkit-tap-highlight-color: transparent;\n  }\n\n  :host([hidden]) {\n    display: none !important;\n  }\n\n  :host(:focus) {\n    outline: none;\n  }\n\n  .hidden {\n    display: none;\n  }\n\n  #checkboxContainer {\n    display: inline-block;\n    position: relative;\n    width: var(--calculated-paper-checkbox-size);\n    height: var(--calculated-paper-checkbox-size);\n    min-width: var(--calculated-paper-checkbox-size);\n    margin: var(--paper-checkbox-margin, initial);\n    vertical-align: var(--paper-checkbox-vertical-align, middle);\n    background-color: var(--paper-checkbox-unchecked-background-color, transparent);\n  }\n\n  #ink {\n    position: absolute;\n\n    /* Center the ripple in the checkbox by negative offsetting it by\n     * (inkWidth - rippleWidth) / 2 */\n    top: calc(0px - (var(--calculated-paper-checkbox-ink-size) - var(--calculated-paper-checkbox-size)) / 2);\n    left: calc(0px - (var(--calculated-paper-checkbox-ink-size) - var(--calculated-paper-checkbox-size)) / 2);\n    width: var(--calculated-paper-checkbox-ink-size);\n    height: var(--calculated-paper-checkbox-ink-size);\n    color: var(--paper-checkbox-unchecked-ink-color, var(--primary-text-color));\n    opacity: 0.6;\n    pointer-events: none;\n  }\n\n  #ink:dir(rtl) {\n    right: calc(0px - (var(--calculated-paper-checkbox-ink-size) - var(--calculated-paper-checkbox-size)) / 2);\n    left: auto;\n  }\n\n  #ink[checked] {\n    color: var(--paper-checkbox-checked-ink-color, var(--primary-color));\n  }\n\n  #checkbox {\n    position: relative;\n    box-sizing: border-box;\n    height: 100%;\n    border: solid 2px;\n    border-color: var(--paper-checkbox-unchecked-color, var(--primary-text-color));\n    border-radius: 2px;\n    pointer-events: none;\n    -webkit-transition: background-color 140ms, border-color 140ms;\n    transition: background-color 140ms, border-color 140ms;\n\n    -webkit-transition-duration: var(--paper-checkbox-animation-duration, 140ms);\n    transition-duration: var(--paper-checkbox-animation-duration, 140ms);\n  }\n\n  /* checkbox checked animations */\n  #checkbox.checked #checkmark {\n    -webkit-animation: checkmark-expand 140ms ease-out forwards;\n    animation: checkmark-expand 140ms ease-out forwards;\n\n    -webkit-animation-duration: var(--paper-checkbox-animation-duration, 140ms);\n    animation-duration: var(--paper-checkbox-animation-duration, 140ms);\n  }\n\n  @-webkit-keyframes checkmark-expand {\n    0% {\n      -webkit-transform: scale(0, 0) rotate(45deg);\n    }\n    100% {\n      -webkit-transform: scale(1, 1) rotate(45deg);\n    }\n  }\n\n  @keyframes checkmark-expand {\n    0% {\n      transform: scale(0, 0) rotate(45deg);\n    }\n    100% {\n      transform: scale(1, 1) rotate(45deg);\n    }\n  }\n\n  #checkbox.checked {\n    background-color: var(--paper-checkbox-checked-color, var(--primary-color));\n    border-color: var(--paper-checkbox-checked-color, var(--primary-color));\n  }\n\n  #checkmark {\n    position: absolute;\n    width: 36%;\n    height: 70%;\n    border-style: solid;\n    border-top: none;\n    border-left: none;\n    border-right-width: calc(2/15 * var(--calculated-paper-checkbox-size));\n    border-bottom-width: calc(2/15 * var(--calculated-paper-checkbox-size));\n    border-color: var(--paper-checkbox-checkmark-color, white);\n    -webkit-transform-origin: 97% 86%;\n    transform-origin: 97% 86%;\n    box-sizing: content-box; /* protect against page-level box-sizing */\n  }\n\n  #checkmark:dir(rtl) {\n    -webkit-transform-origin: 50% 14%;\n    transform-origin: 50% 14%;\n  }\n\n  /* label */\n  #checkboxLabel {\n    position: relative;\n    display: inline-block;\n    vertical-align: middle;\n    padding-left: var(--paper-checkbox-label-spacing, 8px);\n    white-space: normal;\n    line-height: normal;\n    color: var(--paper-checkbox-label-color, var(--primary-text-color));\n    @apply --paper-checkbox-label;\n  }\n\n  :host([checked]) #checkboxLabel {\n    color: var(--paper-checkbox-label-checked-color, var(--paper-checkbox-label-color, var(--primary-text-color)));\n    @apply --paper-checkbox-label-checked;\n  }\n\n  #checkboxLabel:dir(rtl) {\n    padding-right: var(--paper-checkbox-label-spacing, 8px);\n    padding-left: 0;\n  }\n\n  #checkboxLabel[hidden] {\n    display: none;\n  }\n\n  /* disabled state */\n\n  :host([disabled]) #checkbox {\n    opacity: 0.5;\n    border-color: var(--paper-checkbox-unchecked-color, var(--primary-text-color));\n  }\n\n  :host([disabled][checked]) #checkbox {\n    background-color: var(--paper-checkbox-unchecked-color, var(--primary-text-color));\n    opacity: 0.5;\n  }\n\n  :host([disabled]) #checkboxLabel  {\n    opacity: 0.65;\n  }\n\n  /* invalid state */\n  #checkbox.invalid:not(.checked) {\n    border-color: var(--paper-checkbox-error-color, var(--error-color));\n  }\n</style>\n\n<div id=\"checkboxContainer\">\n  <div id=\"checkbox\" class$=\"[[_computeCheckboxClass(checked, invalid)]]\">\n    <div id=\"checkmark\" class$=\"[[_computeCheckmarkClass(checked)]]\"></div>\n  </div>\n</div>\n\n<div id=\"checkboxLabel\"><slot></slot></div>"]);_templateObject12_2937b1a0072d11eaac4ad73c7775be10=function _templateObject12_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject11_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n<custom-style>\n  <style is=\"custom-style\">\n    html {\n      /*\n       * You can use these generic variables in your elements for easy theming.\n       * For example, if all your elements use `--primary-text-color` as its main\n       * color, then switching from a light to a dark theme is just a matter of\n       * changing the value of `--primary-text-color` in your application.\n       */\n      --primary-text-color: var(--light-theme-text-color);\n      --primary-background-color: var(--light-theme-background-color);\n      --secondary-text-color: var(--light-theme-secondary-color);\n      --disabled-text-color: var(--light-theme-disabled-color);\n      --divider-color: var(--light-theme-divider-color);\n      --error-color: var(--paper-deep-orange-a700);\n\n      /*\n       * Primary and accent colors. Also see color.js for more colors.\n       */\n      --primary-color: var(--paper-indigo-500);\n      --light-primary-color: var(--paper-indigo-100);\n      --dark-primary-color: var(--paper-indigo-700);\n\n      --accent-color: var(--paper-pink-a200);\n      --light-accent-color: var(--paper-pink-a100);\n      --dark-accent-color: var(--paper-pink-a400);\n\n\n      /*\n       * Material Design Light background theme\n       */\n      --light-theme-background-color: #ffffff;\n      --light-theme-base-color: #000000;\n      --light-theme-text-color: var(--paper-grey-900);\n      --light-theme-secondary-color: #737373;  /* for secondary text and icons */\n      --light-theme-disabled-color: #9b9b9b;  /* disabled/hint text */\n      --light-theme-divider-color: #dbdbdb;\n\n      /*\n       * Material Design Dark background theme\n       */\n      --dark-theme-background-color: var(--paper-grey-900);\n      --dark-theme-base-color: #ffffff;\n      --dark-theme-text-color: #ffffff;\n      --dark-theme-secondary-color: #bcbcbc;  /* for secondary text and icons */\n      --dark-theme-disabled-color: #646464;  /* disabled/hint text */\n      --dark-theme-divider-color: #3c3c3c;\n\n      /*\n       * Deprecated values because of their confusing names.\n       */\n      --text-primary-color: var(--dark-theme-text-color);\n      --default-primary-color: var(--primary-color);\n    }\n  </style>\n</custom-style>"],["\n<custom-style>\n  <style is=\"custom-style\">\n    html {\n      /*\n       * You can use these generic variables in your elements for easy theming.\n       * For example, if all your elements use \\`--primary-text-color\\` as its main\n       * color, then switching from a light to a dark theme is just a matter of\n       * changing the value of \\`--primary-text-color\\` in your application.\n       */\n      --primary-text-color: var(--light-theme-text-color);\n      --primary-background-color: var(--light-theme-background-color);\n      --secondary-text-color: var(--light-theme-secondary-color);\n      --disabled-text-color: var(--light-theme-disabled-color);\n      --divider-color: var(--light-theme-divider-color);\n      --error-color: var(--paper-deep-orange-a700);\n\n      /*\n       * Primary and accent colors. Also see color.js for more colors.\n       */\n      --primary-color: var(--paper-indigo-500);\n      --light-primary-color: var(--paper-indigo-100);\n      --dark-primary-color: var(--paper-indigo-700);\n\n      --accent-color: var(--paper-pink-a200);\n      --light-accent-color: var(--paper-pink-a100);\n      --dark-accent-color: var(--paper-pink-a400);\n\n\n      /*\n       * Material Design Light background theme\n       */\n      --light-theme-background-color: #ffffff;\n      --light-theme-base-color: #000000;\n      --light-theme-text-color: var(--paper-grey-900);\n      --light-theme-secondary-color: #737373;  /* for secondary text and icons */\n      --light-theme-disabled-color: #9b9b9b;  /* disabled/hint text */\n      --light-theme-divider-color: #dbdbdb;\n\n      /*\n       * Material Design Dark background theme\n       */\n      --dark-theme-background-color: var(--paper-grey-900);\n      --dark-theme-base-color: #ffffff;\n      --dark-theme-text-color: #ffffff;\n      --dark-theme-secondary-color: #bcbcbc;  /* for secondary text and icons */\n      --dark-theme-disabled-color: #646464;  /* disabled/hint text */\n      --dark-theme-divider-color: #3c3c3c;\n\n      /*\n       * Deprecated values because of their confusing names.\n       */\n      --text-primary-color: var(--dark-theme-text-color);\n      --default-primary-color: var(--primary-color);\n    }\n  </style>\n</custom-style>"]);_templateObject11_2937b1a0072d11eaac4ad73c7775be10=function _templateObject11_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject10_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n  <style include=\"paper-material-styles\">\n    /* Need to specify the same specificity as the styles imported from paper-material. */\n    :host {\n      @apply --layout-inline;\n      @apply --layout-center-center;\n      position: relative;\n      box-sizing: border-box;\n      min-width: 5.14em;\n      margin: 0 0.29em;\n      background: transparent;\n      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n      -webkit-tap-highlight-color: transparent;\n      font: inherit;\n      text-transform: uppercase;\n      outline-width: 0;\n      border-radius: 3px;\n      -moz-user-select: none;\n      -ms-user-select: none;\n      -webkit-user-select: none;\n      user-select: none;\n      cursor: pointer;\n      z-index: 0;\n      padding: 0.7em 0.57em;\n\n      @apply --paper-font-common-base;\n      @apply --paper-button;\n    }\n\n    :host([elevation=\"1\"]) {\n      @apply --paper-material-elevation-1;\n    }\n\n    :host([elevation=\"2\"]) {\n      @apply --paper-material-elevation-2;\n    }\n\n    :host([elevation=\"3\"]) {\n      @apply --paper-material-elevation-3;\n    }\n\n    :host([elevation=\"4\"]) {\n      @apply --paper-material-elevation-4;\n    }\n\n    :host([elevation=\"5\"]) {\n      @apply --paper-material-elevation-5;\n    }\n\n    :host([hidden]) {\n      display: none !important;\n    }\n\n    :host([raised].keyboard-focus) {\n      font-weight: bold;\n      @apply --paper-button-raised-keyboard-focus;\n    }\n\n    :host(:not([raised]).keyboard-focus) {\n      font-weight: bold;\n      @apply --paper-button-flat-keyboard-focus;\n    }\n\n    :host([disabled]) {\n      background: none;\n      color: #a8a8a8;\n      cursor: auto;\n      pointer-events: none;\n\n      @apply --paper-button-disabled;\n    }\n\n    :host([disabled][raised]) {\n      background: #eaeaea;\n    }\n\n\n    :host([animated]) {\n      @apply --shadow-transition;\n    }\n\n    paper-ripple {\n      color: var(--paper-button-ink-color);\n    }\n  </style>\n\n  <slot></slot>"]);_templateObject10_2937b1a0072d11eaac4ad73c7775be10=function _templateObject10_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject9_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n<dom-module id=\"paper-material-styles\">\n  <template>\n    <style>\n      html {\n        --paper-material: {\n          display: block;\n          position: relative;\n        };\n        --paper-material-elevation-1: {\n          @apply --shadow-elevation-2dp;\n        };\n        --paper-material-elevation-2: {\n          @apply --shadow-elevation-4dp;\n        };\n        --paper-material-elevation-3: {\n          @apply --shadow-elevation-6dp;\n        };\n        --paper-material-elevation-4: {\n          @apply --shadow-elevation-8dp;\n        };\n        --paper-material-elevation-5: {\n          @apply --shadow-elevation-16dp;\n        };\n      }\n      .paper-material {\n        @apply --paper-material;\n      }\n      .paper-material[elevation=\"1\"] {\n        @apply --paper-material-elevation-1;\n      }\n      .paper-material[elevation=\"2\"] {\n        @apply --paper-material-elevation-2;\n      }\n      .paper-material[elevation=\"3\"] {\n        @apply --paper-material-elevation-3;\n      }\n      .paper-material[elevation=\"4\"] {\n        @apply --paper-material-elevation-4;\n      }\n      .paper-material[elevation=\"5\"] {\n        @apply --paper-material-elevation-5;\n      }\n\n      /* Duplicate the styles because of https://github.com/webcomponents/shadycss/issues/193 */\n      :host {\n        --paper-material: {\n          display: block;\n          position: relative;\n        };\n        --paper-material-elevation-1: {\n          @apply --shadow-elevation-2dp;\n        };\n        --paper-material-elevation-2: {\n          @apply --shadow-elevation-4dp;\n        };\n        --paper-material-elevation-3: {\n          @apply --shadow-elevation-6dp;\n        };\n        --paper-material-elevation-4: {\n          @apply --shadow-elevation-8dp;\n        };\n        --paper-material-elevation-5: {\n          @apply --shadow-elevation-16dp;\n        };\n      }\n      :host(.paper-material) {\n        @apply --paper-material;\n      }\n      :host(.paper-material[elevation=\"1\"]) {\n        @apply --paper-material-elevation-1;\n      }\n      :host(.paper-material[elevation=\"2\"]) {\n        @apply --paper-material-elevation-2;\n      }\n      :host(.paper-material[elevation=\"3\"]) {\n        @apply --paper-material-elevation-3;\n      }\n      :host(.paper-material[elevation=\"4\"]) {\n        @apply --paper-material-elevation-4;\n      }\n      :host(.paper-material[elevation=\"5\"]) {\n        @apply --paper-material-elevation-5;\n      }\n    </style>\n  </template>\n</dom-module>"]);_templateObject9_2937b1a0072d11eaac4ad73c7775be10=function _templateObject9_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject8_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n<custom-style>\n  <style is=\"custom-style\">\n    html {\n\n      --shadow-transition: {\n        transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);\n      };\n\n      --shadow-none: {\n        box-shadow: none;\n      };\n\n      /* from http://codepen.io/shyndman/pen/c5394ddf2e8b2a5c9185904b57421cdb */\n\n      --shadow-elevation-2dp: {\n        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),\n                    0 1px 5px 0 rgba(0, 0, 0, 0.12),\n                    0 3px 1px -2px rgba(0, 0, 0, 0.2);\n      };\n\n      --shadow-elevation-3dp: {\n        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),\n                    0 1px 8px 0 rgba(0, 0, 0, 0.12),\n                    0 3px 3px -2px rgba(0, 0, 0, 0.4);\n      };\n\n      --shadow-elevation-4dp: {\n        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),\n                    0 1px 10px 0 rgba(0, 0, 0, 0.12),\n                    0 2px 4px -1px rgba(0, 0, 0, 0.4);\n      };\n\n      --shadow-elevation-6dp: {\n        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),\n                    0 1px 18px 0 rgba(0, 0, 0, 0.12),\n                    0 3px 5px -1px rgba(0, 0, 0, 0.4);\n      };\n\n      --shadow-elevation-8dp: {\n        box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),\n                    0 3px 14px 2px rgba(0, 0, 0, 0.12),\n                    0 5px 5px -3px rgba(0, 0, 0, 0.4);\n      };\n\n      --shadow-elevation-12dp: {\n        box-shadow: 0 12px 16px 1px rgba(0, 0, 0, 0.14),\n                    0 4px 22px 3px rgba(0, 0, 0, 0.12),\n                    0 6px 7px -4px rgba(0, 0, 0, 0.4);\n      };\n\n      --shadow-elevation-16dp: {\n        box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),\n                    0  6px 30px 5px rgba(0, 0, 0, 0.12),\n                    0  8px 10px -5px rgba(0, 0, 0, 0.4);\n      };\n\n      --shadow-elevation-24dp: {\n        box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),\n                    0 9px 46px 8px rgba(0, 0, 0, 0.12),\n                    0 11px 15px -7px rgba(0, 0, 0, 0.4);\n      };\n    }\n  </style>\n</custom-style>"]);_templateObject8_2937b1a0072d11eaac4ad73c7775be10=function _templateObject8_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject7_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n    <style>\n      :host {\n        display: block;\n        position: absolute;\n        border-radius: inherit;\n        overflow: hidden;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0;\n\n        /* See PolymerElements/paper-behaviors/issues/34. On non-Chrome browsers,\n         * creating a node (with a position:absolute) in the middle of an event\n         * handler \"interrupts\" that event handler (which happens when the\n         * ripple is created on demand) */\n        pointer-events: none;\n      }\n\n      :host([animating]) {\n        /* This resolves a rendering issue in Chrome (as of 40) where the\n           ripple is not properly clipped by its parent (which may have\n           rounded corners). See: http://jsbin.com/temexa/4\n\n           Note: We only apply this style conditionally. Otherwise, the browser\n           will create a new compositing layer for every ripple element on the\n           page, and that would be bad. */\n        -webkit-transform: translate(0, 0);\n        transform: translate3d(0, 0, 0);\n      }\n\n      #background,\n      #waves,\n      .wave-container,\n      .wave {\n        pointer-events: none;\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n      }\n\n      #background,\n      .wave {\n        opacity: 0;\n      }\n\n      #waves,\n      .wave {\n        overflow: hidden;\n      }\n\n      .wave-container,\n      .wave {\n        border-radius: 50%;\n      }\n\n      :host(.circle) #background,\n      :host(.circle) #waves {\n        border-radius: 50%;\n      }\n\n      :host(.circle) .wave-container {\n        overflow: hidden;\n      }\n    </style>\n\n    <div id=\"background\"></div>\n    <div id=\"waves\"></div>\n"]);_templateObject7_2937b1a0072d11eaac4ad73c7775be10=function _templateObject7_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject6_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n    <style>\n      :host {\n        display: inline-block;\n      }\n    </style>\n    <slot id=\"content\"></slot>\n"]);_templateObject6_2937b1a0072d11eaac4ad73c7775be10=function _templateObject6_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject5_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n    <style>\n      :host {\n        display: inline-block;\n        overflow: hidden;\n        position: relative;\n      }\n\n      #baseURIAnchor {\n        display: none;\n      }\n\n      #sizedImgDiv {\n        position: absolute;\n        top: 0px;\n        right: 0px;\n        bottom: 0px;\n        left: 0px;\n\n        display: none;\n      }\n\n      #img {\n        display: block;\n        width: var(--iron-image-width, auto);\n        height: var(--iron-image-height, auto);\n      }\n\n      :host([sizing]) #sizedImgDiv {\n        display: block;\n      }\n\n      :host([sizing]) #img {\n        display: none;\n      }\n\n      #placeholder {\n        position: absolute;\n        top: 0px;\n        right: 0px;\n        bottom: 0px;\n        left: 0px;\n\n        background-color: inherit;\n        opacity: 1;\n\n        @apply --iron-image-placeholder;\n      }\n\n      #placeholder.faded-out {\n        transition: opacity 0.5s linear;\n        opacity: 0;\n      }\n    </style>\n\n    <a id=\"baseURIAnchor\" href=\"#\"></a>\n    <div id=\"sizedImgDiv\" role=\"img\" hidden$=\"[[_computeImgDivHidden(sizing)]]\" aria-hidden$=\"[[_computeImgDivARIAHidden(alt)]]\" aria-label$=\"[[_computeImgDivARIALabel(alt, src)]]\"></div>\n    <img id=\"img\" alt$=\"[[alt]]\" hidden$=\"[[_computeImgHidden(sizing)]]\" crossorigin$=\"[[crossorigin]]\" on-load=\"_imgOnLoad\" on-error=\"_imgOnError\">\n    <div id=\"placeholder\" hidden$=\"[[_computePlaceholderHidden(preload, fade, loading, loaded)]]\" class$=\"[[_computePlaceholderClassName(preload, fade, loading, loaded)]]\"></div>\n"]);_templateObject5_2937b1a0072d11eaac4ad73c7775be10=function _templateObject5_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject4_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n    <style>\n      :host {\n        @apply --layout-inline;\n        @apply --layout-center-center;\n        position: relative;\n\n        vertical-align: middle;\n\n        fill: var(--iron-icon-fill-color, currentcolor);\n        stroke: var(--iron-icon-stroke-color, none);\n\n        width: var(--iron-icon-width, 24px);\n        height: var(--iron-icon-height, 24px);\n        @apply --iron-icon;\n      }\n\n      :host([hidden]) {\n        display: none;\n      }\n    </style>\n"]);_templateObject4_2937b1a0072d11eaac4ad73c7775be10=function _templateObject4_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject3_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n    <style>\n      :host {\n        position: fixed;\n      }\n\n      #contentWrapper ::slotted(*) {\n        overflow: auto;\n      }\n\n      #contentWrapper.animating ::slotted(*) {\n        overflow: hidden;\n        pointer-events: none;\n      }\n    </style>\n\n    <div id=\"contentWrapper\">\n      <slot id=\"content\" name=\"dropdown-content\"></slot>\n    </div>\n"]);_templateObject3_2937b1a0072d11eaac4ad73c7775be10=function _templateObject3_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject2_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n    <style>\n      :host {\n        position: fixed;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        background-color: var(--iron-overlay-backdrop-background-color, #000);\n        opacity: 0;\n        transition: opacity 0.2s;\n        pointer-events: none;\n        @apply --iron-overlay-backdrop;\n      }\n\n      :host(.opened) {\n        opacity: var(--iron-overlay-backdrop-opacity, 0.6);\n        pointer-events: auto;\n        @apply --iron-overlay-backdrop-opened;\n      }\n    </style>\n\n    <slot></slot>\n"]);_templateObject2_2937b1a0072d11eaac4ad73c7775be10=function _templateObject2_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}function _templateObject_2937b1a0072d11eaac4ad73c7775be10(){var data=babelHelpers.taggedTemplateLiteral(["\n    <style>\n      :host {\n        display: inline-block;\n        position: fixed;\n        clip: rect(0px,0px,0px,0px);\n      }\n    </style>\n    <div aria-live$=\"[[mode]]\">[[_text]]</div>\n"]);_templateObject_2937b1a0072d11eaac4ad73c7775be10=function _templateObject_2937b1a0072d11eaac4ad73c7775be10(){return data};return data}// Give the user the choice to opt out of font loading.
+if(!window.polymerSkipLoadingFontRoboto){var link=document.createElement("link");link.rel="stylesheet";link.type="text/css";link.crossOrigin="anonymous";link.href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,300,300italic,400italic,500,500italic,700,700italic";document.head.appendChild(link)}var IronA11yAnnouncer=(0,_natepaasApp.Polymer)({_template:(0,_natepaasApp.html$1)(_templateObject_2937b1a0072d11eaac4ad73c7775be10()),is:"iron-a11y-announcer",properties:{/**
      * The value of mode is used to set the `aria-live` attribute
      * for the element that will be announced. Valid values are: `off`,
      * `polite` and `assertive`.
-     */mode:{type:String,value:"polite"},_text:{type:String,value:""}},created:function(){if(!IronA11yAnnouncer.instance){IronA11yAnnouncer.instance=this}document.body.addEventListener("iron-announce",this._onIronAnnounce.bind(this))},/**
+     */mode:{type:String,value:"polite"},_text:{type:String,value:""}},created:function created(){if(!IronA11yAnnouncer.instance){IronA11yAnnouncer.instance=this}document.body.addEventListener("iron-announce",this._onIronAnnounce.bind(this))},/**
    * Cause a text string to be announced by screen readers.
    *
    * @param {string} text The text that should be announced.
-   */announce:function(text){this._text="";this.async(function(){this._text=text},100)},_onIronAnnounce:function(event){if(event.detail&&event.detail.text){this.announce(event.detail.text)}}});_exports.IronA11yAnnouncer=IronA11yAnnouncer;IronA11yAnnouncer.instance=null;IronA11yAnnouncer.requestAvailability=function(){if(!IronA11yAnnouncer.instance){IronA11yAnnouncer.instance=document.createElement("iron-a11y-announcer")}document.body.appendChild(IronA11yAnnouncer.instance)};var ironA11yAnnouncer={IronA11yAnnouncer:IronA11yAnnouncer};_exports.$ironA11yAnnouncer=ironA11yAnnouncer;var KEY_IDENTIFIER={"U+0008":"backspace","U+0009":"tab","U+001B":"esc","U+0020":"space","U+007F":"del"},KEY_CODE={8:"backspace",9:"tab",13:"enter",27:"esc",33:"pageup",34:"pagedown",35:"end",36:"home",32:"space",37:"left",38:"up",39:"right",40:"down",46:"del",106:"*"},MODIFIER_KEYS={shift:"shiftKey",ctrl:"ctrlKey",alt:"altKey",meta:"metaKey"},KEY_CHAR=/[a-z0-9*]/,IDENT_CHAR=/U\+/,ARROW_KEY=/^arrow/,SPACE_KEY=/^space(bar)?/,ESC_KEY=/^escape$/;/**
+   */announce:function announce(text){this._text="";this.async(function(){this._text=text},100)},_onIronAnnounce:function _onIronAnnounce(event){if(event.detail&&event.detail.text){this.announce(event.detail.text)}}});_exports.IronA11yAnnouncer=IronA11yAnnouncer;IronA11yAnnouncer.instance=null;IronA11yAnnouncer.requestAvailability=function(){if(!IronA11yAnnouncer.instance){IronA11yAnnouncer.instance=document.createElement("iron-a11y-announcer")}document.body.appendChild(IronA11yAnnouncer.instance)};var ironA11yAnnouncer={IronA11yAnnouncer:IronA11yAnnouncer};_exports.$ironA11yAnnouncer=ironA11yAnnouncer;var KEY_IDENTIFIER={"U+0008":"backspace","U+0009":"tab","U+001B":"esc","U+0020":"space","U+007F":"del"},KEY_CODE={8:"backspace",9:"tab",13:"enter",27:"esc",33:"pageup",34:"pagedown",35:"end",36:"home",32:"space",37:"left",38:"up",39:"right",40:"down",46:"del",106:"*"},MODIFIER_KEYS={shift:"shiftKey",ctrl:"ctrlKey",alt:"altKey",meta:"metaKey"},KEY_CHAR=/[a-z0-9*]/,IDENT_CHAR=/U\+/,ARROW_KEY=/^arrow/,SPACE_KEY=/^space(bar)?/,ESC_KEY=/^escape$/;/**
     * Special table for KeyboardEvent.keyCode.
     * KeyboardEvent.keyIdentifier is better, and KeyBoardEvent.key is even better
     * than that.
@@ -84,39 +75,39 @@ var keyEvent=normalizedKeyForEvent(event,keyCombo.hasModifiers);return keyEvent=
    *
    * @demo demo/index.html
    * @polymerBehavior
-   */const IronA11yKeysBehavior={properties:{/**
+   */var IronA11yKeysBehavior={properties:{/**
      * The EventTarget that will be firing relevant KeyboardEvents. Set it to
      * `null` to disable the listeners.
      * @type {?EventTarget}
-     */keyEventTarget:{type:Object,value:function(){return this}},/**
+     */keyEventTarget:{type:Object,value:function value(){return this}},/**
      * If true, this property will cause the implementing element to
      * automatically stop propagation on any handled KeyboardEvents.
-     */stopKeyboardEventPropagation:{type:Boolean,value:!1},_boundKeyHandlers:{type:Array,value:function(){return[]}},// We use this due to a limitation in IE10 where instances will have
+     */stopKeyboardEventPropagation:{type:Boolean,value:!1},_boundKeyHandlers:{type:Array,value:function value(){return[]}},// We use this due to a limitation in IE10 where instances will have
 // own properties of everything on the "prototype".
-_imperativeKeyBindings:{type:Object,value:function(){return{}}}},observers:["_resetKeyEventListeners(keyEventTarget, _boundKeyHandlers)"],/**
+_imperativeKeyBindings:{type:Object,value:function value(){return{}}}},observers:["_resetKeyEventListeners(keyEventTarget, _boundKeyHandlers)"],/**
    * To be used to express what combination of keys  will trigger the relative
    * callback. e.g. `keyBindings: { 'esc': '_onEscPressed'}`
    * @type {!Object}
-   */keyBindings:{},registered:function(){this._prepKeyBindings()},attached:function(){this._listenKeyEventListeners()},detached:function(){this._unlistenKeyEventListeners()},/**
+   */keyBindings:{},registered:function registered(){this._prepKeyBindings()},attached:function attached(){this._listenKeyEventListeners()},detached:function detached(){this._unlistenKeyEventListeners()},/**
    * Can be used to imperatively add a key binding to the implementing
    * element. This is the imperative equivalent of declaring a keybinding
    * in the `keyBindings` prototype property.
    *
    * @param {string} eventString
    * @param {string} handlerName
-   */addOwnKeyBinding:function(eventString,handlerName){this._imperativeKeyBindings[eventString]=handlerName;this._prepKeyBindings();this._resetKeyEventListeners()},/**
+   */addOwnKeyBinding:function addOwnKeyBinding(eventString,handlerName){this._imperativeKeyBindings[eventString]=handlerName;this._prepKeyBindings();this._resetKeyEventListeners()},/**
    * When called, will remove all imperatively-added key bindings.
-   */removeOwnKeyBindings:function(){this._imperativeKeyBindings={};this._prepKeyBindings();this._resetKeyEventListeners()},/**
+   */removeOwnKeyBindings:function removeOwnKeyBindings(){this._imperativeKeyBindings={};this._prepKeyBindings();this._resetKeyEventListeners()},/**
    * Returns true if a keyboard event matches `eventString`.
    *
    * @param {KeyboardEvent} event
    * @param {string} eventString
    * @return {boolean}
-   */keyboardEventMatchesKeys:function(event,eventString){for(var keyCombos=parseEventString(eventString),i=0;i<keyCombos.length;++i){if(keyComboMatchesEvent(keyCombos[i],event)){return!0}}return!1},_collectKeyBindings:function(){var keyBindings=this.behaviors.map(function(behavior){return behavior.keyBindings});if(-1===keyBindings.indexOf(this.keyBindings)){keyBindings.push(this.keyBindings)}return keyBindings},_prepKeyBindings:function(){this._keyBindings={};this._collectKeyBindings().forEach(function(keyBindings){for(var eventString in keyBindings){this._addKeyBinding(eventString,keyBindings[eventString])}},this);for(var eventString in this._imperativeKeyBindings){this._addKeyBinding(eventString,this._imperativeKeyBindings[eventString])}// Give precedence to combos with modifiers to be checked first.
-for(var eventName in this._keyBindings){this._keyBindings[eventName].sort(function(kb1,kb2){var b1=kb1[0].hasModifiers,b2=kb2[0].hasModifiers;return b1===b2?0:b1?-1:1})}},_addKeyBinding:function(eventString,handlerName){parseEventString(eventString).forEach(function(keyCombo){this._keyBindings[keyCombo.event]=this._keyBindings[keyCombo.event]||[];this._keyBindings[keyCombo.event].push([keyCombo,handlerName])},this)},_resetKeyEventListeners:function(){this._unlistenKeyEventListeners();if(this.isAttached){this._listenKeyEventListeners()}},_listenKeyEventListeners:function(){if(!this.keyEventTarget){return}Object.keys(this._keyBindings).forEach(function(eventName){var keyBindings=this._keyBindings[eventName],boundKeyHandler=this._onKeyBindingEvent.bind(this,keyBindings);this._boundKeyHandlers.push([this.keyEventTarget,eventName,boundKeyHandler]);this.keyEventTarget.addEventListener(eventName,boundKeyHandler)},this)},_unlistenKeyEventListeners:function(){var keyHandlerTuple,keyEventTarget,eventName,boundKeyHandler;while(this._boundKeyHandlers.length){// My kingdom for block-scope binding and destructuring assignment..
-keyHandlerTuple=this._boundKeyHandlers.pop();keyEventTarget=keyHandlerTuple[0];eventName=keyHandlerTuple[1];boundKeyHandler=keyHandlerTuple[2];keyEventTarget.removeEventListener(eventName,boundKeyHandler)}},_onKeyBindingEvent:function(keyBindings,event){if(this.stopKeyboardEventPropagation){event.stopPropagation()}// if event has been already prevented, don't do anything
+   */keyboardEventMatchesKeys:function keyboardEventMatchesKeys(event,eventString){for(var keyCombos=parseEventString(eventString),i=0;i<keyCombos.length;++i){if(keyComboMatchesEvent(keyCombos[i],event)){return!0}}return!1},_collectKeyBindings:function _collectKeyBindings(){var keyBindings=this.behaviors.map(function(behavior){return behavior.keyBindings});if(-1===keyBindings.indexOf(this.keyBindings)){keyBindings.push(this.keyBindings)}return keyBindings},_prepKeyBindings:function _prepKeyBindings(){this._keyBindings={};this._collectKeyBindings().forEach(function(keyBindings){for(var eventString in keyBindings){this._addKeyBinding(eventString,keyBindings[eventString])}},this);for(var eventString in this._imperativeKeyBindings){this._addKeyBinding(eventString,this._imperativeKeyBindings[eventString])}// Give precedence to combos with modifiers to be checked first.
+for(var eventName in this._keyBindings){this._keyBindings[eventName].sort(function(kb1,kb2){var b1=kb1[0].hasModifiers,b2=kb2[0].hasModifiers;return b1===b2?0:b1?-1:1})}},_addKeyBinding:function _addKeyBinding(eventString,handlerName){parseEventString(eventString).forEach(function(keyCombo){this._keyBindings[keyCombo.event]=this._keyBindings[keyCombo.event]||[];this._keyBindings[keyCombo.event].push([keyCombo,handlerName])},this)},_resetKeyEventListeners:function _resetKeyEventListeners(){this._unlistenKeyEventListeners();if(this.isAttached){this._listenKeyEventListeners()}},_listenKeyEventListeners:function _listenKeyEventListeners(){if(!this.keyEventTarget){return}Object.keys(this._keyBindings).forEach(function(eventName){var keyBindings=this._keyBindings[eventName],boundKeyHandler=this._onKeyBindingEvent.bind(this,keyBindings);this._boundKeyHandlers.push([this.keyEventTarget,eventName,boundKeyHandler]);this.keyEventTarget.addEventListener(eventName,boundKeyHandler)},this)},_unlistenKeyEventListeners:function _unlistenKeyEventListeners(){var keyHandlerTuple,keyEventTarget,eventName,boundKeyHandler;while(this._boundKeyHandlers.length){// My kingdom for block-scope binding and destructuring assignment..
+keyHandlerTuple=this._boundKeyHandlers.pop();keyEventTarget=keyHandlerTuple[0];eventName=keyHandlerTuple[1];boundKeyHandler=keyHandlerTuple[2];keyEventTarget.removeEventListener(eventName,boundKeyHandler)}},_onKeyBindingEvent:function _onKeyBindingEvent(keyBindings,event){if(this.stopKeyboardEventPropagation){event.stopPropagation()}// if event has been already prevented, don't do anything
 if(event.defaultPrevented){return}for(var i=0;i<keyBindings.length;i++){var keyCombo=keyBindings[i][0],handlerName=keyBindings[i][1];if(keyComboMatchesEvent(keyCombo,event)){this._triggerKeyHandler(keyCombo,handlerName,event);// exit the loop if eventDefault was prevented
-if(event.defaultPrevented){return}}}},_triggerKeyHandler:function(keyCombo,handlerName,keyboardEvent){var detail=Object.create(keyCombo);detail.keyboardEvent=keyboardEvent;var event=new CustomEvent(keyCombo.event,{detail:detail,cancelable:!0});this[handlerName].call(this,event);if(event.defaultPrevented){keyboardEvent.preventDefault()}}};_exports.IronA11yKeysBehavior=IronA11yKeysBehavior;var ironA11yKeysBehavior={IronA11yKeysBehavior:IronA11yKeysBehavior};_exports.$ironA11yKeysBehavior=ironA11yKeysBehavior;const IronControlState={properties:{/**
+if(event.defaultPrevented){return}}}},_triggerKeyHandler:function _triggerKeyHandler(keyCombo,handlerName,keyboardEvent){var detail=Object.create(keyCombo);detail.keyboardEvent=keyboardEvent;var event=new CustomEvent(keyCombo.event,{detail:detail,cancelable:!0});this[handlerName].call(this,event);if(event.defaultPrevented){keyboardEvent.preventDefault()}}};_exports.IronA11yKeysBehavior=IronA11yKeysBehavior;var ironA11yKeysBehavior={IronA11yKeysBehavior:IronA11yKeysBehavior};_exports.$ironA11yKeysBehavior=ironA11yKeysBehavior;var IronControlState={properties:{/**
      * If true, the element currently has focus.
      */focused:{type:Boolean,value:!1,notify:!0,readOnly:!0,reflectToAttribute:!0},/**
      * If true, the user cannot interact with this element.
@@ -124,15 +115,15 @@ if(event.defaultPrevented){return}}}},_triggerKeyHandler:function(keyCombo,handl
      * Value of the `tabindex` attribute before `disabled` was activated.
      * `null` means the attribute was not present.
      * @type {?string|undefined}
-     */_oldTabIndex:{type:String},_boundFocusBlurHandler:{type:Function,value:function(){return this._focusBlurHandler.bind(this)}}},observers:["_changedControlState(focused, disabled)"],/**
+     */_oldTabIndex:{type:String},_boundFocusBlurHandler:{type:Function,value:function value(){return this._focusBlurHandler.bind(this)}}},observers:["_changedControlState(focused, disabled)"],/**
    * @return {void}
-   */ready:function(){this.addEventListener("focus",this._boundFocusBlurHandler,!0);this.addEventListener("blur",this._boundFocusBlurHandler,!0)},_focusBlurHandler:function(event){// Polymer takes care of retargeting events.
-this._setFocused("focus"===event.type);return},_disabledChanged:function(disabled,old){this.setAttribute("aria-disabled",disabled?"true":"false");this.style.pointerEvents=disabled?"none":"";if(disabled){// Read the `tabindex` attribute instead of the `tabIndex` property.
+   */ready:function ready(){this.addEventListener("focus",this._boundFocusBlurHandler,!0);this.addEventListener("blur",this._boundFocusBlurHandler,!0)},_focusBlurHandler:function _focusBlurHandler(event){// Polymer takes care of retargeting events.
+this._setFocused("focus"===event.type);return},_disabledChanged:function _disabledChanged(disabled,old){this.setAttribute("aria-disabled",disabled?"true":"false");this.style.pointerEvents=disabled?"none":"";if(disabled){// Read the `tabindex` attribute instead of the `tabIndex` property.
 // The property returns `-1` if there is no `tabindex` attribute.
 // This distinction is important when restoring the value because
 // leaving `-1` hides shadow root children from the tab order.
-this._oldTabIndex=this.getAttribute("tabindex");this._setFocused(!1);this.tabIndex=-1;this.blur()}else if(this._oldTabIndex!==void 0){if(null===this._oldTabIndex){this.removeAttribute("tabindex")}else{this.setAttribute("tabindex",this._oldTabIndex)}}},_changedControlState:function(){// _controlStateChanged is abstract, follow-on behaviors may implement it
-if(this._controlStateChanged){this._controlStateChanged()}}};_exports.IronControlState=IronControlState;var ironControlState={IronControlState:IronControlState};_exports.$ironControlState=ironControlState;const IronButtonStateImpl={properties:{/**
+this._oldTabIndex=this.getAttribute("tabindex");this._setFocused(!1);this.tabIndex=-1;this.blur()}else if(this._oldTabIndex!==void 0){if(null===this._oldTabIndex){this.removeAttribute("tabindex")}else{this.setAttribute("tabindex",this._oldTabIndex)}}},_changedControlState:function _changedControlState(){// _controlStateChanged is abstract, follow-on behaviors may implement it
+if(this._controlStateChanged){this._controlStateChanged()}}};_exports.IronControlState=IronControlState;var ironControlState={IronControlState:IronControlState};_exports.$ironControlState=ironControlState;var IronButtonStateImpl={properties:{/**
      * If true, the user is currently holding down the button.
      */pressed:{type:Boolean,readOnly:!0,value:!1,reflectToAttribute:!0,observer:"_pressedChanged"},/**
      * If true, the button toggles the active state with each tap or press
@@ -151,23 +142,23 @@ if(this._controlStateChanged){this._controlStateChanged()}}};_exports.IronContro
      * active state.
      */ariaActiveAttribute:{type:String,value:"aria-pressed",observer:"_ariaActiveAttributeChanged"}},listeners:{down:"_downHandler",up:"_upHandler",tap:"_tapHandler"},observers:["_focusChanged(focused)","_activeChanged(active, ariaActiveAttribute)"],/**
    * @type {!Object}
-   */keyBindings:{"enter:keydown":"_asyncClick","space:keydown":"_spaceKeyDownHandler","space:keyup":"_spaceKeyUpHandler"},_mouseEventRe:/^mouse/,_tapHandler:function(){if(this.toggles){// a tap is needed to toggle the active state
-this._userActivate(!this.active)}else{this.active=!1}},_focusChanged:function(focused){this._detectKeyboardFocus(focused);if(!focused){this._setPressed(!1)}},_detectKeyboardFocus:function(focused){this._setReceivedFocusFromKeyboard(!this.pointerDown&&focused)},// to emulate native checkbox, (de-)activations from a user interaction fire
+   */keyBindings:{"enter:keydown":"_asyncClick","space:keydown":"_spaceKeyDownHandler","space:keyup":"_spaceKeyUpHandler"},_mouseEventRe:/^mouse/,_tapHandler:function _tapHandler(){if(this.toggles){// a tap is needed to toggle the active state
+this._userActivate(!this.active)}else{this.active=!1}},_focusChanged:function _focusChanged(focused){this._detectKeyboardFocus(focused);if(!focused){this._setPressed(!1)}},_detectKeyboardFocus:function _detectKeyboardFocus(focused){this._setReceivedFocusFromKeyboard(!this.pointerDown&&focused)},// to emulate native checkbox, (de-)activations from a user interaction fire
 // 'change' events
-_userActivate:function(active){if(this.active!==active){this.active=active;this.fire("change")}},_downHandler:function(event){this._setPointerDown(!0);this._setPressed(!0);this._setReceivedFocusFromKeyboard(!1)},_upHandler:function(){this._setPointerDown(!1);this._setPressed(!1)},/**
+_userActivate:function _userActivate(active){if(this.active!==active){this.active=active;this.fire("change")}},_downHandler:function _downHandler(event){this._setPointerDown(!0);this._setPressed(!0);this._setReceivedFocusFromKeyboard(!1)},_upHandler:function _upHandler(){this._setPointerDown(!1);this._setPressed(!1)},/**
    * @param {!KeyboardEvent} event .
-   */_spaceKeyDownHandler:function(event){var keyboardEvent=event.detail.keyboardEvent,target=(0,_natepaasApp.dom)(keyboardEvent).localTarget;// Ignore the event if this is coming from a focused light child, since that
+   */_spaceKeyDownHandler:function _spaceKeyDownHandler(event){var keyboardEvent=event.detail.keyboardEvent,target=(0,_natepaasApp.dom)(keyboardEvent).localTarget;// Ignore the event if this is coming from a focused light child, since that
 // element will deal with it.
 if(this.isLightDescendant(/** @type {Node} */target))return;keyboardEvent.preventDefault();keyboardEvent.stopImmediatePropagation();this._setPressed(!0)},/**
    * @param {!KeyboardEvent} event .
-   */_spaceKeyUpHandler:function(event){var keyboardEvent=event.detail.keyboardEvent,target=(0,_natepaasApp.dom)(keyboardEvent).localTarget;// Ignore the event if this is coming from a focused light child, since that
+   */_spaceKeyUpHandler:function _spaceKeyUpHandler(event){var keyboardEvent=event.detail.keyboardEvent,target=(0,_natepaasApp.dom)(keyboardEvent).localTarget;// Ignore the event if this is coming from a focused light child, since that
 // element will deal with it.
 if(this.isLightDescendant(/** @type {Node} */target))return;if(this.pressed){this._asyncClick()}this._setPressed(!1)},// trigger click asynchronously, the asynchrony is useful to allow one
 // event handler to unwind before triggering another event
-_asyncClick:function(){this.async(function(){this.click()},1)},// any of these changes are considered a change to button state
-_pressedChanged:function(pressed){this._changedButtonState()},_ariaActiveAttributeChanged:function(value,oldValue){if(oldValue&&oldValue!=value&&this.hasAttribute(oldValue)){this.removeAttribute(oldValue)}},_activeChanged:function(active,ariaActiveAttribute){if(this.toggles){this.setAttribute(this.ariaActiveAttribute,active?"true":"false")}else{this.removeAttribute(this.ariaActiveAttribute)}this._changedButtonState()},_controlStateChanged:function(){if(this.disabled){this._setPressed(!1)}else{this._changedButtonState()}},// provide hook for follow-on behaviors to react to button-state
-_changedButtonState:function(){if(this._buttonStateChanged){this._buttonStateChanged();// abstract
-}}};/** @polymerBehavior */_exports.IronButtonStateImpl=IronButtonStateImpl;const IronButtonState=[IronA11yKeysBehavior,IronButtonStateImpl];_exports.IronButtonState=IronButtonState;var ironButtonState={IronButtonStateImpl:IronButtonStateImpl,IronButtonState:IronButtonState};_exports.$ironButtonState=ironButtonState;const IronFormElementBehavior={properties:{/**
+_asyncClick:function _asyncClick(){this.async(function(){this.click()},1)},// any of these changes are considered a change to button state
+_pressedChanged:function _pressedChanged(pressed){this._changedButtonState()},_ariaActiveAttributeChanged:function _ariaActiveAttributeChanged(value,oldValue){if(oldValue&&oldValue!=value&&this.hasAttribute(oldValue)){this.removeAttribute(oldValue)}},_activeChanged:function _activeChanged(active,ariaActiveAttribute){if(this.toggles){this.setAttribute(this.ariaActiveAttribute,active?"true":"false")}else{this.removeAttribute(this.ariaActiveAttribute)}this._changedButtonState()},_controlStateChanged:function _controlStateChanged(){if(this.disabled){this._setPressed(!1)}else{this._changedButtonState()}},// provide hook for follow-on behaviors to react to button-state
+_changedButtonState:function _changedButtonState(){if(this._buttonStateChanged){this._buttonStateChanged();// abstract
+}}};/** @polymerBehavior */_exports.IronButtonStateImpl=IronButtonStateImpl;var IronButtonState=[IronA11yKeysBehavior,IronButtonStateImpl];_exports.IronButtonState=IronButtonState;var ironButtonState={IronButtonStateImpl:IronButtonStateImpl,IronButtonState:IronButtonState};_exports.$ironButtonState=ironButtonState;var IronFormElementBehavior={properties:{/**
      * The name of this element.
      */name:{type:String},/**
      * The value for this element.
@@ -180,16 +171,16 @@ _changedButtonState:function(){if(this._buttonStateChanged){this._buttonStateCha
      * It's also strongly recommended to provide a visual style for the element
      * when its value is invalid.
      */required:{type:Boolean,value:!1}},// Empty implementations for backcompatibility.
-attached:function(){},detached:function(){}};_exports.IronFormElementBehavior=IronFormElementBehavior;var ironFormElementBehavior={IronFormElementBehavior:IronFormElementBehavior};_exports.$ironFormElementBehavior=ironFormElementBehavior;class IronMeta{/**
+attached:function attached(){},detached:function detached(){}};_exports.IronFormElementBehavior=IronFormElementBehavior;var ironFormElementBehavior={IronFormElementBehavior:IronFormElementBehavior};_exports.$ironFormElementBehavior=ironFormElementBehavior;var IronMeta=/*#__PURE__*/function(){/**
    * @param {{
    *   type: (string|null|undefined),
    *   key: (string|null|undefined),
    *   value: *,
    * }=} options
-   */constructor(options){IronMeta[" "](options);/** @type {string} */this.type=options&&options.type||"default";/** @type {string|null|undefined} */this.key=options&&options.key;if(options&&"value"in options){/** @type {*} */this.value=options.value}}/** @return {*} */get value(){var type=this.type,key=this.key;if(type&&key){return IronMeta.types[type]&&IronMeta.types[type][key]}}/** @param {*} value */set value(value){var type=this.type,key=this.key;if(type&&key){type=IronMeta.types[type]=IronMeta.types[type]||{};if(null==value){delete type[key]}else{type[key]=value}}}/** @return {!Array<*>} */get list(){var type=this.type;if(type){var items=IronMeta.types[this.type];if(!items){return[]}return Object.keys(items).map(function(key){return metaDatas[this.type][key]},this)}}/**
+   */function IronMeta(options){babelHelpers.classCallCheck(this,IronMeta);IronMeta[" "](options);/** @type {string} */this.type=options&&options.type||"default";/** @type {string|null|undefined} */this.key=options&&options.key;if(options&&"value"in options){/** @type {*} */this.value=options.value}}/** @return {*} */babelHelpers.createClass(IronMeta,[{key:"byKey",/**
      * @param {string} key
      * @return {*}
-     */byKey(key){this.key=key;return this.value}}_exports.IronMeta=IronMeta;;// This function is used to convince Closure not to remove constructor calls
+     */value:function byKey(key){this.key=key;return this.value}},{key:"value",get:function get(){var type=this.type,key=this.key;if(type&&key){return IronMeta.types[type]&&IronMeta.types[type][key]}}/** @param {*} value */,set:function set(value){var type=this.type,key=this.key;if(type&&key){type=IronMeta.types[type]=IronMeta.types[type]||{};if(null==value){delete type[key]}else{type[key]=value}}}/** @return {!Array<*>} */},{key:"list",get:function get(){var type=this.type;if(type){var items=IronMeta.types[this.type];if(!items){return[]}return Object.keys(items).map(function(key){return metaDatas[this.type][key]},this)}}}]);return IronMeta}();_exports.IronMeta=IronMeta;;// This function is used to convince Closure not to remove constructor calls
 // for instances that are not held anywhere. For example, when
 // `new IronMeta({...})` is used only for the side effect of adding a value.
 IronMeta[" "]=function(){};IronMeta.types={};var metaDatas=IronMeta.types;/**
@@ -242,13 +233,13 @@ IronMeta[" "]=function(){};IronMeta.types={};var metaDatas=IronMeta.types;/**
      * @type {*}
      */value:{type:String,notify:!0},/**
      * If true, `value` is set to the iron-meta instance itself.
-     */self:{type:Boolean,observer:"_selfChanged"},__meta:{type:Boolean,computed:"__computeMeta(type, key, value)"}},hostAttributes:{hidden:!0},__computeMeta:function(type,key,value){var meta=new IronMeta({type:type,key:key});if(value!==void 0&&value!==meta.value){meta.value=value}else if(this.value!==meta.value){this.value=meta.value}return meta},get list(){return this.__meta&&this.__meta.list},_selfChanged:function(self){if(self){this.value=this}},/**
+     */self:{type:Boolean,observer:"_selfChanged"},__meta:{type:Boolean,computed:"__computeMeta(type, key, value)"}},hostAttributes:{hidden:!0},__computeMeta:function __computeMeta(type,key,value){var meta=new IronMeta({type:type,key:key});if(value!==void 0&&value!==meta.value){meta.value=value}else if(this.value!==meta.value){this.value=meta.value}return meta},get list(){return this.__meta&&this.__meta.list},_selfChanged:function _selfChanged(self){if(self){this.value=this}},/**
    * Retrieves meta data value by key.
    *
    * @method byKey
    * @param {string} key The key of the meta-data to be returned.
    * @return {*}
-   */byKey:function(key){return new IronMeta({type:this.type,key:key}).value}});var ironMeta={IronMeta:IronMeta};_exports.$ironMeta=ironMeta;let IronValidatableBehaviorMeta=null;/**
+   */byKey:function byKey(key){return new IronMeta({type:this.type,key:key}).value}});var ironMeta={IronMeta:IronMeta};_exports.$ironMeta=ironMeta;var IronValidatableBehaviorMeta=null;/**
                                                 * `Use IronValidatableBehavior` to implement an element that validates
                                                 * user input. Use the related `IronValidatorBehavior` to add custom
                                                 * validation logic to an iron-input.
@@ -274,14 +265,14 @@ IronMeta[" "]=function(){};IronMeta.types={};var metaDatas=IronMeta.types;/**
                                                 *
                                                 * @demo demo/index.html
                                                 * @polymerBehavior
-                                                */_exports.IronValidatableBehaviorMeta=IronValidatableBehaviorMeta;const IronValidatableBehavior={properties:{/**
+                                                */_exports.IronValidatableBehaviorMeta=IronValidatableBehaviorMeta;var IronValidatableBehavior={properties:{/**
      * Name of the validator to use.
      */validator:{type:String},/**
      * True if the last call to `validate` is invalid.
-     */invalid:{notify:!0,reflectToAttribute:!0,type:Boolean,value:!1,observer:"_invalidChanged"}},registered:function(){_exports.IronValidatableBehaviorMeta=IronValidatableBehaviorMeta=new IronMeta({type:"validator"})},_invalidChanged:function(){if(this.invalid){this.setAttribute("aria-invalid","true")}else{this.removeAttribute("aria-invalid")}},/* Recompute this every time it's needed, because we don't know if the
+     */invalid:{notify:!0,reflectToAttribute:!0,type:Boolean,value:!1,observer:"_invalidChanged"}},registered:function registered(){_exports.IronValidatableBehaviorMeta=IronValidatableBehaviorMeta=new IronMeta({type:"validator"})},_invalidChanged:function _invalidChanged(){if(this.invalid){this.setAttribute("aria-invalid","true")}else{this.removeAttribute("aria-invalid")}},/* Recompute this every time it's needed, because we don't know if the
    * underlying IronValidatableBehaviorMeta has changed. */get _validator(){return IronValidatableBehaviorMeta&&IronValidatableBehaviorMeta.byKey(this.validator)},/**
    * @return {boolean} True if the validator `validator` exists.
-   */hasValidator:function(){return null!=this._validator},/**
+   */hasValidator:function hasValidator(){return null!=this._validator},/**
    * Returns true if the `value` is valid, and updates `invalid`. If you want
    * your element to have custom validation logic, do not override this method;
    * override `_getValidity(value)` instead.
@@ -291,7 +282,7 @@ IronMeta[" "]=function(){};IronMeta.types={};var metaDatas=IronMeta.types;/**
    * If this argument is not specified, then the element's `value` property
    * is used, if it exists.
    * @return {boolean} True if `value` is valid.
-   */validate:function(value){// If this is an element that also has a value property, and there was
+   */validate:function validate(value){// If this is an element that also has a value property, and there was
 // no explicit value argument passed, use the element's property instead.
 if(value===void 0&&this.value!==void 0)this.invalid=!this._getValidity(this.value);else this.invalid=!this._getValidity(value);return!this.invalid},/**
    * Returns true if `value` is valid.  By default, it is passed
@@ -301,7 +292,7 @@ if(value===void 0&&this.value!==void 0)this.invalid=!this._getValidity(this.valu
    *
    * @param {Object} value The value to be validated.
    * @return {boolean} True if `value` is valid.
-   */_getValidity:function(value){if(this.hasValidator()){return this._validator.validate(value)}return!0}};_exports.IronValidatableBehavior=IronValidatableBehavior;var ironValidatableBehavior={get IronValidatableBehaviorMeta(){return IronValidatableBehaviorMeta},IronValidatableBehavior:IronValidatableBehavior};_exports.$ironValidatableBehavior=ironValidatableBehavior;const IronCheckedElementBehaviorImpl={properties:{/**
+   */_getValidity:function _getValidity(value){if(this.hasValidator()){return this._validator.validate(value)}return!0}};_exports.IronValidatableBehavior=IronValidatableBehavior;var ironValidatableBehavior={get IronValidatableBehaviorMeta(){return IronValidatableBehaviorMeta},IronValidatableBehavior:IronValidatableBehavior};_exports.$ironValidatableBehavior=ironValidatableBehavior;var IronCheckedElementBehaviorImpl={properties:{/**
      * Fired when the checked state changes.
      *
      * @event iron-change
@@ -310,7 +301,7 @@ if(value===void 0&&this.value!==void 0)this.invalid=!this._getValidity(this.valu
          */checked:{type:Boolean,value:!1,reflectToAttribute:!0,notify:!0,observer:"_checkedChanged"},/**
      * If true, the button toggles the active state with each tap or press
      * of the spacebar.
-     */toggles:{type:Boolean,value:!0,reflectToAttribute:!0},/* Overriden from IronFormElementBehavior */value:{type:String,value:"on",observer:"_valueChanged"}},observers:["_requiredChanged(required)"],created:function(){// Used by `iron-form` to handle the case that an element with this behavior
+     */toggles:{type:Boolean,value:!0,reflectToAttribute:!0},/* Overriden from IronFormElementBehavior */value:{type:String,value:"on",observer:"_valueChanged"}},observers:["_requiredChanged(required)"],created:function created(){// Used by `iron-form` to handle the case that an element with this behavior
 // doesn't have a role of 'checkbox' or 'radio', but should still only be
 // included when the form is serialized if `this.checked === true`.
 this._hasIronCheckedElementBehavior=!0},/**
@@ -318,18 +309,18 @@ this._hasIronCheckedElementBehavior=!0},/**
    * otherwise.
    * @param {*=} _value Ignored.
    * @return {boolean} true if `required` is false or if `checked` is true.
-   */_getValidity:function(_value){return this.disabled||!this.required||this.checked},/**
+   */_getValidity:function _getValidity(_value){return this.disabled||!this.required||this.checked},/**
    * Update the aria-required label when `required` is changed.
-   */_requiredChanged:function(){if(this.required){this.setAttribute("aria-required","true")}else{this.removeAttribute("aria-required")}},/**
+   */_requiredChanged:function _requiredChanged(){if(this.required){this.setAttribute("aria-required","true")}else{this.removeAttribute("aria-required")}},/**
    * Fire `iron-changed` when the checked state changes.
-   */_checkedChanged:function(){this.active=this.checked;this.fire("iron-change")},/**
+   */_checkedChanged:function _checkedChanged(){this.active=this.checked;this.fire("iron-change")},/**
    * Reset value to 'on' if it is set to `undefined`.
-   */_valueChanged:function(){if(this.value===void 0||null===this.value){this.value="on"}}};/** @polymerBehavior */_exports.IronCheckedElementBehaviorImpl=IronCheckedElementBehaviorImpl;const IronCheckedElementBehavior=[IronFormElementBehavior,IronValidatableBehavior,IronCheckedElementBehaviorImpl];_exports.IronCheckedElementBehavior=IronCheckedElementBehavior;var ironCheckedElementBehavior={IronCheckedElementBehaviorImpl:IronCheckedElementBehaviorImpl,IronCheckedElementBehavior:IronCheckedElementBehavior};_exports.$ironCheckedElementBehavior=ironCheckedElementBehavior;const IronFitBehavior={properties:{/**
+   */_valueChanged:function _valueChanged(){if(this.value===void 0||null===this.value){this.value="on"}}};/** @polymerBehavior */_exports.IronCheckedElementBehaviorImpl=IronCheckedElementBehaviorImpl;var IronCheckedElementBehavior=[IronFormElementBehavior,IronValidatableBehavior,IronCheckedElementBehaviorImpl];_exports.IronCheckedElementBehavior=IronCheckedElementBehavior;var ironCheckedElementBehavior={IronCheckedElementBehaviorImpl:IronCheckedElementBehaviorImpl,IronCheckedElementBehavior:IronCheckedElementBehavior};_exports.$ironCheckedElementBehavior=ironCheckedElementBehavior;var IronFitBehavior={properties:{/**
      * The element that will receive a `max-height`/`width`. By default it is
      * the same as `this`, but it can be set to a child element. This is useful,
      * for example, for implementing a scrolling region inside the element.
      * @type {!Element}
-     */sizingTarget:{type:Object,value:function(){return this}},/**
+     */sizingTarget:{type:Object,value:function value(){return this}},/**
      * The element to fit `this` into.
      */fitInto:{type:Object,value:window},/**
      * Will position the element around the positionTarget without overlapping
@@ -387,27 +378,27 @@ this._hasIronCheckedElementBehavior=!0},/**
 if("right"===this.horizontalAlign){return"left"}if("left"===this.horizontalAlign){return"right"}}return this.horizontalAlign},/**
    * True if the element should be positioned instead of centered.
    * @private
-   */get __shouldPosition(){return(this.horizontalAlign||this.verticalAlign)&&this.positionTarget},attached:function(){// Memoize this to avoid expensive calculations & relayouts.
+   */get __shouldPosition(){return(this.horizontalAlign||this.verticalAlign)&&this.positionTarget},attached:function attached(){// Memoize this to avoid expensive calculations & relayouts.
 // Make sure we do it only once
 if("undefined"===typeof this._isRTL){this._isRTL="rtl"==window.getComputedStyle(this).direction}this.positionTarget=this.positionTarget||this._defaultPositionTarget;if(this.autoFitOnAttach){if("none"===window.getComputedStyle(this).display){setTimeout(function(){this.fit()}.bind(this))}else{// NOTE: shadydom applies distribution asynchronously
 // for performance reasons webcomponents/shadydom#120
 // Flush to get correct layout info.
-window.ShadyDOM&&ShadyDOM.flush();this.fit()}}},detached:function(){if(this.__deferredFit){clearTimeout(this.__deferredFit);this.__deferredFit=null}},/**
+window.ShadyDOM&&ShadyDOM.flush();this.fit()}}},detached:function detached(){if(this.__deferredFit){clearTimeout(this.__deferredFit);this.__deferredFit=null}},/**
    * Positions and fits the element into the `fitInto` element.
-   */fit:function(){this.position();this.constrain();this.center()},/**
+   */fit:function fit(){this.position();this.constrain();this.center()},/**
    * Memoize information needed to position and size the target element.
    * @suppress {deprecated}
-   */_discoverInfo:function(){if(this._fitInfo){return}var target=window.getComputedStyle(this),sizer=window.getComputedStyle(this.sizingTarget);this._fitInfo={inlineStyle:{top:this.style.top||"",left:this.style.left||"",position:this.style.position||""},sizerInlineStyle:{maxWidth:this.sizingTarget.style.maxWidth||"",maxHeight:this.sizingTarget.style.maxHeight||"",boxSizing:this.sizingTarget.style.boxSizing||""},positionedBy:{vertically:"auto"!==target.top?"top":"auto"!==target.bottom?"bottom":null,horizontally:"auto"!==target.left?"left":"auto"!==target.right?"right":null},sizedBy:{height:"none"!==sizer.maxHeight,width:"none"!==sizer.maxWidth,minWidth:parseInt(sizer.minWidth,10)||0,minHeight:parseInt(sizer.minHeight,10)||0},margin:{top:parseInt(target.marginTop,10)||0,right:parseInt(target.marginRight,10)||0,bottom:parseInt(target.marginBottom,10)||0,left:parseInt(target.marginLeft,10)||0}}},/**
+   */_discoverInfo:function _discoverInfo(){if(this._fitInfo){return}var target=window.getComputedStyle(this),sizer=window.getComputedStyle(this.sizingTarget);this._fitInfo={inlineStyle:{top:this.style.top||"",left:this.style.left||"",position:this.style.position||""},sizerInlineStyle:{maxWidth:this.sizingTarget.style.maxWidth||"",maxHeight:this.sizingTarget.style.maxHeight||"",boxSizing:this.sizingTarget.style.boxSizing||""},positionedBy:{vertically:"auto"!==target.top?"top":"auto"!==target.bottom?"bottom":null,horizontally:"auto"!==target.left?"left":"auto"!==target.right?"right":null},sizedBy:{height:"none"!==sizer.maxHeight,width:"none"!==sizer.maxWidth,minWidth:parseInt(sizer.minWidth,10)||0,minHeight:parseInt(sizer.minHeight,10)||0},margin:{top:parseInt(target.marginTop,10)||0,right:parseInt(target.marginRight,10)||0,bottom:parseInt(target.marginBottom,10)||0,left:parseInt(target.marginLeft,10)||0}}},/**
    * Resets the target element's position and size constraints, and clear
    * the memoized data.
-   */resetFit:function(){var info=this._fitInfo||{};for(var property in info.sizerInlineStyle){this.sizingTarget.style[property]=info.sizerInlineStyle[property]}for(var property in info.inlineStyle){this.style[property]=info.inlineStyle[property]}this._fitInfo=null},/**
+   */resetFit:function resetFit(){var info=this._fitInfo||{};for(var property in info.sizerInlineStyle){this.sizingTarget.style[property]=info.sizerInlineStyle[property]}for(var property in info.inlineStyle){this.style[property]=info.inlineStyle[property]}this._fitInfo=null},/**
    * Equivalent to calling `resetFit()` and `fit()`. Useful to call this after
    * the element or the `fitInto` element has been resized, or if any of the
    * positioning properties (e.g. `horizontalAlign, verticalAlign`) is updated.
    * It preserves the scroll position of the sizingTarget.
-   */refit:function(){var scrollLeft=this.sizingTarget.scrollLeft,scrollTop=this.sizingTarget.scrollTop;this.resetFit();this.fit();this.sizingTarget.scrollLeft=scrollLeft;this.sizingTarget.scrollTop=scrollTop},/**
+   */refit:function refit(){var scrollLeft=this.sizingTarget.scrollLeft,scrollTop=this.sizingTarget.scrollTop;this.resetFit();this.fit();this.sizingTarget.scrollLeft=scrollLeft;this.sizingTarget.scrollTop=scrollTop},/**
    * Positions the element according to `horizontalAlign, verticalAlign`.
-   */position:function(){if(!this.__shouldPosition){// needs to be centered, and it is done after constrain.
+   */position:function position(){if(!this.__shouldPosition){// needs to be centered, and it is done after constrain.
 return}this._discoverInfo();this.style.position="fixed";// Need border-box for margin/padding.
 this.sizingTarget.style.boxSizing="border-box";// Set to 0, 0 in order to discover any offset caused by parent stacking
 // contexts.
@@ -418,25 +409,25 @@ this.sizingTarget.style.maxWidth=Math.max(right-left,this._fitInfo.sizedBy.minWi
 this.style.left=left-rect.left+"px";this.style.top=top-rect.top+"px"},/**
    * Constrains the size of the element to `fitInto` by setting `max-height`
    * and/or `max-width`.
-   */constrain:function(){if(this.__shouldPosition){return}this._discoverInfo();var info=this._fitInfo;// position at (0px, 0px) if not already positioned, so we can measure the
+   */constrain:function constrain(){if(this.__shouldPosition){return}this._discoverInfo();var info=this._fitInfo;// position at (0px, 0px) if not already positioned, so we can measure the
 // natural size.
 if(!info.positionedBy.vertically){this.style.position="fixed";this.style.top="0px"}if(!info.positionedBy.horizontally){this.style.position="fixed";this.style.left="0px"}// need border-box for margin/padding
 this.sizingTarget.style.boxSizing="border-box";// constrain the width and height if not already set
 var rect=this.getBoundingClientRect();if(!info.sizedBy.height){this.__sizeDimension(rect,info.positionedBy.vertically,"top","bottom","Height")}if(!info.sizedBy.width){this.__sizeDimension(rect,info.positionedBy.horizontally,"left","right","Width")}},/**
    * @protected
    * @deprecated
-   */_sizeDimension:function(rect,positionedBy,start,end,extent){this.__sizeDimension(rect,positionedBy,start,end,extent)},/**
+   */_sizeDimension:function _sizeDimension(rect,positionedBy,start,end,extent){this.__sizeDimension(rect,positionedBy,start,end,extent)},/**
    * @private
-   */__sizeDimension:function(rect,positionedBy,start,end,extent){var info=this._fitInfo,fitRect=this.__getNormalizedRect(this.fitInto),max="Width"===extent?fitRect.width:fitRect.height,flip=positionedBy===end,offset=flip?max-rect[end]:rect[start],margin=info.margin[flip?start:end],offsetExtent="offset"+extent,sizingOffset=this[offsetExtent]-this.sizingTarget[offsetExtent];this.sizingTarget.style["max"+extent]=max-margin-offset-sizingOffset+"px"},/**
+   */__sizeDimension:function __sizeDimension(rect,positionedBy,start,end,extent){var info=this._fitInfo,fitRect=this.__getNormalizedRect(this.fitInto),max="Width"===extent?fitRect.width:fitRect.height,flip=positionedBy===end,offset=flip?max-rect[end]:rect[start],margin=info.margin[flip?start:end],offsetExtent="offset"+extent,sizingOffset=this[offsetExtent]-this.sizingTarget[offsetExtent];this.sizingTarget.style["max"+extent]=max-margin-offset-sizingOffset+"px"},/**
    * Centers horizontally and vertically if not already positioned. This also
    * sets `position:fixed`.
-   */center:function(){if(this.__shouldPosition){return}this._discoverInfo();var positionedBy=this._fitInfo.positionedBy;if(positionedBy.vertically&&positionedBy.horizontally){// Already positioned.
+   */center:function center(){if(this.__shouldPosition){return}this._discoverInfo();var positionedBy=this._fitInfo.positionedBy;if(positionedBy.vertically&&positionedBy.horizontally){// Already positioned.
 return}// Need position:fixed to center
 this.style.position="fixed";// Take into account the offset caused by parents that create stacking
 // contexts (e.g. with transform: translate3d). Translate to 0,0 and
 // measure the bounding rect.
 if(!positionedBy.vertically){this.style.top="0px"}if(!positionedBy.horizontally){this.style.left="0px"}// It will take in consideration margins and transforms
-var rect=this.getBoundingClientRect(),fitRect=this.__getNormalizedRect(this.fitInto);if(!positionedBy.vertically){var top=fitRect.top-rect.top+(fitRect.height-rect.height)/2;this.style.top=top+"px"}if(!positionedBy.horizontally){var left=fitRect.left-rect.left+(fitRect.width-rect.width)/2;this.style.left=left+"px"}},__getNormalizedRect:function(target){if(target===document.documentElement||target===window){return{top:0,left:0,width:window.innerWidth,height:window.innerHeight,right:window.innerWidth,bottom:window.innerHeight}}return target.getBoundingClientRect()},__getOffscreenArea:function(position,size,fitRect){var verticalCrop=Math.min(0,position.top)+Math.min(0,fitRect.bottom-(position.top+size.height)),horizontalCrop=Math.min(0,position.left)+Math.min(0,fitRect.right-(position.left+size.width));return Math.abs(verticalCrop)*size.width+Math.abs(horizontalCrop)*size.height},__getPosition:function(hAlign,vAlign,size,sizeNoMargins,positionRect,fitRect){// All the possible configurations.
+var rect=this.getBoundingClientRect(),fitRect=this.__getNormalizedRect(this.fitInto);if(!positionedBy.vertically){var top=fitRect.top-rect.top+(fitRect.height-rect.height)/2;this.style.top=top+"px"}if(!positionedBy.horizontally){var left=fitRect.left-rect.left+(fitRect.width-rect.width)/2;this.style.left=left+"px"}},__getNormalizedRect:function __getNormalizedRect(target){if(target===document.documentElement||target===window){return{top:0,left:0,width:window.innerWidth,height:window.innerHeight,right:window.innerWidth,bottom:window.innerHeight}}return target.getBoundingClientRect()},__getOffscreenArea:function __getOffscreenArea(position,size,fitRect){var verticalCrop=Math.min(0,position.top)+Math.min(0,fitRect.bottom-(position.top+size.height)),horizontalCrop=Math.min(0,position.left)+Math.min(0,fitRect.right-(position.left+size.width));return Math.abs(verticalCrop)*size.width+Math.abs(horizontalCrop)*size.height},__getPosition:function __getPosition(hAlign,vAlign,size,sizeNoMargins,positionRect,fitRect){// All the possible configurations.
 // Ordered as top-left, top-right, bottom-left, bottom-right.
 var positions=[{verticalAlign:"top",horizontalAlign:"left",top:positionRect.top+this.verticalOffset,left:positionRect.left+this.horizontalOffset},{verticalAlign:"top",horizontalAlign:"right",top:positionRect.top+this.verticalOffset,left:positionRect.right-size.width-this.horizontalOffset},{verticalAlign:"bottom",horizontalAlign:"left",top:positionRect.bottom-size.height-this.verticalOffset,left:positionRect.left+this.horizontalOffset},{verticalAlign:"bottom",horizontalAlign:"right",top:positionRect.bottom-size.height-this.verticalOffset,left:positionRect.right-size.width-this.horizontalOffset}];if(this.noOverlap){// Duplicate.
 for(var i=0,l=positions.length,copy;i<l;i++){copy={};for(var key in positions[i]){copy[key]=positions[i][key]}positions.push(copy)}// Horizontal overlap only.
@@ -455,19 +446,19 @@ if(!this.dynamicAlign&&!alignOk){continue}candidate.offscreenArea=this.__getOffs
 // ones overlapping vertically.
 if(0===candidate.offscreenArea&&alignOk){position=candidate;break}position=position||candidate;var diff=candidate.offscreenArea-position.offscreenArea;// Check which crops less. If it crops equally, check if at least one
 // align setting is ok.
-if(0>diff||0===diff&&(vAlignOk||hAlignOk)){position=candidate}}return position}};_exports.IronFitBehavior=IronFitBehavior;var ironFitBehavior={IronFitBehavior:IronFitBehavior};_exports.$ironFitBehavior=ironFitBehavior;var p=Element.prototype,matches=p.matches||p.matchesSelector||p.mozMatchesSelector||p.msMatchesSelector||p.oMatchesSelector||p.webkitMatchesSelector;const IronFocusablesHelper={/**
+if(0>diff||0===diff&&(vAlignOk||hAlignOk)){position=candidate}}return position}};_exports.IronFitBehavior=IronFitBehavior;var ironFitBehavior={IronFitBehavior:IronFitBehavior};_exports.$ironFitBehavior=ironFitBehavior;var p=Element.prototype,matches=p.matches||p.matchesSelector||p.mozMatchesSelector||p.msMatchesSelector||p.oMatchesSelector||p.webkitMatchesSelector,IronFocusablesHelper={/**
    * Returns a sorted array of tabbable nodes, including the root node.
    * It searches the tabbable nodes in the light and shadow dom of the chidren,
    * sorting the result by tabindex.
    * @param {!Node} node
    * @return {!Array<!HTMLElement>}
-   */getTabbableNodes:function(node){var result=[],needsSortByTabIndex=this._collectTabbableNodes(node,result);// If there is at least one element with tabindex > 0, we need to sort
+   */getTabbableNodes:function getTabbableNodes(node){var result=[],needsSortByTabIndex=this._collectTabbableNodes(node,result);// If there is at least one element with tabindex > 0, we need to sort
 // the final array by tabindex.
 if(needsSortByTabIndex){return this._sortByTabIndex(result)}return result},/**
    * Returns if a element is focusable.
    * @param {!HTMLElement} element
    * @return {boolean}
-   */isFocusable:function(element){// From http://stackoverflow.com/a/1600194/4228703:
+   */isFocusable:function isFocusable(element){// From http://stackoverflow.com/a/1600194/4228703:
 // There isn't a definite list, it's up to the browser. The only
 // standard we have is DOM Level 2 HTML
 // https://www.w3.org/TR/DOM-Level-2-HTML/html.html, according to which the
@@ -483,7 +474,7 @@ return matches.call(element,"a[href], area[href], iframe, [tabindex], [contentEd
    * focusable, visible, and with a tabindex !== -1.
    * @param {!HTMLElement} element
    * @return {boolean}
-   */isTabbable:function(element){return this.isFocusable(element)&&matches.call(element,":not([tabindex=\"-1\"])")&&this._isVisible(element)},/**
+   */isTabbable:function isTabbable(element){return this.isFocusable(element)&&matches.call(element,":not([tabindex=\"-1\"])")&&this._isVisible(element)},/**
    * Returns the normalized element tabindex. If not focusable, returns -1.
    * It checks for the attribute "tabindex" instead of the element property
    * `tabIndex` since browsers assign different values to it.
@@ -491,7 +482,7 @@ return matches.call(element,"a[href], area[href], iframe, [tabindex], [contentEd
    * @param {!HTMLElement} element
    * @return {!number}
    * @private
-   */_normalizedTabIndex:function(element){if(this.isFocusable(element)){var tabIndex=element.getAttribute("tabindex")||0;return+tabIndex}return-1},/**
+   */_normalizedTabIndex:function _normalizedTabIndex(element){if(this.isFocusable(element)){var tabIndex=element.getAttribute("tabindex")||0;return+tabIndex}return-1},/**
    * Searches for nodes that are tabbable and adds them to the `result` array.
    * Returns if the `result` array needs to be sorted by tabindex.
    * @param {!Node} node The starting point for the search; added to `result`
@@ -499,7 +490,7 @@ return matches.call(element,"a[href], area[href], iframe, [tabindex], [contentEd
    * @param {!Array<!HTMLElement>} result
    * @return {boolean}
    * @private
-   */_collectTabbableNodes:function(node,result){// If not an element or not visible, no need to explore children.
+   */_collectTabbableNodes:function _collectTabbableNodes(node,result){// If not an element or not visible, no need to explore children.
 if(node.nodeType!==Node.ELEMENT_NODE||!this._isVisible(node)){return!1}var element=/** @type {!HTMLElement} */node,tabIndex=this._normalizedTabIndex(element),needsSort=0<tabIndex;if(0<=tabIndex){result.push(element)}// In ShadowDOM v1, tab order is affected by the order of distrubution.
 // E.g. getTabbableNodes(#root) in ShadowDOM v1 should return [#A, #B];
 // in ShadowDOM v0 tab order is not affected by the distrubution order,
@@ -520,14 +511,14 @@ needsSort=this._collectTabbableNodes(children[i],result)||needsSort}return needs
    * @param {!HTMLElement} element
    * @return {boolean}
    * @private
-   */_isVisible:function(element){// Check inline style first to save a re-flow. If looks good, check also
+   */_isVisible:function _isVisible(element){// Check inline style first to save a re-flow. If looks good, check also
 // computed style.
 var style=element.style;if("hidden"!==style.visibility&&"none"!==style.display){style=window.getComputedStyle(element);return"hidden"!==style.visibility&&"none"!==style.display}return!1},/**
    * Sorts an array of tabbable elements by tabindex. Returns a new array.
    * @param {!Array<!HTMLElement>} tabbables
    * @return {!Array<!HTMLElement>}
    * @private
-   */_sortByTabIndex:function(tabbables){// Implement a merge sort as Array.prototype.sort does a non-stable sort
+   */_sortByTabIndex:function _sortByTabIndex(tabbables){// Implement a merge sort as Array.prototype.sort does a non-stable sort
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 var len=tabbables.length;if(2>len){return tabbables}var pivot=Math.ceil(len/2),left=this._sortByTabIndex(tabbables.slice(0,pivot)),right=this._sortByTabIndex(tabbables.slice(pivot));return this._mergeSortByTabIndex(left,right)},/**
    * Merge sort iterator, merges the two arrays into one, sorted by tab index.
@@ -535,7 +526,7 @@ var len=tabbables.length;if(2>len){return tabbables}var pivot=Math.ceil(len/2),l
    * @param {!Array<!HTMLElement>} right
    * @return {!Array<!HTMLElement>}
    * @private
-   */_mergeSortByTabIndex:function(left,right){var result=[];while(0<left.length&&0<right.length){if(this._hasLowerTabOrder(left[0],right[0])){result.push(right.shift())}else{result.push(left.shift())}}return result.concat(left,right)},/**
+   */_mergeSortByTabIndex:function _mergeSortByTabIndex(left,right){var result=[];while(0<left.length&&0<right.length){if(this._hasLowerTabOrder(left[0],right[0])){result.push(right.shift())}else{result.push(left.shift())}}return result.concat(left,right)},/**
    * Returns if element `a` has lower tab order compared to element `b`
    * (both elements are assumed to be focusable and tabbable).
    * Elements with tabindex = 0 have lower tab order compared to elements
@@ -545,51 +536,28 @@ var len=tabbables.length;if(2>len){return tabbables}var pivot=Math.ceil(len/2),l
    * @param {!HTMLElement} b
    * @return {boolean}
    * @private
-   */_hasLowerTabOrder:function(a,b){// Normalize tabIndexes
+   */_hasLowerTabOrder:function _hasLowerTabOrder(a,b){// Normalize tabIndexes
 // e.g. in Firefox `<div contenteditable>` has `tabIndex = -1`
-var ati=Math.max(a.tabIndex,0),bti=Math.max(b.tabIndex,0);return 0===ati||0===bti?bti>ati:ati>bti}};_exports.IronFocusablesHelper=IronFocusablesHelper;var ironFocusablesHelper={IronFocusablesHelper:IronFocusablesHelper};_exports.$ironFocusablesHelper=ironFocusablesHelper;(0,_natepaasApp.Polymer)({_template:_natepaasApp.html$1`
-    <style>
-      :host {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--iron-overlay-backdrop-background-color, #000);
-        opacity: 0;
-        transition: opacity 0.2s;
-        pointer-events: none;
-        @apply --iron-overlay-backdrop;
-      }
-
-      :host(.opened) {
-        opacity: var(--iron-overlay-backdrop-opacity, 0.6);
-        pointer-events: auto;
-        @apply --iron-overlay-backdrop-opened;
-      }
-    </style>
-
-    <slot></slot>
-`,is:"iron-overlay-backdrop",properties:{/**
+var ati=Math.max(a.tabIndex,0),bti=Math.max(b.tabIndex,0);return 0===ati||0===bti?bti>ati:ati>bti}};_exports.IronFocusablesHelper=IronFocusablesHelper;var ironFocusablesHelper={IronFocusablesHelper:IronFocusablesHelper};_exports.$ironFocusablesHelper=ironFocusablesHelper;(0,_natepaasApp.Polymer)({_template:(0,_natepaasApp.html$1)(_templateObject2_2937b1a0072d11eaac4ad73c7775be10()),is:"iron-overlay-backdrop",properties:{/**
      * Returns true if the backdrop is opened.
-     */opened:{reflectToAttribute:!0,type:Boolean,value:!1,observer:"_openedChanged"}},listeners:{transitionend:"_onTransitionend"},created:function(){// Used to cancel previous requestAnimationFrame calls when opened changes.
-this.__openedRaf=null},attached:function(){this.opened&&this._openedChanged(this.opened)},/**
+     */opened:{reflectToAttribute:!0,type:Boolean,value:!1,observer:"_openedChanged"}},listeners:{transitionend:"_onTransitionend"},created:function created(){// Used to cancel previous requestAnimationFrame calls when opened changes.
+this.__openedRaf=null},attached:function attached(){this.opened&&this._openedChanged(this.opened)},/**
    * Appends the backdrop to document body if needed.
-   */prepare:function(){if(this.opened&&!this.parentNode){(0,_natepaasApp.dom)(document.body).appendChild(this)}},/**
+   */prepare:function prepare(){if(this.opened&&!this.parentNode){(0,_natepaasApp.dom)(document.body).appendChild(this)}},/**
    * Shows the backdrop.
-   */open:function(){this.opened=!0},/**
+   */open:function open(){this.opened=!0},/**
    * Hides the backdrop.
-   */close:function(){this.opened=!1},/**
+   */close:function close(){this.opened=!1},/**
    * Removes the backdrop from document body if needed.
-   */complete:function(){if(!this.opened&&this.parentNode===document.body){(0,_natepaasApp.dom)(this.parentNode).removeChild(this)}},_onTransitionend:function(event){if(event&&event.target===this){this.complete()}},/**
+   */complete:function complete(){if(!this.opened&&this.parentNode===document.body){(0,_natepaasApp.dom)(this.parentNode).removeChild(this)}},_onTransitionend:function _onTransitionend(event){if(event&&event.target===this){this.complete()}},/**
    * @param {boolean} opened
    * @private
-   */_openedChanged:function(opened){if(opened){// Auto-attach.
+   */_openedChanged:function _openedChanged(opened){if(opened){// Auto-attach.
 this.prepare()}else{// Animation might be disabled via the mixin or opacity custom property.
 // If it is disabled in other ways, it's up to the user to call complete.
 var cs=window.getComputedStyle(this);if("0s"===cs.transitionDuration||0==cs.opacity){this.complete()}}if(!this.isAttached){return}// Always cancel previous requestAnimationFrame.
 if(this.__openedRaf){window.cancelAnimationFrame(this.__openedRaf);this.__openedRaf=null}// Force relayout to ensure proper transitions.
-this.scrollTop=this.scrollTop;this.__openedRaf=window.requestAnimationFrame(function(){this.__openedRaf=null;this.toggleClass("opened",this.opened)}.bind(this))}});const IronOverlayManagerClass=function(){/**
+this.scrollTop=this.scrollTop;this.__openedRaf=window.requestAnimationFrame(function(){this.__openedRaf=null;this.toggleClass("opened",this.opened)}.bind(this))}});var IronOverlayManagerClass=function IronOverlayManagerClass(){/**
    * Used to keep track of the opened overlays.
    * @private {!Array<!Element>}
    */this._overlays=[];/**
@@ -616,11 +584,11 @@ this.scrollTop=this.scrollTop;this.__openedRaf=window.requestAnimationFrame(func
 // https://developer.mozilla.org/en-US/docs/Web/API/Document/activeElement
 // In IE 11, it can also be an object when operating in iframes.
 // In these cases, default it to document.body.
-if(!active||!1===active instanceof Element){active=document.body}while(active.root&&(0,_natepaasApp.dom)(active.root).activeElement){active=(0,_natepaasApp.dom)(active.root).activeElement}return active},/**
+if(!active||!1===babelHelpers.instanceof(active,Element)){active=document.body}while(active.root&&(0,_natepaasApp.dom)(active.root).activeElement){active=(0,_natepaasApp.dom)(active.root).activeElement}return active},/**
    * Brings the overlay at the specified index to the front.
    * @param {number} i
    * @private
-   */_bringOverlayAtIndexToFront:function(i){var overlay=this._overlays[i];if(!overlay){return}var lastI=this._overlays.length-1,currentOverlay=this._overlays[lastI];// Ensure always-on-top overlay stays on top.
+   */_bringOverlayAtIndexToFront:function _bringOverlayAtIndexToFront(i){var overlay=this._overlays[i];if(!overlay){return}var lastI=this._overlays.length-1,currentOverlay=this._overlays[lastI];// Ensure always-on-top overlay stays on top.
 if(currentOverlay&&this._shouldBeBehindOverlay(overlay,currentOverlay)){lastI--}// If already the top element, return.
 if(i>=lastI){return}// Update z-index to be on top.
 var minimumZ=Math.max(this.currentOverlayZ(),this._minimumZ);if(this._getZ(overlay)<=minimumZ){this._applyOverlayZ(overlay,minimumZ)}// Shift other overlays behind the new on top.
@@ -628,82 +596,82 @@ while(i<lastI){this._overlays[i]=this._overlays[i+1];i++}this._overlays[lastI]=o
    * Adds the overlay and updates its z-index if it's opened, or removes it if
    * it's closed. Also updates the backdrop z-index.
    * @param {!Element} overlay
-   */addOrRemoveOverlay:function(overlay){if(overlay.opened){this.addOverlay(overlay)}else{this.removeOverlay(overlay)}},/**
+   */addOrRemoveOverlay:function addOrRemoveOverlay(overlay){if(overlay.opened){this.addOverlay(overlay)}else{this.removeOverlay(overlay)}},/**
    * Tracks overlays for z-index and focus management.
    * Ensures the last added overlay with always-on-top remains on top.
    * @param {!Element} overlay
-   */addOverlay:function(overlay){var i=this._overlays.indexOf(overlay);if(0<=i){this._bringOverlayAtIndexToFront(i);this.trackBackdrop();return}var insertionIndex=this._overlays.length,currentOverlay=this._overlays[insertionIndex-1],minimumZ=Math.max(this._getZ(currentOverlay),this._minimumZ),newZ=this._getZ(overlay);// Ensure always-on-top overlay stays on top.
+   */addOverlay:function addOverlay(overlay){var i=this._overlays.indexOf(overlay);if(0<=i){this._bringOverlayAtIndexToFront(i);this.trackBackdrop();return}var insertionIndex=this._overlays.length,currentOverlay=this._overlays[insertionIndex-1],minimumZ=Math.max(this._getZ(currentOverlay),this._minimumZ),newZ=this._getZ(overlay);// Ensure always-on-top overlay stays on top.
 if(currentOverlay&&this._shouldBeBehindOverlay(overlay,currentOverlay)){// This bumps the z-index of +2.
 this._applyOverlayZ(currentOverlay,minimumZ);insertionIndex--;// Update minimumZ to match previous overlay's z-index.
 var previousOverlay=this._overlays[insertionIndex-1];minimumZ=Math.max(this._getZ(previousOverlay),this._minimumZ)}// Update z-index and insert overlay.
 if(newZ<=minimumZ){this._applyOverlayZ(overlay,minimumZ)}this._overlays.splice(insertionIndex,0,overlay);this.trackBackdrop()},/**
    * @param {!Element} overlay
-   */removeOverlay:function(overlay){var i=this._overlays.indexOf(overlay);if(-1===i){return}this._overlays.splice(i,1);this.trackBackdrop()},/**
+   */removeOverlay:function removeOverlay(overlay){var i=this._overlays.indexOf(overlay);if(-1===i){return}this._overlays.splice(i,1);this.trackBackdrop()},/**
    * Returns the current overlay.
    * @return {!Element|undefined}
-   */currentOverlay:function(){var i=this._overlays.length-1;return this._overlays[i]},/**
+   */currentOverlay:function currentOverlay(){var i=this._overlays.length-1;return this._overlays[i]},/**
    * Returns the current overlay z-index.
    * @return {number}
-   */currentOverlayZ:function(){return this._getZ(this.currentOverlay())},/**
+   */currentOverlayZ:function currentOverlayZ(){return this._getZ(this.currentOverlay())},/**
    * Ensures that the minimum z-index of new overlays is at least `minimumZ`.
    * This does not effect the z-index of any existing overlays.
    * @param {number} minimumZ
-   */ensureMinimumZ:function(minimumZ){this._minimumZ=Math.max(this._minimumZ,minimumZ)},focusOverlay:function(){var current=/** @type {?} */this.currentOverlay();if(current){current._applyFocus()}},/**
+   */ensureMinimumZ:function ensureMinimumZ(minimumZ){this._minimumZ=Math.max(this._minimumZ,minimumZ)},focusOverlay:function focusOverlay(){var current=/** @type {?} */this.currentOverlay();if(current){current._applyFocus()}},/**
    * Updates the backdrop z-index.
-   */trackBackdrop:function(){var overlay=this._overlayWithBackdrop();// Avoid creating the backdrop if there is no overlay with backdrop.
+   */trackBackdrop:function trackBackdrop(){var overlay=this._overlayWithBackdrop();// Avoid creating the backdrop if there is no overlay with backdrop.
 if(!overlay&&!this._backdropElement){return}this.backdropElement.style.zIndex=this._getZ(overlay)-1;this.backdropElement.opened=!!overlay;// Property observers are not fired until element is attached
 // in Polymer 2.x, so we ensure element is attached if needed.
 // https://github.com/Polymer/polymer/issues/4526
 this.backdropElement.prepare()},/**
    * @return {!Array<!Element>}
-   */getBackdrops:function(){for(var backdrops=[],i=0;i<this._overlays.length;i++){if(this._overlays[i].withBackdrop){backdrops.push(this._overlays[i])}}return backdrops},/**
+   */getBackdrops:function getBackdrops(){for(var backdrops=[],i=0;i<this._overlays.length;i++){if(this._overlays[i].withBackdrop){backdrops.push(this._overlays[i])}}return backdrops},/**
    * Returns the z-index for the backdrop.
    * @return {number}
-   */backdropZ:function(){return this._getZ(this._overlayWithBackdrop())-1},/**
+   */backdropZ:function backdropZ(){return this._getZ(this._overlayWithBackdrop())-1},/**
    * Returns the top opened overlay that has a backdrop.
    * @return {!Element|undefined}
    * @private
-   */_overlayWithBackdrop:function(){for(var i=this._overlays.length-1;0<=i;i--){if(this._overlays[i].withBackdrop){return this._overlays[i]}}},/**
+   */_overlayWithBackdrop:function _overlayWithBackdrop(){for(var i=this._overlays.length-1;0<=i;i--){if(this._overlays[i].withBackdrop){return this._overlays[i]}}},/**
    * Calculates the minimum z-index for the overlay.
    * @param {Element=} overlay
    * @private
-   */_getZ:function(overlay){var z=this._minimumZ;if(overlay){var z1=+(overlay.style.zIndex||window.getComputedStyle(overlay).zIndex);// Check if is a number
+   */_getZ:function _getZ(overlay){var z=this._minimumZ;if(overlay){var z1=+(overlay.style.zIndex||window.getComputedStyle(overlay).zIndex);// Check if is a number
 // Number.isNaN not supported in IE 10+
 if(z1===z1){z=z1}}return z},/**
    * @param {!Element} element
    * @param {number|string} z
    * @private
-   */_setZ:function(element,z){element.style.zIndex=z},/**
+   */_setZ:function _setZ(element,z){element.style.zIndex=z},/**
    * @param {!Element} overlay
    * @param {number} aboveZ
    * @private
-   */_applyOverlayZ:function(overlay,aboveZ){this._setZ(overlay,aboveZ+2)},/**
+   */_applyOverlayZ:function _applyOverlayZ(overlay,aboveZ){this._setZ(overlay,aboveZ+2)},/**
    * Returns the deepest overlay in the path.
    * @param {!Array<!Element>=} path
    * @return {!Element|undefined}
    * @suppress {missingProperties}
    * @private
-   */_overlayInPath:function(path){path=path||[];for(var i=0;i<path.length;i++){if(path[i]._manager===this){return path[i]}}},/**
+   */_overlayInPath:function _overlayInPath(path){path=path||[];for(var i=0;i<path.length;i++){if(path[i]._manager===this){return path[i]}}},/**
    * Ensures the click event is delegated to the right overlay.
    * @param {!Event} event
    * @private
-   */_onCaptureClick:function(event){var i=this._overlays.length-1;if(-1===i)return;var path=/** @type {!Array<!EventTarget>} */(0,_natepaasApp.dom)(event).path,overlay;// Check if clicked outside of overlay.
+   */_onCaptureClick:function _onCaptureClick(event){var i=this._overlays.length-1;if(-1===i)return;var path=/** @type {!Array<!EventTarget>} */(0,_natepaasApp.dom)(event).path,overlay;// Check if clicked outside of overlay.
 while((overlay=/** @type {?} */this._overlays[i])&&this._overlayInPath(path)!==overlay){overlay._onCaptureClick(event);if(overlay.allowClickThrough){i--}else{break}}},/**
    * Ensures the focus event is delegated to the right overlay.
    * @param {!Event} event
    * @private
-   */_onCaptureFocus:function(event){var overlay=/** @type {?} */this.currentOverlay();if(overlay){overlay._onCaptureFocus(event)}},/**
+   */_onCaptureFocus:function _onCaptureFocus(event){var overlay=/** @type {?} */this.currentOverlay();if(overlay){overlay._onCaptureFocus(event)}},/**
    * Ensures TAB and ESC keyboard events are delegated to the right overlay.
    * @param {!Event} event
    * @private
-   */_onCaptureKeyDown:function(event){var overlay=/** @type {?} */this.currentOverlay();if(overlay){if(IronA11yKeysBehavior.keyboardEventMatchesKeys(event,"esc")){overlay._onCaptureEsc(event)}else if(IronA11yKeysBehavior.keyboardEventMatchesKeys(event,"tab")){overlay._onCaptureTab(event)}}},/**
+   */_onCaptureKeyDown:function _onCaptureKeyDown(event){var overlay=/** @type {?} */this.currentOverlay();if(overlay){if(IronA11yKeysBehavior.keyboardEventMatchesKeys(event,"esc")){overlay._onCaptureEsc(event)}else if(IronA11yKeysBehavior.keyboardEventMatchesKeys(event,"tab")){overlay._onCaptureTab(event)}}},/**
    * Returns if the overlay1 should be behind overlay2.
    * @param {!Element} overlay1
    * @param {!Element} overlay2
    * @return {boolean}
    * @suppress {missingProperties}
    * @private
-   */_shouldBeBehindOverlay:function(overlay1,overlay2){return!overlay1.alwaysOnTop&&overlay2.alwaysOnTop}};const IronOverlayManager=new IronOverlayManagerClass;_exports.IronOverlayManager=IronOverlayManager;var ironOverlayManager={IronOverlayManagerClass:IronOverlayManagerClass,IronOverlayManager:IronOverlayManager};_exports.$ironOverlayManager=ironOverlayManager;var lastTouchPosition={pageX:0,pageY:0},lastRootTarget=null,lastScrollableNodes=[],scrollEvents=[// Modern `wheel` event for mouse wheel scrolling:
+   */_shouldBeBehindOverlay:function _shouldBeBehindOverlay(overlay1,overlay2){return!overlay1.alwaysOnTop&&overlay2.alwaysOnTop}};var IronOverlayManager=new IronOverlayManagerClass;_exports.IronOverlayManager=IronOverlayManager;var ironOverlayManager={IronOverlayManagerClass:IronOverlayManagerClass,IronOverlayManager:IronOverlayManager};_exports.$ironOverlayManager=ironOverlayManager;var lastTouchPosition={pageX:0,pageY:0},lastRootTarget=null,lastScrollableNodes=[],scrollEvents=[// Modern `wheel` event for mouse wheel scrolling:
 "wheel",// Older, non-standard `mousewheel` event for some FF:
 "mousewheel",// IE:
 "DOMMouseScroll",// Touch enabled devices
@@ -715,9 +683,7 @@ while((overlay=/** @type {?} */this._overlays[i])&&this._overlayInPath(path)!==o
                             * of authority and control over which elements in a document are currently
                             * allowed to scroll.
                             *
-                            */_exports.currentLockingElement=currentLockingElement;`TODO(modulizer): A namespace named Polymer.IronScrollManager was
-declared here. The surrounding comments should be reviewed,
-and this string can then be deleted`;/**
+                            */_exports.currentLockingElement=currentLockingElement;"TODO(modulizer): A namespace named Polymer.IronScrollManager was\ndeclared here. The surrounding comments should be reviewed,\nand this string can then be deleted";/**
                                        * The current element that defines the DOM boundaries of the
                                        * scroll lock. This is always the most recently locking element.
                                        *
@@ -740,7 +706,7 @@ if(0<=_lockingElements.indexOf(element)){return}if(0===_lockingElements.length){
    *
    * @param {!HTMLElement} element The element to remove from the scroll
    * lock stack.
-   */function removeScrollLock(element){var index=_lockingElements.indexOf(element);if(-1===index){return}_lockingElements.splice(index,1);_exports.currentLockingElement=currentLockingElement=_lockingElements[_lockingElements.length-1];_exports._lockedElementCache=_lockedElementCache=[];_exports._unlockedElementCache=_unlockedElementCache=[];if(0===_lockingElements.length){_unlockScrollInteractions()}}const _lockingElements=[];_exports._lockingElements=_lockingElements;let _lockedElementCache=null;_exports._lockedElementCache=_lockedElementCache;let _unlockedElementCache=null;_exports._unlockedElementCache=_unlockedElementCache;function _hasCachedLockedElement(element){return-1<_lockedElementCache.indexOf(element)}function _hasCachedUnlockedElement(element){return-1<_unlockedElementCache.indexOf(element)}function _composedTreeContains(element,child){// NOTE(cdata): This method iterates over content elements and their
+   */function removeScrollLock(element){var index=_lockingElements.indexOf(element);if(-1===index){return}_lockingElements.splice(index,1);_exports.currentLockingElement=currentLockingElement=_lockingElements[_lockingElements.length-1];_exports._lockedElementCache=_lockedElementCache=[];_exports._unlockedElementCache=_unlockedElementCache=[];if(0===_lockingElements.length){_unlockScrollInteractions()}}var _lockingElements=[];_exports._lockingElements=_lockingElements;var _lockedElementCache=null;_exports._lockedElementCache=_lockedElementCache;var _unlockedElementCache=null;_exports._unlockedElementCache=_unlockedElementCache;function _hasCachedLockedElement(element){return-1<_lockedElementCache.indexOf(element)}function _hasCachedUnlockedElement(element){return-1<_unlockedElementCache.indexOf(element)}function _composedTreeContains(element,child){// NOTE(cdata): This method iterates over content elements and their
 // corresponding distributed nodes to implement a contains-like method
 // that pierces through the composed tree of the ShadowDOM. Results of
 // this operation are cached (elsewhere) on a per-scroll-lock basis, to
@@ -808,7 +774,7 @@ else if("wheelDelta"in event){info.deltaX=0;info.deltaY=-event.wheelDelta}// Fir
 else if("axis"in event){info.deltaX=1===event.axis?event.detail:0;info.deltaY=2===event.axis?event.detail:0}// On mobile devices, calculate scroll direction.
 else if(event.targetTouches){var touch=event.targetTouches[0];// Touch moves from right to left => scrolling goes right.
 info.deltaX=lastTouchPosition.pageX-touch.pageX;// Touch moves from down to up => scrolling goes down.
-info.deltaY=lastTouchPosition.pageY-touch.pageY}return info}var ironScrollManager={get currentLockingElement(){return currentLockingElement},elementIsScrollLocked:elementIsScrollLocked,pushScrollLock:pushScrollLock,removeScrollLock:removeScrollLock,_lockingElements:_lockingElements,get _lockedElementCache(){return _lockedElementCache},get _unlockedElementCache(){return _unlockedElementCache},_hasCachedLockedElement:_hasCachedLockedElement,_hasCachedUnlockedElement:_hasCachedUnlockedElement,_composedTreeContains:_composedTreeContains,_scrollInteractionHandler:_scrollInteractionHandler,get _boundScrollHandler(){return _boundScrollHandler},_lockScrollInteractions:_lockScrollInteractions,_unlockScrollInteractions:_unlockScrollInteractions,_shouldPreventScrolling:_shouldPreventScrolling,_getScrollableNodes:_getScrollableNodes,_getScrollingNode:_getScrollingNode,_getScrollInfo:_getScrollInfo};_exports.$ironScrollManager=ironScrollManager;const IronOverlayBehaviorImpl={properties:{/**
+info.deltaY=lastTouchPosition.pageY-touch.pageY}return info}var ironScrollManager={get currentLockingElement(){return currentLockingElement},elementIsScrollLocked:elementIsScrollLocked,pushScrollLock:pushScrollLock,removeScrollLock:removeScrollLock,_lockingElements:_lockingElements,get _lockedElementCache(){return _lockedElementCache},get _unlockedElementCache(){return _unlockedElementCache},_hasCachedLockedElement:_hasCachedLockedElement,_hasCachedUnlockedElement:_hasCachedUnlockedElement,_composedTreeContains:_composedTreeContains,_scrollInteractionHandler:_scrollInteractionHandler,get _boundScrollHandler(){return _boundScrollHandler},_lockScrollInteractions:_lockScrollInteractions,_unlockScrollInteractions:_unlockScrollInteractions,_shouldPreventScrolling:_shouldPreventScrolling,_getScrollableNodes:_getScrollableNodes,_getScrollingNode:_getScrollingNode,_getScrollInfo:_getScrollInfo};_exports.$ironScrollManager=ironScrollManager;var IronOverlayBehaviorImpl={properties:{/**
      * True if the overlay is currently displayed.
      */opened:{observer:"_openedChanged",type:Boolean,value:!1,notify:!0},/**
      * True if the overlay was canceled when it was last closed.
@@ -867,7 +833,7 @@ type:Object},/**
    * @protected
    */get _focusableNodes(){return IronFocusablesHelper.getTabbableNodes(this)},/**
    * @return {void}
-   */ready:function(){// Used to skip calls to notifyResize and refit while the overlay is
+   */ready:function ready(){// Used to skip calls to notifyResize and refit while the overlay is
 // animating.
 this.__isAnimating=!1;// with-backdrop needs tabindex to be set in order to trap the focus.
 // If it is not set, IronOverlayBehavior will set it, and remove it if
@@ -877,34 +843,34 @@ this.__firstFocusableNode=this.__lastFocusableNode=null;// Used by to keep track
 this.__rafs={};// Focused node before overlay gets opened. Can be restored on close.
 this.__restoreFocusNode=null;// Scroll info to be restored.
 this.__scrollTop=this.__scrollLeft=null;this.__onCaptureScroll=this.__onCaptureScroll.bind(this);// Root nodes hosting the overlay, used to listen for scroll events on them.
-this.__rootNodes=null;this._ensureSetup()},attached:function(){// Call _openedChanged here so that position can be computed correctly.
-if(this.opened){this._openedChanged(this.opened)}this._observer=(0,_natepaasApp.dom)(this).observeNodes(this._onNodesChange)},detached:function(){(0,_natepaasApp.dom)(this).unobserveNodes(this._observer);this._observer=null;for(var cb in this.__rafs){if(null!==this.__rafs[cb]){cancelAnimationFrame(this.__rafs[cb])}}this.__rafs={};this._manager.removeOverlay(this);// We got detached while animating, ensure we show/hide the overlay
+this.__rootNodes=null;this._ensureSetup()},attached:function attached(){// Call _openedChanged here so that position can be computed correctly.
+if(this.opened){this._openedChanged(this.opened)}this._observer=(0,_natepaasApp.dom)(this).observeNodes(this._onNodesChange)},detached:function detached(){(0,_natepaasApp.dom)(this).unobserveNodes(this._observer);this._observer=null;for(var cb in this.__rafs){if(null!==this.__rafs[cb]){cancelAnimationFrame(this.__rafs[cb])}}this.__rafs={};this._manager.removeOverlay(this);// We got detached while animating, ensure we show/hide the overlay
 // and fire iron-overlay-opened/closed event!
 if(this.__isAnimating){if(this.opened){this._finishRenderOpened()}else{// Restore the focus if necessary.
 this._applyFocus();this._finishRenderClosed()}}},/**
    * Toggle the opened state of the overlay.
-   */toggle:function(){this._setCanceled(!1);this.opened=!this.opened},/**
+   */toggle:function toggle(){this._setCanceled(!1);this.opened=!this.opened},/**
    * Open the overlay.
-   */open:function(){this._setCanceled(!1);this.opened=!0},/**
+   */open:function open(){this._setCanceled(!1);this.opened=!0},/**
    * Close the overlay.
-   */close:function(){this._setCanceled(!1);this.opened=!1},/**
+   */close:function close(){this._setCanceled(!1);this.opened=!1},/**
    * Cancels the overlay.
    * @param {Event=} event The original event
-   */cancel:function(event){var cancelEvent=this.fire("iron-overlay-canceled",event,{cancelable:!0});if(cancelEvent.defaultPrevented){return}this._setCanceled(!0);this.opened=!1},/**
+   */cancel:function cancel(event){var cancelEvent=this.fire("iron-overlay-canceled",event,{cancelable:!0});if(cancelEvent.defaultPrevented){return}this._setCanceled(!0);this.opened=!1},/**
    * Invalidates the cached tabbable nodes. To be called when any of the
    * focusable content changes (e.g. a button is disabled).
-   */invalidateTabbables:function(){this.__firstFocusableNode=this.__lastFocusableNode=null},_ensureSetup:function(){if(this._overlaySetup){return}this._overlaySetup=!0;this.style.outline="none";this.style.display="none"},/**
+   */invalidateTabbables:function invalidateTabbables(){this.__firstFocusableNode=this.__lastFocusableNode=null},_ensureSetup:function _ensureSetup(){if(this._overlaySetup){return}this._overlaySetup=!0;this.style.outline="none";this.style.display="none"},/**
    * Called when `opened` changes.
    * @param {boolean=} opened
    * @protected
-   */_openedChanged:function(opened){if(opened){this.removeAttribute("aria-hidden")}else{this.setAttribute("aria-hidden","true")}// Defer any animation-related code on attached
+   */_openedChanged:function _openedChanged(opened){if(opened){this.removeAttribute("aria-hidden")}else{this.setAttribute("aria-hidden","true")}// Defer any animation-related code on attached
 // (_openedChanged gets called again on attached).
 if(!this.isAttached){return}this.__isAnimating=!0;// Deraf for non-blocking rendering.
-this.__deraf("__openedChanged",this.__openedChanged)},_canceledChanged:function(){this.closingReason=this.closingReason||{};this.closingReason.canceled=this.canceled},_withBackdropChanged:function(){// If tabindex is already set, no need to override it.
+this.__deraf("__openedChanged",this.__openedChanged)},_canceledChanged:function _canceledChanged(){this.closingReason=this.closingReason||{};this.closingReason.canceled=this.canceled},_withBackdropChanged:function _withBackdropChanged(){// If tabindex is already set, no need to override it.
 if(this.withBackdrop&&!this.hasAttribute("tabindex")){this.setAttribute("tabindex","-1");this.__shouldRemoveTabIndex=!0}else if(this.__shouldRemoveTabIndex){this.removeAttribute("tabindex");this.__shouldRemoveTabIndex=!1}if(this.opened&&this.isAttached){this._manager.trackBackdrop()}},/**
    * tasks which must occur before opening; e.g. making the element visible.
    * @protected
-   */_prepareRenderOpened:function(){// Store focused node.
+   */_prepareRenderOpened:function _prepareRenderOpened(){// Store focused node.
 this.__restoreFocusNode=this._manager.deepActiveElement;// Needed to calculate the size of the overlay so that transitions on its
 // size will have the correct starting points.
 this._preparePositioning();this.refit();this._finishPositioning();// Safari will apply the focus to the autofocus element when displayed
@@ -913,21 +879,21 @@ if(this.noAutoFocus&&document.activeElement===this._focusNode){this._focusNode.b
    * Tasks which cause the overlay to actually open; typically play an
    * animation.
    * @protected
-   */_renderOpened:function(){this._finishRenderOpened()},/**
+   */_renderOpened:function _renderOpened(){this._finishRenderOpened()},/**
    * Tasks which cause the overlay to actually close; typically play an
    * animation.
    * @protected
-   */_renderClosed:function(){this._finishRenderClosed()},/**
+   */_renderClosed:function _renderClosed(){this._finishRenderClosed()},/**
    * Tasks to be performed at the end of open action. Will fire
    * `iron-overlay-opened`.
    * @protected
-   */_finishRenderOpened:function(){this.notifyResize();this.__isAnimating=!1;this.fire("iron-overlay-opened")},/**
+   */_finishRenderOpened:function _finishRenderOpened(){this.notifyResize();this.__isAnimating=!1;this.fire("iron-overlay-opened")},/**
    * Tasks to be performed at the end of close action. Will fire
    * `iron-overlay-closed`.
    * @protected
-   */_finishRenderClosed:function(){// Hide the overlay.
+   */_finishRenderClosed:function _finishRenderClosed(){// Hide the overlay.
 this.style.display="none";// Reset z-index only at the end of the animation.
-this.style.zIndex="";this.notifyResize();this.__isAnimating=!1;this.fire("iron-overlay-closed",this.closingReason)},_preparePositioning:function(){this.style.transition=this.style.webkitTransition="none";this.style.transform=this.style.webkitTransform="none";this.style.display=""},_finishPositioning:function(){// First, make it invisible & reactivate animations.
+this.style.zIndex="";this.notifyResize();this.__isAnimating=!1;this.fire("iron-overlay-closed",this.closingReason)},_preparePositioning:function _preparePositioning(){this.style.transition=this.style.webkitTransition="none";this.style.transform=this.style.webkitTransform="none";this.style.display=""},_finishPositioning:function _finishPositioning(){// First, make it invisible & reactivate animations.
 this.style.display="none";// Force reflow before re-enabling animations so that they don't start.
 // Set scrollTop to itself so that Closure Compiler doesn't remove this.
 this.scrollTop=this.scrollTop;this.style.transition=this.style.webkitTransition="";this.style.transform=this.style.webkitTransform="";// Now that animations are enabled, make it visible again
@@ -936,7 +902,7 @@ this.style.display="";// Force reflow, so that following animations are properly
 this.scrollTop=this.scrollTop},/**
    * Applies focus according to the opened state.
    * @protected
-   */_applyFocus:function(){if(this.opened){if(!this.noAutoFocus){this._focusNode.focus()}}else{// Restore focus.
+   */_applyFocus:function _applyFocus(){if(this.opened){if(!this.noAutoFocus){this._focusNode.focus()}}else{// Restore focus.
 if(this.restoreFocusOnClose&&this.__restoreFocusNode){// If the activeElement is `<body>` or inside the overlay,
 // we are allowed to restore the focus. In all the other
 // cases focus might have been moved elsewhere by another
@@ -946,21 +912,21 @@ var activeElement=this._manager.deepActiveElement;if(activeElement===document.bo
    * Cancels (closes) the overlay. Call when click happens outside the overlay.
    * @param {!Event} event
    * @protected
-   */_onCaptureClick:function(event){if(!this.noCancelOnOutsideClick){this.cancel(event)}},/**
+   */_onCaptureClick:function _onCaptureClick(event){if(!this.noCancelOnOutsideClick){this.cancel(event)}},/**
    * Keeps track of the focused child. If withBackdrop, traps focus within
    * overlay.
    * @param {!Event} event
    * @protected
-   */_onCaptureFocus:function(event){if(!this.withBackdrop){return}var path=(0,_natepaasApp.dom)(event).path;if(-1===path.indexOf(this)){event.stopPropagation();this._applyFocus()}else{this._focusedChild=path[0]}},/**
+   */_onCaptureFocus:function _onCaptureFocus(event){if(!this.withBackdrop){return}var path=(0,_natepaasApp.dom)(event).path;if(-1===path.indexOf(this)){event.stopPropagation();this._applyFocus()}else{this._focusedChild=path[0]}},/**
    * Handles the ESC key event and cancels (closes) the overlay.
    * @param {!Event} event
    * @protected
-   */_onCaptureEsc:function(event){if(!this.noCancelOnEscKey){this.cancel(event)}},/**
+   */_onCaptureEsc:function _onCaptureEsc(event){if(!this.noCancelOnEscKey){this.cancel(event)}},/**
    * Handles TAB key events to track focus changes.
    * Will wrap focus for overlays withBackdrop.
    * @param {!Event} event
    * @protected
-   */_onCaptureTab:function(event){if(!this.withBackdrop){return}this.__ensureFirstLastFocusables();// TAB wraps from last to first focusable.
+   */_onCaptureTab:function _onCaptureTab(event){if(!this.withBackdrop){return}this.__ensureFirstLastFocusables();// TAB wraps from last to first focusable.
 // Shift + TAB wraps from first to last focusable.
 var shift=event.shiftKey,nodeToCheck=shift?this.__firstFocusableNode:this.__lastFocusableNode,nodeToSet=shift?this.__lastFocusableNode:this.__firstFocusableNode,shouldWrap=!1;if(nodeToCheck===nodeToSet){// If nodeToCheck is the same as nodeToSet, it means we have an overlay
 // with 0 or 1 focusables; in either case we still need to trap the
@@ -984,19 +950,19 @@ shouldWrap=focusedNode===nodeToCheck||focusedNode===this}if(shouldWrap){// When 
 event.preventDefault();this._focusedChild=nodeToSet;this._applyFocus()}},/**
    * Refits if the overlay is opened and not animating.
    * @protected
-   */_onIronResize:function(){if(this.opened&&!this.__isAnimating){this.__deraf("refit",this.refit)}},/**
+   */_onIronResize:function _onIronResize(){if(this.opened&&!this.__isAnimating){this.__deraf("refit",this.refit)}},/**
    * Will call notifyResize if overlay is opened.
    * Can be overridden in order to avoid multiple observers on the same node.
    * @protected
-   */_onNodesChange:function(){if(this.opened&&!this.__isAnimating){// It might have added focusable nodes, so invalidate cached values.
+   */_onNodesChange:function _onNodesChange(){if(this.opened&&!this.__isAnimating){// It might have added focusable nodes, so invalidate cached values.
 this.invalidateTabbables();this.notifyResize()}},/**
    * Updates the references to the first and last focusable nodes.
    * @private
-   */__ensureFirstLastFocusables:function(){var focusableNodes=this._focusableNodes;this.__firstFocusableNode=focusableNodes[0];this.__lastFocusableNode=focusableNodes[focusableNodes.length-1]},/**
+   */__ensureFirstLastFocusables:function __ensureFirstLastFocusables(){var focusableNodes=this._focusableNodes;this.__firstFocusableNode=focusableNodes[0];this.__lastFocusableNode=focusableNodes[focusableNodes.length-1]},/**
    * Tasks executed when opened changes: prepare for the opening, move the
    * focus, update the manager, render opened/closed.
    * @private
-   */__openedChanged:function(){if(this.opened){// Make overlay visible, then add it to the manager.
+   */__openedChanged:function __openedChanged(){if(this.opened){// Make overlay visible, then add it to the manager.
 this._prepareRenderOpened();this._manager.addOverlay(this);// Move the focus to the child node with [autofocus].
 this._applyFocus();this._renderOpened()}else{// Remove overlay, then restore the focus before actually closing.
 this._manager.removeOverlay(this);this._applyFocus();this._renderClosed()}},/**
@@ -1004,35 +970,35 @@ this._manager.removeOverlay(this);this._applyFocus();this._renderClosed()}},/**
    * @param {!string} jobname
    * @param {!Function} callback Always bound to `this`
    * @private
-   */__deraf:function(jobname,callback){var rafs=this.__rafs;if(null!==rafs[jobname]){cancelAnimationFrame(rafs[jobname])}rafs[jobname]=requestAnimationFrame(function nextAnimationFrame(){rafs[jobname]=null;callback.call(this)}.bind(this))},/**
+   */__deraf:function __deraf(jobname,callback){var rafs=this.__rafs;if(null!==rafs[jobname]){cancelAnimationFrame(rafs[jobname])}rafs[jobname]=requestAnimationFrame(function nextAnimationFrame(){rafs[jobname]=null;callback.call(this)}.bind(this))},/**
    * @param {boolean} isAttached
    * @param {boolean} opened
    * @param {string=} scrollAction
    * @private
-   */__updateScrollObservers:function(isAttached,opened,scrollAction){if(!isAttached||!opened||!this.__isValidScrollAction(scrollAction)){removeScrollLock(this);this.__removeScrollListeners()}else{if("lock"===scrollAction){this.__saveScrollPosition();pushScrollLock(this)}this.__addScrollListeners()}},/**
+   */__updateScrollObservers:function __updateScrollObservers(isAttached,opened,scrollAction){if(!isAttached||!opened||!this.__isValidScrollAction(scrollAction)){removeScrollLock(this);this.__removeScrollListeners()}else{if("lock"===scrollAction){this.__saveScrollPosition();pushScrollLock(this)}this.__addScrollListeners()}},/**
    * @private
-   */__addScrollListeners:function(){if(!this.__rootNodes){this.__rootNodes=[];// Listen for scroll events in all shadowRoots hosting this overlay only
+   */__addScrollListeners:function __addScrollListeners(){if(!this.__rootNodes){this.__rootNodes=[];// Listen for scroll events in all shadowRoots hosting this overlay only
 // when in native ShadowDOM.
 if(_natepaasApp.useShadow){var node=this;while(node){if(node.nodeType===Node.DOCUMENT_FRAGMENT_NODE&&node.host){this.__rootNodes.push(node)}node=node.host||node.assignedSlot||node.parentNode}}this.__rootNodes.push(document)}this.__rootNodes.forEach(function(el){el.addEventListener("scroll",this.__onCaptureScroll,{capture:!0,passive:!0})},this)},/**
    * @private
-   */__removeScrollListeners:function(){if(this.__rootNodes){this.__rootNodes.forEach(function(el){el.removeEventListener("scroll",this.__onCaptureScroll,{capture:!0,passive:!0})},this)}if(!this.isAttached){this.__rootNodes=null}},/**
+   */__removeScrollListeners:function __removeScrollListeners(){if(this.__rootNodes){this.__rootNodes.forEach(function(el){el.removeEventListener("scroll",this.__onCaptureScroll,{capture:!0,passive:!0})},this)}if(!this.isAttached){this.__rootNodes=null}},/**
    * @param {string=} scrollAction
    * @return {boolean}
    * @private
-   */__isValidScrollAction:function(scrollAction){return"lock"===scrollAction||"refit"===scrollAction||"cancel"===scrollAction},/**
+   */__isValidScrollAction:function __isValidScrollAction(scrollAction){return"lock"===scrollAction||"refit"===scrollAction||"cancel"===scrollAction},/**
    * @private
-   */__onCaptureScroll:function(event){if(this.__isAnimating){return}// Check if scroll outside the overlay.
+   */__onCaptureScroll:function __onCaptureScroll(event){if(this.__isAnimating){return}// Check if scroll outside the overlay.
 if(0<=(0,_natepaasApp.dom)(event).path.indexOf(this)){return}switch(this.scrollAction){case"lock":// NOTE: scrolling might happen if a scroll event is not cancellable, or
 // if user pressed keys that cause scrolling (they're not prevented in
 // order not to break a11y features like navigate with arrow keys).
 this.__restoreScrollPosition();break;case"refit":this.__deraf("refit",this.refit);break;case"cancel":this.cancel(event);break;}},/**
    * Memoizes the scroll position of the outside scrolling element.
    * @private
-   */__saveScrollPosition:function(){if(document.scrollingElement){this.__scrollTop=document.scrollingElement.scrollTop;this.__scrollLeft=document.scrollingElement.scrollLeft}else{// Since we don't know if is the body or html, get max.
+   */__saveScrollPosition:function __saveScrollPosition(){if(document.scrollingElement){this.__scrollTop=document.scrollingElement.scrollTop;this.__scrollLeft=document.scrollingElement.scrollLeft}else{// Since we don't know if is the body or html, get max.
 this.__scrollTop=Math.max(document.documentElement.scrollTop,document.body.scrollTop);this.__scrollLeft=Math.max(document.documentElement.scrollLeft,document.body.scrollLeft)}},/**
    * Resets the scroll position of the outside scrolling element.
    * @private
-   */__restoreScrollPosition:function(){if(document.scrollingElement){document.scrollingElement.scrollTop=this.__scrollTop;document.scrollingElement.scrollLeft=this.__scrollLeft}else{// Since we don't know if is the body or html, set both.
+   */__restoreScrollPosition:function __restoreScrollPosition(){if(document.scrollingElement){document.scrollingElement.scrollTop=this.__scrollTop;document.scrollingElement.scrollLeft=this.__scrollLeft}else{// Since we don't know if is the body or html, set both.
 document.documentElement.scrollTop=document.body.scrollTop=this.__scrollTop;document.documentElement.scrollLeft=document.body.scrollLeft=this.__scrollLeft}}};/**
      Use `Polymer.IronOverlayBehavior` to implement an element that can be hidden
      or shown, and displays on top of other content. It includes an optional
@@ -1082,7 +1048,7 @@ document.documentElement.scrollTop=document.body.scrollTop=this.__scrollTop;docu
    
      @demo demo/index.html
      @polymerBehavior
-    */_exports.IronOverlayBehaviorImpl=IronOverlayBehaviorImpl;const IronOverlayBehavior=[IronFitBehavior,_natepaasApp.IronResizableBehavior,IronOverlayBehaviorImpl];/**
+    */_exports.IronOverlayBehaviorImpl=IronOverlayBehaviorImpl;var IronOverlayBehavior=[IronFitBehavior,_natepaasApp.IronResizableBehavior,IronOverlayBehaviorImpl];/**
                                                                                                        * Fired after the overlay opens.
                                                                                                        * @event iron-overlay-opened
                                                                                                        */ /**
@@ -1097,7 +1063,7 @@ document.documentElement.scrollTop=document.body.scrollTop=this.__scrollTop;docu
                                                                                                                * @event iron-overlay-closed
                                                                                                                * @param {Event} event The `event.detail` is the `closingReason` property
                                                                                                                * (contains `canceled`, whether the overlay was canceled).
-                                                                                                               */_exports.IronOverlayBehavior=IronOverlayBehavior;var ironOverlayBehavior={IronOverlayBehaviorImpl:IronOverlayBehaviorImpl,IronOverlayBehavior:IronOverlayBehavior};_exports.$ironOverlayBehavior=ironOverlayBehavior;const NeonAnimatableBehavior={properties:{/**
+                                                                                                               */_exports.IronOverlayBehavior=IronOverlayBehavior;var ironOverlayBehavior={IronOverlayBehaviorImpl:IronOverlayBehaviorImpl,IronOverlayBehavior:IronOverlayBehavior};_exports.$ironOverlayBehavior=ironOverlayBehavior;var NeonAnimatableBehavior={properties:{/**
      * Animation configuration. See README for more info.
      */animationConfig:{type:Object},/**
      * Convenience property for setting an 'entry' animation. Do not set
@@ -1107,8 +1073,8 @@ document.documentElement.scrollTop=document.body.scrollTop=this.__scrollTop;docu
      * Convenience property for setting an 'exit' animation. Do not set
      * `animationConfig.exit` manually if using this. The animated node is set
      * to `this` if using this property.
-     */exitAnimation:{observer:"_exitAnimationChanged",type:String}},_entryAnimationChanged:function(){this.animationConfig=this.animationConfig||{};this.animationConfig.entry=[{name:this.entryAnimation,node:this}]},_exitAnimationChanged:function(){this.animationConfig=this.animationConfig||{};this.animationConfig.exit=[{name:this.exitAnimation,node:this}]},_copyProperties:function(config1,config2){// shallowly copy properties from config2 to config1
-for(var property in config2){config1[property]=config2[property]}},_cloneConfig:function(config){var clone={isClone:!0};this._copyProperties(clone,config);return clone},_getAnimationConfigRecursive:function(type,map,allConfigs){if(!this.animationConfig){return}if(this.animationConfig.value&&"function"===typeof this.animationConfig.value){this._warn(this._logf("playAnimation","Please put 'animationConfig' inside of your components 'properties' object instead of outside of it."));return}// type is optional
+     */exitAnimation:{observer:"_exitAnimationChanged",type:String}},_entryAnimationChanged:function _entryAnimationChanged(){this.animationConfig=this.animationConfig||{};this.animationConfig.entry=[{name:this.entryAnimation,node:this}]},_exitAnimationChanged:function _exitAnimationChanged(){this.animationConfig=this.animationConfig||{};this.animationConfig.exit=[{name:this.exitAnimation,node:this}]},_copyProperties:function _copyProperties(config1,config2){// shallowly copy properties from config2 to config1
+for(var property in config2){config1[property]=config2[property]}},_cloneConfig:function _cloneConfig(config){var clone={isClone:!0};this._copyProperties(clone,config);return clone},_getAnimationConfigRecursive:function _getAnimationConfigRecursive(type,map,allConfigs){if(!this.animationConfig){return}if(this.animationConfig.value&&"function"===typeof this.animationConfig.value){this._warn(this._logf("playAnimation","Please put 'animationConfig' inside of your components 'properties' object instead of outside of it."));return}// type is optional
 var thisConfig;if(type){thisConfig=this.animationConfig[type]}else{thisConfig=this.animationConfig}if(!Array.isArray(thisConfig)){thisConfig=[thisConfig]}// iterate animations and recurse to process configurations from child nodes
 if(thisConfig){for(var config,index=0;config=thisConfig[index];index++){if(config.animatable){config.animatable._getAnimationConfigRecursive(config.type||type,map,allConfigs)}else{if(config.id){var cachedConfig=map[config.id];if(cachedConfig){// merge configurations with the same id, making a clone lazily
 if(!cachedConfig.isClone){map[config.id]=this._cloneConfig(cachedConfig);cachedConfig=map[config.id]}this._copyProperties(cachedConfig,config)}else{// put any configs with an id into a map
@@ -1118,41 +1084,22 @@ map[config.id]=config}}else{allConfigs.push(config)}}}}},/**
    * implementing `NeonAnimatableBehavior` should define the property
    * `animationConfig`, which is either a configuration object or a map of
    * animation type to array of configuration objects.
-   */getAnimationConfig:function(type){var map={},allConfigs=[];this._getAnimationConfigRecursive(type,map,allConfigs);// append the configurations saved in the map to the array
-for(var key in map){allConfigs.push(map[key])}return allConfigs}};_exports.NeonAnimatableBehavior=NeonAnimatableBehavior;var neonAnimatableBehavior={NeonAnimatableBehavior:NeonAnimatableBehavior};_exports.$neonAnimatableBehavior=neonAnimatableBehavior;const NeonAnimationRunnerBehaviorImpl={_configureAnimations:function(configs){var results=[],resultsToPlay=[];if(0<configs.length){for(let config,index=0,neonAnimation;config=configs[index];index++){neonAnimation=document.createElement(config.name);// is this element actually a neon animation?
-if(neonAnimation.isNeonAnimation){let result=null;// Closure compiler does not work well with a try / catch here.
+   */getAnimationConfig:function getAnimationConfig(type){var map={},allConfigs=[];this._getAnimationConfigRecursive(type,map,allConfigs);// append the configurations saved in the map to the array
+for(var key in map){allConfigs.push(map[key])}return allConfigs}};_exports.NeonAnimatableBehavior=NeonAnimatableBehavior;var neonAnimatableBehavior={NeonAnimatableBehavior:NeonAnimatableBehavior};_exports.$neonAnimatableBehavior=neonAnimatableBehavior;var NeonAnimationRunnerBehaviorImpl={_configureAnimations:function _configureAnimations(configs){var results=[],resultsToPlay=[];if(0<configs.length){for(var _config,index=0,neonAnimation;_config=configs[index];index++){neonAnimation=document.createElement(_config.name);// is this element actually a neon animation?
+if(neonAnimation.isNeonAnimation){var result=null;// Closure compiler does not work well with a try / catch here.
 // .configure needs to be explicitly defined
 if(!neonAnimation.configure){/**
              * @param {Object} config
              * @return {AnimationEffectReadOnly}
-             */neonAnimation.configure=function(config){return null}}result=neonAnimation.configure(config);resultsToPlay.push({result:result,config:config,neonAnimation:neonAnimation})}else{console.warn(this.is+":",config.name,"not found!")}}}for(var i=0;i<resultsToPlay.length;i++){let result=resultsToPlay[i].result,config=resultsToPlay[i].config,neonAnimation=resultsToPlay[i].neonAnimation;// configuration or play could fail if polyfills aren't loaded
+             */neonAnimation.configure=function(config){return null}}result=neonAnimation.configure(_config);resultsToPlay.push({result:result,config:_config,neonAnimation:neonAnimation})}else{console.warn(this.is+":",_config.name,"not found!")}}}for(var i=0;i<resultsToPlay.length;i++){var _result=resultsToPlay[i].result,_config2=resultsToPlay[i].config,_neonAnimation=resultsToPlay[i].neonAnimation;// configuration or play could fail if polyfills aren't loaded
 try{// Check if we have an Effect rather than an Animation
-if("function"!=typeof result.cancel){result=document.timeline.play(result)}}catch(e){result=null;console.warn("Couldnt play","(",config.name,").",e)}if(result){results.push({neonAnimation:neonAnimation,config:config,animation:result})}}return results},_shouldComplete:function(activeEntries){for(var finished=!0,i=0;i<activeEntries.length;i++){if("finished"!=activeEntries[i].animation.playState){finished=!1;break}}return finished},_complete:function(activeEntries){for(var i=0;i<activeEntries.length;i++){activeEntries[i].neonAnimation.complete(activeEntries[i].config)}for(var i=0;i<activeEntries.length;i++){activeEntries[i].animation.cancel()}},/**
+if("function"!=typeof _result.cancel){_result=document.timeline.play(_result)}}catch(e){_result=null;console.warn("Couldnt play","(",_config2.name,").",e)}if(_result){results.push({neonAnimation:_neonAnimation,config:_config2,animation:_result})}}return results},_shouldComplete:function _shouldComplete(activeEntries){for(var finished=!0,i=0;i<activeEntries.length;i++){if("finished"!=activeEntries[i].animation.playState){finished=!1;break}}return finished},_complete:function _complete(activeEntries){for(var i=0;i<activeEntries.length;i++){activeEntries[i].neonAnimation.complete(activeEntries[i].config)}for(var i=0;i<activeEntries.length;i++){activeEntries[i].animation.cancel()}},/**
    * Plays an animation with an optional `type`.
    * @param {string=} type
    * @param {!Object=} cookie
-   */playAnimation:function(type,cookie){var configs=this.getAnimationConfig(type);if(!configs){return}this._active=this._active||{};if(this._active[type]){this._complete(this._active[type]);delete this._active[type]}var activeEntries=this._configureAnimations(configs);if(0==activeEntries.length){this.fire("neon-animation-finish",cookie,{bubbles:!1});return}this._active[type]=activeEntries;for(var i=0;i<activeEntries.length;i++){activeEntries[i].animation.onfinish=function(){if(this._shouldComplete(activeEntries)){this._complete(activeEntries);delete this._active[type];this.fire("neon-animation-finish",cookie,{bubbles:!1})}}.bind(this)}},/**
+   */playAnimation:function playAnimation(type,cookie){var configs=this.getAnimationConfig(type);if(!configs){return}this._active=this._active||{};if(this._active[type]){this._complete(this._active[type]);delete this._active[type]}var activeEntries=this._configureAnimations(configs);if(0==activeEntries.length){this.fire("neon-animation-finish",cookie,{bubbles:!1});return}this._active[type]=activeEntries;for(var i=0;i<activeEntries.length;i++){activeEntries[i].animation.onfinish=function(){if(this._shouldComplete(activeEntries)){this._complete(activeEntries);delete this._active[type];this.fire("neon-animation-finish",cookie,{bubbles:!1})}}.bind(this)}},/**
    * Cancels the currently running animations.
-   */cancelAnimation:function(){for(var k in this._active){var entries=this._active[k];for(var j in entries){entries[j].animation.cancel()}}this._active={}}};/** @polymerBehavior */_exports.NeonAnimationRunnerBehaviorImpl=NeonAnimationRunnerBehaviorImpl;const NeonAnimationRunnerBehavior=[NeonAnimatableBehavior,NeonAnimationRunnerBehaviorImpl];_exports.NeonAnimationRunnerBehavior=NeonAnimationRunnerBehavior;var neonAnimationRunnerBehavior={NeonAnimationRunnerBehaviorImpl:NeonAnimationRunnerBehaviorImpl,NeonAnimationRunnerBehavior:NeonAnimationRunnerBehavior};_exports.$neonAnimationRunnerBehavior=neonAnimationRunnerBehavior;(0,_natepaasApp.Polymer)({_template:_natepaasApp.html$1`
-    <style>
-      :host {
-        position: fixed;
-      }
-
-      #contentWrapper ::slotted(*) {
-        overflow: auto;
-      }
-
-      #contentWrapper.animating ::slotted(*) {
-        overflow: hidden;
-        pointer-events: none;
-      }
-    </style>
-
-    <div id="contentWrapper">
-      <slot id="content" name="dropdown-content"></slot>
-    </div>
-`,is:"iron-dropdown",behaviors:[IronControlState,IronA11yKeysBehavior,IronOverlayBehavior,NeonAnimationRunnerBehavior],properties:{/**
+   */cancelAnimation:function cancelAnimation(){for(var k in this._active){var entries=this._active[k];for(var j in entries){entries[j].animation.cancel()}}this._active={}}};/** @polymerBehavior */_exports.NeonAnimationRunnerBehaviorImpl=NeonAnimationRunnerBehaviorImpl;var NeonAnimationRunnerBehavior=[NeonAnimatableBehavior,NeonAnimationRunnerBehaviorImpl];_exports.NeonAnimationRunnerBehavior=NeonAnimationRunnerBehavior;var neonAnimationRunnerBehavior={NeonAnimationRunnerBehaviorImpl:NeonAnimationRunnerBehaviorImpl,NeonAnimationRunnerBehavior:NeonAnimationRunnerBehavior};_exports.$neonAnimationRunnerBehavior=neonAnimationRunnerBehavior;(0,_natepaasApp.Polymer)({_template:(0,_natepaasApp.html$1)(_templateObject3_2937b1a0072d11eaac4ad73c7775be10()),is:"iron-dropdown",behaviors:[IronControlState,IronA11yKeysBehavior,IronOverlayBehavior,NeonAnimationRunnerBehavior],properties:{/**
      * The orientation against which to align the dropdown content
      * horizontally relative to the dropdown trigger.
      * Overridden from `Polymer.IronFitBehavior`.
@@ -1186,56 +1133,35 @@ if("function"!=typeof result.cancel){result=document.timeline.play(result)}}catc
      */allowOutsideScroll:{type:Boolean,value:!1,observer:"_allowOutsideScrollChanged"}},listeners:{"neon-animation-finish":"_onNeonAnimationFinish"},observers:["_updateOverlayPosition(positionTarget, verticalAlign, horizontalAlign, verticalOffset, horizontalOffset)"],/**
    * The element that is contained by the dropdown, if any.
    */get containedElement(){// Polymer 2.x returns slot.assignedNodes which can contain text nodes.
-for(var nodes=(0,_natepaasApp.dom)(this.$.content).getDistributedNodes(),i=0,l=nodes.length;i<l;i++){if(nodes[i].nodeType===Node.ELEMENT_NODE){return nodes[i]}}},ready:function(){// Ensure scrollAction is set.
-if(!this.scrollAction){this.scrollAction=this.allowOutsideScroll?"refit":"lock"}this._readied=!0},attached:function(){if(!this.sizingTarget||this.sizingTarget===this){this.sizingTarget=this.containedElement||this}},detached:function(){this.cancelAnimation()},/**
+for(var nodes=(0,_natepaasApp.dom)(this.$.content).getDistributedNodes(),i=0,l=nodes.length;i<l;i++){if(nodes[i].nodeType===Node.ELEMENT_NODE){return nodes[i]}}},ready:function ready(){// Ensure scrollAction is set.
+if(!this.scrollAction){this.scrollAction=this.allowOutsideScroll?"refit":"lock"}this._readied=!0},attached:function attached(){if(!this.sizingTarget||this.sizingTarget===this){this.sizingTarget=this.containedElement||this}},detached:function detached(){this.cancelAnimation()},/**
    * Called when the value of `opened` changes.
    * Overridden from `IronOverlayBehavior`
-   */_openedChanged:function(){if(this.opened&&this.disabled){this.cancel()}else{this.cancelAnimation();this._updateAnimationConfig();IronOverlayBehaviorImpl._openedChanged.apply(this,arguments)}},/**
+   */_openedChanged:function _openedChanged(){if(this.opened&&this.disabled){this.cancel()}else{this.cancelAnimation();this._updateAnimationConfig();IronOverlayBehaviorImpl._openedChanged.apply(this,arguments)}},/**
    * Overridden from `IronOverlayBehavior`.
-   */_renderOpened:function(){if(!this.noAnimations&&this.animationConfig.open){this.$.contentWrapper.classList.add("animating");this.playAnimation("open")}else{IronOverlayBehaviorImpl._renderOpened.apply(this,arguments)}},/**
+   */_renderOpened:function _renderOpened(){if(!this.noAnimations&&this.animationConfig.open){this.$.contentWrapper.classList.add("animating");this.playAnimation("open")}else{IronOverlayBehaviorImpl._renderOpened.apply(this,arguments)}},/**
    * Overridden from `IronOverlayBehavior`.
-   */_renderClosed:function(){if(!this.noAnimations&&this.animationConfig.close){this.$.contentWrapper.classList.add("animating");this.playAnimation("close")}else{IronOverlayBehaviorImpl._renderClosed.apply(this,arguments)}},/**
+   */_renderClosed:function _renderClosed(){if(!this.noAnimations&&this.animationConfig.close){this.$.contentWrapper.classList.add("animating");this.playAnimation("close")}else{IronOverlayBehaviorImpl._renderClosed.apply(this,arguments)}},/**
    * Called when animation finishes on the dropdown (when opening or
    * closing). Responsible for "completing" the process of opening or
    * closing the dropdown by positioning it or setting its display to
    * none.
-   */_onNeonAnimationFinish:function(){this.$.contentWrapper.classList.remove("animating");if(this.opened){this._finishRenderOpened()}else{this._finishRenderClosed()}},/**
+   */_onNeonAnimationFinish:function _onNeonAnimationFinish(){this.$.contentWrapper.classList.remove("animating");if(this.opened){this._finishRenderOpened()}else{this._finishRenderClosed()}},/**
    * Constructs the final animation config from different properties used
    * to configure specific parts of the opening and closing animations.
-   */_updateAnimationConfig:function(){// Update the animation node to be the containedElement.
+   */_updateAnimationConfig:function _updateAnimationConfig(){// Update the animation node to be the containedElement.
 for(var animationNode=this.containedElement,animations=[].concat(this.openAnimationConfig||[]).concat(this.closeAnimationConfig||[]),i=0;i<animations.length;i++){animations[i].node=animationNode}this.animationConfig={open:this.openAnimationConfig,close:this.closeAnimationConfig}},/**
    * Updates the overlay position based on configured horizontal
    * and vertical alignment.
-   */_updateOverlayPosition:function(){if(this.isAttached){// This triggers iron-resize, and iron-overlay-behavior will call refit if
+   */_updateOverlayPosition:function _updateOverlayPosition(){if(this.isAttached){// This triggers iron-resize, and iron-overlay-behavior will call refit if
 // needed.
 this.notifyResize()}},/**
    * Sets scrollAction according to the value of allowOutsideScroll.
    * Prefer setting directly scrollAction.
-   */_allowOutsideScrollChanged:function(allowOutsideScroll){// Wait until initial values are all set.
+   */_allowOutsideScrollChanged:function _allowOutsideScrollChanged(allowOutsideScroll){// Wait until initial values are all set.
 if(!this._readied){return}if(!allowOutsideScroll){this.scrollAction="lock"}else if(!this.scrollAction||"lock"===this.scrollAction){this.scrollAction="refit"}},/**
    * Apply focus to focusTarget or containedElement
-   */_applyFocus:function(){var focusTarget=this.focusTarget||this.containedElement;if(focusTarget&&this.opened&&!this.noAutoFocus){focusTarget.focus()}else{IronOverlayBehaviorImpl._applyFocus.apply(this,arguments)}}});(0,_natepaasApp.Polymer)({_template:_natepaasApp.html$1`
-    <style>
-      :host {
-        @apply --layout-inline;
-        @apply --layout-center-center;
-        position: relative;
-
-        vertical-align: middle;
-
-        fill: var(--iron-icon-fill-color, currentcolor);
-        stroke: var(--iron-icon-stroke-color, none);
-
-        width: var(--iron-icon-width, 24px);
-        height: var(--iron-icon-height, 24px);
-        @apply --iron-icon;
-      }
-
-      :host([hidden]) {
-        display: none;
-      }
-    </style>
-`,is:"iron-icon",properties:{/**
+   */_applyFocus:function _applyFocus(){var focusTarget=this.focusTarget||this.containedElement;if(focusTarget&&this.opened&&!this.noAutoFocus){focusTarget.focus()}else{IronOverlayBehaviorImpl._applyFocus.apply(this,arguments)}}});(0,_natepaasApp.Polymer)({_template:(0,_natepaasApp.html$1)(_templateObject4_2937b1a0072d11eaac4ad73c7775be10()),is:"iron-icon",properties:{/**
      * The name of the icon to use. The name should be of the form:
      * `iconset_name:icon_name`.
      */icon:{type:String},/**
@@ -1247,7 +1173,7 @@ if(!this._readied){return}if(!allowOutsideScroll){this.scrollAction="lock"}else 
      * precedence over a given icon attribute.
      */src:{type:String},/**
      * @type {!IronMeta}
-     */_meta:{value:_natepaasApp.Base.create("iron-meta",{type:"iconset"})}},observers:["_updateIcon(_meta, isAttached)","_updateIcon(theme, isAttached)","_srcChanged(src, isAttached)","_iconChanged(icon, isAttached)"],_DEFAULT_ICONSET:"icons",_iconChanged:function(icon){var parts=(icon||"").split(":");this._iconName=parts.pop();this._iconsetName=parts.pop()||this._DEFAULT_ICONSET;this._updateIcon()},_srcChanged:function(src){this._updateIcon()},_usesIconset:function(){return this.icon||!this.src},/** @suppress {visibility} */_updateIcon:function(){if(this._usesIconset()){if(this._img&&this._img.parentNode){(0,_natepaasApp.dom)(this.root).removeChild(this._img)}if(""===this._iconName){if(this._iconset){this._iconset.removeIcon(this)}}else if(this._iconsetName&&this._meta){this._iconset=/** @type {?Polymer.Iconset} */this._meta.byKey(this._iconsetName);if(this._iconset){this._iconset.applyIcon(this,this._iconName,this.theme);this.unlisten(window,"iron-iconset-added","_updateIcon")}else{this.listen(window,"iron-iconset-added","_updateIcon")}}}else{if(this._iconset){this._iconset.removeIcon(this)}if(!this._img){this._img=document.createElement("img");this._img.style.width="100%";this._img.style.height="100%";this._img.draggable=!1}this._img.src=this.src;(0,_natepaasApp.dom)(this.root).appendChild(this._img)}}});(0,_natepaasApp.Polymer)({is:"iron-iconset-svg",properties:{/**
+     */_meta:{value:_natepaasApp.Base.create("iron-meta",{type:"iconset"})}},observers:["_updateIcon(_meta, isAttached)","_updateIcon(theme, isAttached)","_srcChanged(src, isAttached)","_iconChanged(icon, isAttached)"],_DEFAULT_ICONSET:"icons",_iconChanged:function _iconChanged(icon){var parts=(icon||"").split(":");this._iconName=parts.pop();this._iconsetName=parts.pop()||this._DEFAULT_ICONSET;this._updateIcon()},_srcChanged:function _srcChanged(src){this._updateIcon()},_usesIconset:function _usesIconset(){return this.icon||!this.src},/** @suppress {visibility} */_updateIcon:function _updateIcon(){if(this._usesIconset()){if(this._img&&this._img.parentNode){(0,_natepaasApp.dom)(this.root).removeChild(this._img)}if(""===this._iconName){if(this._iconset){this._iconset.removeIcon(this)}}else if(this._iconsetName&&this._meta){this._iconset=/** @type {?Polymer.Iconset} */this._meta.byKey(this._iconsetName);if(this._iconset){this._iconset.applyIcon(this,this._iconName,this.theme);this.unlisten(window,"iron-iconset-added","_updateIcon")}else{this.listen(window,"iron-iconset-added","_updateIcon")}}}else{if(this._iconset){this._iconset.removeIcon(this)}if(!this._img){this._img=document.createElement("img");this._img.style.width="100%";this._img.style.height="100%";this._img.draggable=!1}this._img.src=this.src;(0,_natepaasApp.dom)(this.root).appendChild(this._img)}}});(0,_natepaasApp.Polymer)({is:"iron-iconset-svg",properties:{/**
      * The name of the iconset.
      */name:{type:String,observer:"_nameChanged"},/**
      * The size of an individual icon. Note that icons must be square.
@@ -1263,11 +1189,11 @@ if(!this._readied){return}if(!allowOutsideScroll){this.scrollAction="lock"}else 
      * Set to true to measure RTL based on the dir attribute on the body or
      * html elements (measured on document.body or document.documentElement as
      * available).
-     */useGlobalRtlAttribute:{type:Boolean,value:!1}},created:function(){this._meta=new IronMeta({type:"iconset",key:null,value:null})},attached:function(){this.style.display="none"},/**
+     */useGlobalRtlAttribute:{type:Boolean,value:!1}},created:function created(){this._meta=new IronMeta({type:"iconset",key:null,value:null})},attached:function attached(){this.style.display="none"},/**
    * Construct an array of all icon names in this iconset.
    *
    * @return {!Array} Array of icon names.
-   */getIconNames:function(){this._icons=this._createIconMap();return Object.keys(this._icons).map(function(n){return this.name+":"+n},this)},/**
+   */getIconNames:function getIconNames(){this._icons=this._createIconMap();return Object.keys(this._icons).map(function(n){return this.name+":"+n},this)},/**
    * Applies an icon to the given element.
    *
    * An svg icon is prepended to the element's shadowRoot if it exists,
@@ -1283,7 +1209,7 @@ if(!this._readied){return}if(!allowOutsideScroll){this.scrollAction="lock"}else 
    * @param {Element} element Element to which the icon is applied.
    * @param {string} iconName Name of the icon to apply.
    * @return {?Element} The svg element which renders the icon.
-   */applyIcon:function(element,iconName){// Remove old svg element
+   */applyIcon:function applyIcon(element,iconName){// Remove old svg element
 this.removeIcon(element);// install new svg element
 var svg=this._cloneIcon(iconName,this.rtlMirroring&&this._targetIsRTL(element));if(svg){// insert svg element into shadow root, if it exists
 var pde=(0,_natepaasApp.dom)(element.root||element);pde.insertBefore(svg,pde.childNodes[0]);return element._svgIcon=svg}return null},/**
@@ -1291,20 +1217,20 @@ var pde=(0,_natepaasApp.dom)(element.root||element);pde.insertBefore(svg,pde.chi
    * by `applyIcon`.
    *
    * @param {Element} element The element from which the icon is removed.
-   */removeIcon:function(element){// Remove old svg element
+   */removeIcon:function removeIcon(element){// Remove old svg element
 if(element._svgIcon){(0,_natepaasApp.dom)(element.root||element).removeChild(element._svgIcon);element._svgIcon=null}},/**
    * Measures and memoizes the direction of the element. Note that this
    * measurement is only done once and the result is memoized for future
    * invocations.
-   */_targetIsRTL:function(target){if(null==this.__targetIsRTL){if(this.useGlobalRtlAttribute){var globalElement=document.body&&document.body.hasAttribute("dir")?document.body:document.documentElement;this.__targetIsRTL="rtl"===globalElement.getAttribute("dir")}else{if(target&&target.nodeType!==Node.ELEMENT_NODE){target=target.host}this.__targetIsRTL=target&&"rtl"===window.getComputedStyle(target).direction}}return this.__targetIsRTL},/**
+   */_targetIsRTL:function _targetIsRTL(target){if(null==this.__targetIsRTL){if(this.useGlobalRtlAttribute){var globalElement=document.body&&document.body.hasAttribute("dir")?document.body:document.documentElement;this.__targetIsRTL="rtl"===globalElement.getAttribute("dir")}else{if(target&&target.nodeType!==Node.ELEMENT_NODE){target=target.host}this.__targetIsRTL=target&&"rtl"===window.getComputedStyle(target).direction}}return this.__targetIsRTL},/**
    *
    * When name is changed, register iconset metadata
    *
-   */_nameChanged:function(){this._meta.value=null;this._meta.key=this.name;this._meta.value=this;this.async(function(){this.fire("iron-iconset-added",this,{node:window})})},/**
+   */_nameChanged:function _nameChanged(){this._meta.value=null;this._meta.key=this.name;this._meta.value=this;this.async(function(){this.fire("iron-iconset-added",this,{node:window})})},/**
    * Create a map of child SVG elements by id.
    *
    * @return {!Object} Map of id's to SVG elements.
-   */_createIconMap:function(){// Objects chained to Object.prototype (`{}`) have members. Specifically,
+   */_createIconMap:function _createIconMap(){// Objects chained to Object.prototype (`{}`) have members. Specifically,
 // on FF there is a `watch` method that confuses the icon map, so we
 // need to use a null-based object here.
 var icons=Object.create(null);(0,_natepaasApp.dom)(this).querySelectorAll("[id]").forEach(function(icon){icons[icon.id]=icon});return icons},/**
@@ -1313,77 +1239,18 @@ var icons=Object.create(null);(0,_natepaasApp.dom)(this).querySelectorAll("[id]"
    *
    * @return {Element} Returns an installable clone of the SVG element
    * matching `id`.
-   */_cloneIcon:function(id,mirrorAllowed){// create the icon map on-demand, since the iconset itself has no discrete
+   */_cloneIcon:function _cloneIcon(id,mirrorAllowed){// create the icon map on-demand, since the iconset itself has no discrete
 // signal to know when it's children are fully parsed
 this._icons=this._icons||this._createIconMap();return this._prepareSvgClone(this._icons[id],this.size,mirrorAllowed)},/**
    * @param {Element} sourceSvg
    * @param {number} size
    * @param {Boolean} mirrorAllowed
    * @return {Element}
-   */_prepareSvgClone:function(sourceSvg,size,mirrorAllowed){if(sourceSvg){var content=sourceSvg.cloneNode(!0),svg=document.createElementNS("http://www.w3.org/2000/svg","svg"),viewBox=content.getAttribute("viewBox")||"0 0 "+size+" "+size,cssText="pointer-events: none; display: block; width: 100%; height: 100%;";if(mirrorAllowed&&content.hasAttribute("mirror-in-rtl")){cssText+="-webkit-transform:scale(-1,1);transform:scale(-1,1);transform-origin:center;"}svg.setAttribute("viewBox",viewBox);svg.setAttribute("preserveAspectRatio","xMidYMid meet");svg.setAttribute("focusable","false");// TODO(dfreedm): `pointer-events: none` works around
+   */_prepareSvgClone:function _prepareSvgClone(sourceSvg,size,mirrorAllowed){if(sourceSvg){var content=sourceSvg.cloneNode(!0),svg=document.createElementNS("http://www.w3.org/2000/svg","svg"),viewBox=content.getAttribute("viewBox")||"0 0 "+size+" "+size,cssText="pointer-events: none; display: block; width: 100%; height: 100%;";if(mirrorAllowed&&content.hasAttribute("mirror-in-rtl")){cssText+="-webkit-transform:scale(-1,1);transform:scale(-1,1);transform-origin:center;"}svg.setAttribute("viewBox",viewBox);svg.setAttribute("preserveAspectRatio","xMidYMid meet");svg.setAttribute("focusable","false");// TODO(dfreedm): `pointer-events: none` works around
 // https://crbug.com/370136
 // TODO(sjmiles): inline style may not be ideal, but avoids requiring a
 // shadow-root
-svg.style.cssText=cssText;svg.appendChild(content).removeAttribute("id");return svg}return null}});(0,_natepaasApp.Polymer)({_template:_natepaasApp.html$1`
-    <style>
-      :host {
-        display: inline-block;
-        overflow: hidden;
-        position: relative;
-      }
-
-      #baseURIAnchor {
-        display: none;
-      }
-
-      #sizedImgDiv {
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-
-        display: none;
-      }
-
-      #img {
-        display: block;
-        width: var(--iron-image-width, auto);
-        height: var(--iron-image-height, auto);
-      }
-
-      :host([sizing]) #sizedImgDiv {
-        display: block;
-      }
-
-      :host([sizing]) #img {
-        display: none;
-      }
-
-      #placeholder {
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-
-        background-color: inherit;
-        opacity: 1;
-
-        @apply --iron-image-placeholder;
-      }
-
-      #placeholder.faded-out {
-        transition: opacity 0.5s linear;
-        opacity: 0;
-      }
-    </style>
-
-    <a id="baseURIAnchor" href="#"></a>
-    <div id="sizedImgDiv" role="img" hidden$="[[_computeImgDivHidden(sizing)]]" aria-hidden$="[[_computeImgDivARIAHidden(alt)]]" aria-label$="[[_computeImgDivARIALabel(alt, src)]]"></div>
-    <img id="img" alt$="[[alt]]" hidden$="[[_computeImgHidden(sizing)]]" crossorigin$="[[crossorigin]]" on-load="_imgOnLoad" on-error="_imgOnError">
-    <div id="placeholder" hidden$="[[_computePlaceholderHidden(preload, fade, loading, loaded)]]" class$="[[_computePlaceholderClassName(preload, fade, loading, loaded)]]"></div>
-`,is:"iron-image",properties:{/**
+svg.style.cssText=cssText;svg.appendChild(content).removeAttribute("id");return svg}return null}});(0,_natepaasApp.Polymer)({_template:(0,_natepaasApp.html$1)(_templateObject5_2937b1a0072d11eaac4ad73c7775be10()),is:"iron-image",properties:{/**
      * The URL of an image.
      */src:{type:String,value:""},/**
      * A short text alternative for the image.
@@ -1429,25 +1296,18 @@ svg.style.cssText=cssText;svg.appendChild(content).removeAttribute("id");return 
      * @attribute height
      * @type number
      * @default null
-     */height:{observer:"_heightChanged",type:Number,value:null}},observers:["_transformChanged(sizing, position)","_loadStateObserver(src, preventLoad)"],created:function(){this._resolvedSrc=""},_imgOnLoad:function(){if(this.$.img.src!==this._resolveSrc(this.src)){return}this._setLoading(!1);this._setLoaded(!0);this._setError(!1)},_imgOnError:function(){if(this.$.img.src!==this._resolveSrc(this.src)){return}this.$.img.removeAttribute("src");this.$.sizedImgDiv.style.backgroundImage="";this._setLoading(!1);this._setLoaded(!1);this._setError(!0)},_computePlaceholderHidden:function(){return!this.preload||!this.fade&&!this.loading&&this.loaded},_computePlaceholderClassName:function(){return this.preload&&this.fade&&!this.loading&&this.loaded?"faded-out":""},_computeImgDivHidden:function(){return!this.sizing},_computeImgDivARIAHidden:function(){return""===this.alt?"true":void 0},_computeImgDivARIALabel:function(){if(null!==this.alt){return this.alt}// Polymer.ResolveUrl.resolveUrl will resolve '' relative to a URL x to
+     */height:{observer:"_heightChanged",type:Number,value:null}},observers:["_transformChanged(sizing, position)","_loadStateObserver(src, preventLoad)"],created:function created(){this._resolvedSrc=""},_imgOnLoad:function _imgOnLoad(){if(this.$.img.src!==this._resolveSrc(this.src)){return}this._setLoading(!1);this._setLoaded(!0);this._setError(!1)},_imgOnError:function _imgOnError(){if(this.$.img.src!==this._resolveSrc(this.src)){return}this.$.img.removeAttribute("src");this.$.sizedImgDiv.style.backgroundImage="";this._setLoading(!1);this._setLoaded(!1);this._setError(!0)},_computePlaceholderHidden:function _computePlaceholderHidden(){return!this.preload||!this.fade&&!this.loading&&this.loaded},_computePlaceholderClassName:function _computePlaceholderClassName(){return this.preload&&this.fade&&!this.loading&&this.loaded?"faded-out":""},_computeImgDivHidden:function _computeImgDivHidden(){return!this.sizing},_computeImgDivARIAHidden:function _computeImgDivARIAHidden(){return""===this.alt?"true":void 0},_computeImgDivARIALabel:function _computeImgDivARIALabel(){if(null!==this.alt){return this.alt}// Polymer.ResolveUrl.resolveUrl will resolve '' relative to a URL x to
 // that URL x, but '' is the default for src.
 if(""===this.src){return""}// NOTE: Use of `URL` was removed here because IE11 doesn't support
 // constructing it. If this ends up being problematic, we should
 // consider reverting and adding the URL polyfill as a dev dependency.
 var resolved=this._resolveSrc(this.src);// Remove query parts, get file name.
-return resolved.replace(/[?|#].*/g,"").split("/").pop()},_computeImgHidden:function(){return!!this.sizing},_widthChanged:function(){this.style.width=isNaN(this.width)?this.width:this.width+"px"},_heightChanged:function(){this.style.height=isNaN(this.height)?this.height:this.height+"px"},_loadStateObserver:function(src,preventLoad){var newResolvedSrc=this._resolveSrc(src);if(newResolvedSrc===this._resolvedSrc){return}this._resolvedSrc="";this.$.img.removeAttribute("src");this.$.sizedImgDiv.style.backgroundImage="";if(""===src||preventLoad){this._setLoading(!1);this._setLoaded(!1);this._setError(!1)}else{this._resolvedSrc=newResolvedSrc;this.$.img.src=this._resolvedSrc;this.$.sizedImgDiv.style.backgroundImage="url(\""+this._resolvedSrc+"\")";this._setLoading(!0);this._setLoaded(!1);this._setError(!1)}},_placeholderChanged:function(){this.$.placeholder.style.backgroundImage=this.placeholder?"url(\""+this.placeholder+"\")":""},_transformChanged:function(){var sizedImgDivStyle=this.$.sizedImgDiv.style,placeholderStyle=this.$.placeholder.style;sizedImgDivStyle.backgroundSize=placeholderStyle.backgroundSize=this.sizing;sizedImgDivStyle.backgroundPosition=placeholderStyle.backgroundPosition=this.sizing?this.position:"";sizedImgDivStyle.backgroundRepeat=placeholderStyle.backgroundRepeat=this.sizing?"no-repeat":""},_resolveSrc:function(testSrc){var resolved=(0,_natepaasApp.resolveUrl)(testSrc,this.$.baseURIAnchor.href);// NOTE: Use of `URL` was removed here because IE11 doesn't support
+return resolved.replace(/[?|#].*/g,"").split("/").pop()},_computeImgHidden:function _computeImgHidden(){return!!this.sizing},_widthChanged:function _widthChanged(){this.style.width=isNaN(this.width)?this.width:this.width+"px"},_heightChanged:function _heightChanged(){this.style.height=isNaN(this.height)?this.height:this.height+"px"},_loadStateObserver:function _loadStateObserver(src,preventLoad){var newResolvedSrc=this._resolveSrc(src);if(newResolvedSrc===this._resolvedSrc){return}this._resolvedSrc="";this.$.img.removeAttribute("src");this.$.sizedImgDiv.style.backgroundImage="";if(""===src||preventLoad){this._setLoading(!1);this._setLoaded(!1);this._setError(!1)}else{this._resolvedSrc=newResolvedSrc;this.$.img.src=this._resolvedSrc;this.$.sizedImgDiv.style.backgroundImage="url(\""+this._resolvedSrc+"\")";this._setLoading(!0);this._setLoaded(!1);this._setError(!1)}},_placeholderChanged:function _placeholderChanged(){this.$.placeholder.style.backgroundImage=this.placeholder?"url(\""+this.placeholder+"\")":""},_transformChanged:function _transformChanged(){var sizedImgDivStyle=this.$.sizedImgDiv.style,placeholderStyle=this.$.placeholder.style;sizedImgDivStyle.backgroundSize=placeholderStyle.backgroundSize=this.sizing;sizedImgDivStyle.backgroundPosition=placeholderStyle.backgroundPosition=this.sizing?this.position:"";sizedImgDivStyle.backgroundRepeat=placeholderStyle.backgroundRepeat=this.sizing?"no-repeat":""},_resolveSrc:function _resolveSrc(testSrc){var resolved=(0,_natepaasApp.resolveUrl)(testSrc,this.$.baseURIAnchor.href);// NOTE: Use of `URL` was removed here because IE11 doesn't support
 // constructing it. If this ends up being problematic, we should
 // consider reverting and adding the URL polyfill as a dev dependency.
 if(2<=resolved.length&&"/"===resolved[0]&&"/"!==resolved[1]){// In IE location.origin might not work
 // https://connect.microsoft.com/IE/feedback/details/1763802/location-origin-is-undefined-in-ie-11-on-windows-10-but-works-on-windows-7
-resolved=(location.origin||location.protocol+"//"+location.host)+resolved}return resolved}});(0,_natepaasApp.Polymer)({_template:_natepaasApp.html$1`
-    <style>
-      :host {
-        display: inline-block;
-      }
-    </style>
-    <slot id="content"></slot>
-`,is:"iron-input",behaviors:[IronValidatableBehavior],/**
+resolved=(location.origin||location.protocol+"//"+location.host)+resolved}return resolved}});(0,_natepaasApp.Polymer)({_template:(0,_natepaasApp.html$1)(_templateObject6_2937b1a0072d11eaac4ad73c7775be10()),is:"iron-input",behaviors:[IronValidatableBehavior],/**
    * Fired whenever `validate()` is called.
    *
    * @event iron-input-validate
@@ -1481,17 +1341,17 @@ resolved=(location.origin||location.protocol+"//"+location.host)+resolved}return
      * Set to true to auto-validate the input value as you type.
      */autoValidate:{type:Boolean,value:!1},/**
      * The native input element.
-     */_inputElement:Object},observers:["_bindValueChanged(bindValue, _inputElement)"],listeners:{input:"_onInput",keypress:"_onKeypress"},created:function(){IronA11yAnnouncer.requestAvailability();this._previousValidInput="";this._patternAlreadyChecked=!1},attached:function(){// If the input is added at a later time, update the internal reference.
-this._observer=(0,_natepaasApp.dom)(this).observeNodes(function(info){this._initSlottedInput()}.bind(this))},detached:function(){if(this._observer){(0,_natepaasApp.dom)(this).unobserveNodes(this._observer);this._observer=null}},/**
+     */_inputElement:Object},observers:["_bindValueChanged(bindValue, _inputElement)"],listeners:{input:"_onInput",keypress:"_onKeypress"},created:function created(){IronA11yAnnouncer.requestAvailability();this._previousValidInput="";this._patternAlreadyChecked=!1},attached:function attached(){// If the input is added at a later time, update the internal reference.
+this._observer=(0,_natepaasApp.dom)(this).observeNodes(function(info){this._initSlottedInput()}.bind(this))},detached:function detached(){if(this._observer){(0,_natepaasApp.dom)(this).unobserveNodes(this._observer);this._observer=null}},/**
    * Returns the distributed input element.
-   */get inputElement(){return this._inputElement},_initSlottedInput:function(){this._inputElement=this.getEffectiveChildren()[0];if(this.inputElement&&this.inputElement.value){this.bindValue=this.inputElement.value}this.fire("iron-input-ready")},get _patternRegExp(){var pattern;if(this.allowedPattern){pattern=new RegExp(this.allowedPattern)}else{switch(this.inputElement.type){case"number":pattern=/[0-9.,e-]/;break;}}return pattern},/**
+   */get inputElement(){return this._inputElement},_initSlottedInput:function _initSlottedInput(){this._inputElement=this.getEffectiveChildren()[0];if(this.inputElement&&this.inputElement.value){this.bindValue=this.inputElement.value}this.fire("iron-input-ready")},get _patternRegExp(){var pattern;if(this.allowedPattern){pattern=new RegExp(this.allowedPattern)}else{switch(this.inputElement.type){case"number":pattern=/[0-9.,e-]/;break;}}return pattern},/**
    * @suppress {checkTypes}
-   */_bindValueChanged:function(bindValue,inputElement){// The observer could have run before attached() when we have actually
+   */_bindValueChanged:function _bindValueChanged(bindValue,inputElement){// The observer could have run before attached() when we have actually
 // initialized this property.
 if(!inputElement){return}if(bindValue===void 0){inputElement.value=null}else if(bindValue!==inputElement.value){this.inputElement.value=bindValue}if(this.autoValidate){this.validate()}// manually notify because we don't want to notify until after setting value
-this.fire("bind-value-changed",{value:bindValue})},_onInput:function(){// Need to validate each of the characters pasted if they haven't
+this.fire("bind-value-changed",{value:bindValue})},_onInput:function _onInput(){// Need to validate each of the characters pasted if they haven't
 // been validated inside `_onKeypress` already.
-if(this.allowedPattern&&!this._patternAlreadyChecked){var valid=this._checkPatternValidity();if(!valid){this._announceInvalidCharacter("Invalid string of characters not entered.");this.inputElement.value=this._previousValidInput}}this.bindValue=this._previousValidInput=this.inputElement.value;this._patternAlreadyChecked=!1},_isPrintable:function(event){// What a control/printable character is varies wildly based on the browser.
+if(this.allowedPattern&&!this._patternAlreadyChecked){var valid=this._checkPatternValidity();if(!valid){this._announceInvalidCharacter("Invalid string of characters not entered.");this.inputElement.value=this._previousValidInput}}this.bindValue=this._previousValidInput=this.inputElement.value;this._patternAlreadyChecked=!1},_isPrintable:function _isPrintable(event){// What a control/printable character is varies wildly based on the browser.
 // - most control characters (arrows, backspace) do not send a `keypress`
 // event
 //   in Chrome, but the *do* on Firefox
@@ -1516,39 +1376,39 @@ var anyNonPrintable=8==event.keyCode||// backspace
 111<event.keyCode&&124>event.keyCode;// escape
 // For these keys, make sure it's a browser keycode and not an ASCII code.
 // fn keys
-return!anyNonPrintable&&!(0==event.charCode&&mozNonPrintable)},_onKeypress:function(event){if(!this.allowedPattern&&"number"!==this.inputElement.type){return}var regexp=this._patternRegExp;if(!regexp){return}// Handle special keys and backspace
+return!anyNonPrintable&&!(0==event.charCode&&mozNonPrintable)},_onKeypress:function _onKeypress(event){if(!this.allowedPattern&&"number"!==this.inputElement.type){return}var regexp=this._patternRegExp;if(!regexp){return}// Handle special keys and backspace
 if(event.metaKey||event.ctrlKey||event.altKey){return}// Check the pattern either here or in `_onInput`, but not in both.
-this._patternAlreadyChecked=!0;var thisChar=String.fromCharCode(event.charCode);if(this._isPrintable(event)&&!regexp.test(thisChar)){event.preventDefault();this._announceInvalidCharacter("Invalid character "+thisChar+" not entered.")}},_checkPatternValidity:function(){var regexp=this._patternRegExp;if(!regexp){return!0}for(var i=0;i<this.inputElement.value.length;i++){if(!regexp.test(this.inputElement.value[i])){return!1}}return!0},/**
+this._patternAlreadyChecked=!0;var thisChar=String.fromCharCode(event.charCode);if(this._isPrintable(event)&&!regexp.test(thisChar)){event.preventDefault();this._announceInvalidCharacter("Invalid character "+thisChar+" not entered.")}},_checkPatternValidity:function _checkPatternValidity(){var regexp=this._patternRegExp;if(!regexp){return!0}for(var i=0;i<this.inputElement.value.length;i++){if(!regexp.test(this.inputElement.value[i])){return!1}}return!0},/**
    * Returns true if `value` is valid. The validator provided in `validator`
    * will be used first, then any constraints.
    * @return {boolean} True if the value is valid.
-   */validate:function(){if(!this.inputElement){this.invalid=!1;return!0}// Use the nested input's native validity.
+   */validate:function validate(){if(!this.inputElement){this.invalid=!1;return!0}// Use the nested input's native validity.
 var valid=this.inputElement.checkValidity();// Only do extra checking if the browser thought this was valid.
 if(valid){// Empty, required input is invalid
-if(this.required&&""===this.bindValue){valid=!1}else if(this.hasValidator()){valid=IronValidatableBehavior.validate.call(this,this.bindValue)}}this.invalid=!valid;this.fire("iron-input-validate");return valid},_announceInvalidCharacter:function(message){this.fire("iron-announce",{text:message})},_computeValue:function(bindValue){return bindValue}});class IronSelection{/**
+if(this.required&&""===this.bindValue){valid=!1}else if(this.hasValidator()){valid=IronValidatableBehavior.validate.call(this,this.bindValue)}}this.invalid=!valid;this.fire("iron-input-validate");return valid},_announceInvalidCharacter:function _announceInvalidCharacter(message){this.fire("iron-announce",{text:message})},_computeValue:function _computeValue(bindValue){return bindValue}});var IronSelection=/*#__PURE__*/function(){/**
    * @param {!Function} selectCallback
    * @suppress {missingProvide}
-   */constructor(selectCallback){this.selection=[];this.selectCallback=selectCallback}/**
+   */function IronSelection(selectCallback){babelHelpers.classCallCheck(this,IronSelection);this.selection=[];this.selectCallback=selectCallback}/**
      * Retrieves the selected item(s).
      *
      * @returns Returns the selected item(s). If the multi property is true,
      * `get` will return an array, otherwise it will return
      * the selected item or undefined if there is no selection.
-     */get(){return this.multi?this.selection.slice():this.selection[0]}/**
+     */babelHelpers.createClass(IronSelection,[{key:"get",value:function get(){return this.multi?this.selection.slice():this.selection[0]}/**
      * Clears all the selection except the ones indicated.
      *
      * @param {Array} excludes items to be excluded.
-     */clear(excludes){this.selection.slice().forEach(function(item){if(!excludes||0>excludes.indexOf(item)){this.setItemSelected(item,!1)}},this)}/**
+     */},{key:"clear",value:function clear(excludes){this.selection.slice().forEach(function(item){if(!excludes||0>excludes.indexOf(item)){this.setItemSelected(item,!1)}},this)}/**
      * Indicates if a given item is selected.
      *
      * @param {*} item The item whose selection state should be checked.
      * @return {boolean} Returns true if `item` is selected.
-     */isSelected(item){return 0<=this.selection.indexOf(item)}/**
+     */},{key:"isSelected",value:function isSelected(item){return 0<=this.selection.indexOf(item)}/**
      * Sets the selection state for a given item to either selected or deselected.
      *
      * @param {*} item The item to select.
      * @param {boolean} isSelected True for selected, false for deselected.
-     */setItemSelected(item,isSelected){if(null!=item){if(isSelected!==this.isSelected(item)){// proceed to update selection only if requested state differs from
+     */},{key:"setItemSelected",value:function setItemSelected(item,isSelected){if(null!=item){if(isSelected!==this.isSelected(item)){// proceed to update selection only if requested state differs from
 // current
 if(isSelected){this.selection.push(item)}else{var i=this.selection.indexOf(item);if(0<=i){this.selection.splice(i,1)}}if(this.selectCallback){this.selectCallback(item,isSelected)}}}}/**
      * Sets the selection state for a given item. If the `multi` property
@@ -1556,11 +1416,11 @@ if(isSelected){this.selection.push(item)}else{var i=this.selection.indexOf(item)
      * the `item` will be selected.
      *
      * @param {*} item The item to select.
-     */select(item){if(this.multi){this.toggle(item)}else if(this.get()!==item){this.setItemSelected(this.get(),!1);this.setItemSelected(item,!0)}}/**
+     */},{key:"select",value:function select(item){if(this.multi){this.toggle(item)}else if(this.get()!==item){this.setItemSelected(this.get(),!1);this.setItemSelected(item,!0)}}/**
      * Toggles the selection state for `item`.
      *
      * @param {*} item The item to toggle.
-     */toggle(item){this.setItemSelected(item,!this.isSelected(item))}}_exports.IronSelection=IronSelection;;var ironSelection={IronSelection:IronSelection};_exports.$ironSelection=ironSelection;const IronSelectableBehavior={/**
+     */},{key:"toggle",value:function toggle(item){this.setItemSelected(item,!this.isSelected(item))}}]);return IronSelection}();_exports.IronSelection=IronSelection;;var ironSelection={IronSelection:IronSelection};_exports.$ironSelection=ironSelection;var IronSelectableBehavior={/**
    * Fired when iron-selector is activated (selected or deselected).
    * It is fired before the selected items are changed.
    * Cancel the event to abort selection.
@@ -1613,35 +1473,35 @@ if(isSelected){this.selection.push(item)}else{var i=this.selection.indexOf(item)
      * `attrForSelected` is not found.
      */fallbackSelection:{type:String,value:null},/**
      * The list of items from which a selection can be made.
-     */items:{type:Array,readOnly:!0,notify:!0,value:function(){return[]}},/**
+     */items:{type:Array,readOnly:!0,notify:!0,value:function value(){return[]}},/**
      * The set of excluded elements where the key is the `localName`
      * of the element that will be ignored from the item list.
      *
      * @default {template: 1}
-     */_excludedLocalNames:{type:Object,value:function(){return{template:1,"dom-bind":1,"dom-if":1,"dom-repeat":1}}}},observers:["_updateAttrForSelected(attrForSelected)","_updateSelected(selected)","_checkFallback(fallbackSelection)"],created:function(){this._bindFilterItem=this._filterItem.bind(this);this._selection=new IronSelection(this._applySelection.bind(this))},attached:function(){this._observer=this._observeItems(this);this._addListener(this.activateEvent)},detached:function(){if(this._observer){(0,_natepaasApp.dom)(this).unobserveNodes(this._observer)}this._removeListener(this.activateEvent)},/**
+     */_excludedLocalNames:{type:Object,value:function value(){return{template:1,"dom-bind":1,"dom-if":1,"dom-repeat":1}}}},observers:["_updateAttrForSelected(attrForSelected)","_updateSelected(selected)","_checkFallback(fallbackSelection)"],created:function created(){this._bindFilterItem=this._filterItem.bind(this);this._selection=new IronSelection(this._applySelection.bind(this))},attached:function attached(){this._observer=this._observeItems(this);this._addListener(this.activateEvent)},detached:function detached(){if(this._observer){(0,_natepaasApp.dom)(this).unobserveNodes(this._observer)}this._removeListener(this.activateEvent)},/**
    * Returns the index of the given item.
    *
    * @method indexOf
    * @param {Object} item
    * @returns Returns the index of the item
-   */indexOf:function(item){return this.items?this.items.indexOf(item):-1},/**
+   */indexOf:function indexOf(item){return this.items?this.items.indexOf(item):-1},/**
    * Selects the given value.
    *
    * @method select
    * @param {string|number} value the value to select.
-   */select:function(value){this.selected=value},/**
+   */select:function select(value){this.selected=value},/**
    * Selects the previous item.
    *
    * @method selectPrevious
-   */selectPrevious:function(){var length=this.items.length,index=length-1;if(this.selected!==void 0){index=(+this._valueToIndex(this.selected)-1+length)%length}this.selected=this._indexToValue(index)},/**
+   */selectPrevious:function selectPrevious(){var length=this.items.length,index=length-1;if(this.selected!==void 0){index=(+this._valueToIndex(this.selected)-1+length)%length}this.selected=this._indexToValue(index)},/**
    * Selects the next item.
    *
    * @method selectNext
-   */selectNext:function(){var index=0;if(this.selected!==void 0){index=(+this._valueToIndex(this.selected)+1)%this.items.length}this.selected=this._indexToValue(index)},/**
+   */selectNext:function selectNext(){var index=0;if(this.selected!==void 0){index=(+this._valueToIndex(this.selected)+1)%this.items.length}this.selected=this._indexToValue(index)},/**
    * Selects the item at the given index.
    *
    * @method selectIndex
-   */selectIndex:function(index){this.select(this._indexToValue(index))},/**
+   */selectIndex:function selectIndex(index){this.select(this._indexToValue(index))},/**
    * Force a synchronous update of the `items` property.
    *
    * NOTE: Consider listening for the `iron-items-changed` event to respond to
@@ -1652,37 +1512,37 @@ if(isSelected){this.selection.push(item)}else{var i=this.selection.indexOf(item)
    * alternate approach. Synchronously querying for items is potentially
    * slow for many use cases. The `items` property will update asynchronously
    * on its own to reflect selectable items in the DOM.
-   */forceSynchronousItemUpdate:function(){if(this._observer&&"function"===typeof this._observer.flush){// NOTE(bicknellr): `dom.flush` above is no longer sufficient to trigger
+   */forceSynchronousItemUpdate:function forceSynchronousItemUpdate(){if(this._observer&&"function"===typeof this._observer.flush){// NOTE(bicknellr): `dom.flush` above is no longer sufficient to trigger
 // `observeNodes` callbacks. Polymer 2.x returns an object from
 // `observeNodes` with a `flush` that synchronously gives the callback any
 // pending MutationRecords (retrieved with `takeRecords`). Any case where
 // ShadyDOM flushes were expected to synchronously trigger item updates
 // will now require calling `forceSynchronousItemUpdate`.
 this._observer.flush()}else{this._updateItems()}},// UNUSED, FOR API COMPATIBILITY
-get _shouldUpdateSelection(){return null!=this.selected},_checkFallback:function(){this._updateSelected()},_addListener:function(eventName){this.listen(this,eventName,"_activateHandler")},_removeListener:function(eventName){this.unlisten(this,eventName,"_activateHandler")},_activateEventChanged:function(eventName,old){this._removeListener(old);this._addListener(eventName)},_updateItems:function(){var nodes=(0,_natepaasApp.dom)(this).queryDistributedElements(this.selectable||"*");nodes=Array.prototype.filter.call(nodes,this._bindFilterItem);this._setItems(nodes)},_updateAttrForSelected:function(){if(this.selectedItem){this.selected=this._valueForItem(this.selectedItem)}},_updateSelected:function(){this._selectSelected(this.selected)},_selectSelected:function(selected){if(!this.items){return}var item=this._valueToItem(this.selected);if(item){this._selection.select(item)}else{this._selection.clear()}// Check for items, since this array is populated only when attached
+get _shouldUpdateSelection(){return null!=this.selected},_checkFallback:function _checkFallback(){this._updateSelected()},_addListener:function _addListener(eventName){this.listen(this,eventName,"_activateHandler")},_removeListener:function _removeListener(eventName){this.unlisten(this,eventName,"_activateHandler")},_activateEventChanged:function _activateEventChanged(eventName,old){this._removeListener(old);this._addListener(eventName)},_updateItems:function _updateItems(){var nodes=(0,_natepaasApp.dom)(this).queryDistributedElements(this.selectable||"*");nodes=Array.prototype.filter.call(nodes,this._bindFilterItem);this._setItems(nodes)},_updateAttrForSelected:function _updateAttrForSelected(){if(this.selectedItem){this.selected=this._valueForItem(this.selectedItem)}},_updateSelected:function _updateSelected(){this._selectSelected(this.selected)},_selectSelected:function _selectSelected(selected){if(!this.items){return}var item=this._valueToItem(this.selected);if(item){this._selection.select(item)}else{this._selection.clear()}// Check for items, since this array is populated only when attached
 // Since Number(0) is falsy, explicitly check for undefined
-if(this.fallbackSelection&&this.items.length&&this._selection.get()===void 0){this.selected=this.fallbackSelection}},_filterItem:function(node){return!this._excludedLocalNames[node.localName]},_valueToItem:function(value){return null==value?null:this.items[this._valueToIndex(value)]},_valueToIndex:function(value){if(this.attrForSelected){for(var i=0,item;item=this.items[i];i++){if(this._valueForItem(item)==value){return i}}}else{return+value}},_indexToValue:function(index){if(this.attrForSelected){var item=this.items[index];if(item){return this._valueForItem(item)}}else{return index}},_valueForItem:function(item){if(!item){return null}if(!this.attrForSelected){var i=this.indexOf(item);return-1===i?null:i}var propValue=item[(0,_natepaasApp.dashToCamelCase)(this.attrForSelected)];return propValue!=void 0?propValue:item.getAttribute(this.attrForSelected)},_applySelection:function(item,isSelected){if(this.selectedClass){this.toggleClass(this.selectedClass,isSelected,item)}if(this.selectedAttribute){this.toggleAttribute(this.selectedAttribute,isSelected,item)}this._selectionChange();this.fire("iron-"+(isSelected?"select":"deselect"),{item:item})},_selectionChange:function(){this._setSelectedItem(this._selection.get())},// observe items change under the given node.
-_observeItems:function(node){return(0,_natepaasApp.dom)(node).observeNodes(function(mutation){this._updateItems();this._updateSelected();// Let other interested parties know about the change so that
+if(this.fallbackSelection&&this.items.length&&this._selection.get()===void 0){this.selected=this.fallbackSelection}},_filterItem:function _filterItem(node){return!this._excludedLocalNames[node.localName]},_valueToItem:function _valueToItem(value){return null==value?null:this.items[this._valueToIndex(value)]},_valueToIndex:function _valueToIndex(value){if(this.attrForSelected){for(var i=0,item;item=this.items[i];i++){if(this._valueForItem(item)==value){return i}}}else{return+value}},_indexToValue:function _indexToValue(index){if(this.attrForSelected){var item=this.items[index];if(item){return this._valueForItem(item)}}else{return index}},_valueForItem:function _valueForItem(item){if(!item){return null}if(!this.attrForSelected){var i=this.indexOf(item);return-1===i?null:i}var propValue=item[(0,_natepaasApp.dashToCamelCase)(this.attrForSelected)];return propValue!=void 0?propValue:item.getAttribute(this.attrForSelected)},_applySelection:function _applySelection(item,isSelected){if(this.selectedClass){this.toggleClass(this.selectedClass,isSelected,item)}if(this.selectedAttribute){this.toggleAttribute(this.selectedAttribute,isSelected,item)}this._selectionChange();this.fire("iron-"+(isSelected?"select":"deselect"),{item:item})},_selectionChange:function _selectionChange(){this._setSelectedItem(this._selection.get())},// observe items change under the given node.
+_observeItems:function _observeItems(node){return(0,_natepaasApp.dom)(node).observeNodes(function(mutation){this._updateItems();this._updateSelected();// Let other interested parties know about the change so that
 // we don't have to recreate mutation observers everywhere.
-this.fire("iron-items-changed",mutation,{bubbles:!1,cancelable:!1})})},_activateHandler:function(e){var t=e.target,items=this.items;while(t&&t!=this){var i=items.indexOf(t);if(0<=i){var value=this._indexToValue(i);this._itemActivate(value,t);return}t=t.parentNode}},_itemActivate:function(value,item){if(!this.fire("iron-activate",{selected:value,item:item},{cancelable:!0}).defaultPrevented){this.select(value)}}};_exports.IronSelectableBehavior=IronSelectableBehavior;var ironSelectable={IronSelectableBehavior:IronSelectableBehavior};_exports.$ironSelectable=ironSelectable;const IronMultiSelectableBehaviorImpl={properties:{/**
+this.fire("iron-items-changed",mutation,{bubbles:!1,cancelable:!1})})},_activateHandler:function _activateHandler(e){var t=e.target,items=this.items;while(t&&t!=this){var i=items.indexOf(t);if(0<=i){var value=this._indexToValue(i);this._itemActivate(value,t);return}t=t.parentNode}},_itemActivate:function _itemActivate(value,item){if(!this.fire("iron-activate",{selected:value,item:item},{cancelable:!0}).defaultPrevented){this.select(value)}}};_exports.IronSelectableBehavior=IronSelectableBehavior;var ironSelectable={IronSelectableBehavior:IronSelectableBehavior};_exports.$ironSelectable=ironSelectable;var IronMultiSelectableBehaviorImpl={properties:{/**
      * If true, multiple selections are allowed.
      */multi:{type:Boolean,value:!1,observer:"multiChanged"},/**
      * Gets or sets the selected elements. This is used instead of `selected`
      * when `multi` is true.
-     */selectedValues:{type:Array,notify:!0,value:function(){return[]}},/**
+     */selectedValues:{type:Array,notify:!0,value:function value(){return[]}},/**
      * Returns an array of currently selected items.
-     */selectedItems:{type:Array,readOnly:!0,notify:!0,value:function(){return[]}}},observers:["_updateSelected(selectedValues.splices)"],/**
+     */selectedItems:{type:Array,readOnly:!0,notify:!0,value:function value(){return[]}}},observers:["_updateSelected(selectedValues.splices)"],/**
    * Selects the given value. If the `multi` property is true, then the selected
    * state of the `value` will be toggled; otherwise the `value` will be
    * selected.
    *
    * @method select
    * @param {string|number} value the value to select.
-   */select:function(value){if(this.multi){this._toggleSelected(value)}else{this.selected=value}},multiChanged:function(multi){this._selection.multi=multi;this._updateSelected()},// UNUSED, FOR API COMPATIBILITY
-get _shouldUpdateSelection(){return null!=this.selected||null!=this.selectedValues&&this.selectedValues.length},_updateAttrForSelected:function(){if(!this.multi){IronSelectableBehavior._updateAttrForSelected.apply(this)}else if(this.selectedItems&&0<this.selectedItems.length){this.selectedValues=this.selectedItems.map(function(selectedItem){return this._indexToValue(this.indexOf(selectedItem))},this).filter(function(unfilteredValue){return null!=unfilteredValue},this)}},_updateSelected:function(){if(this.multi){this._selectMulti(this.selectedValues)}else{this._selectSelected(this.selected)}},_selectMulti:function(values){values=values||[];var selectedItems=(this._valuesToItems(values)||[]).filter(function(item){return null!==item&&item!==void 0});// clear all but the current selected items
+   */select:function select(value){if(this.multi){this._toggleSelected(value)}else{this.selected=value}},multiChanged:function multiChanged(multi){this._selection.multi=multi;this._updateSelected()},// UNUSED, FOR API COMPATIBILITY
+get _shouldUpdateSelection(){return null!=this.selected||null!=this.selectedValues&&this.selectedValues.length},_updateAttrForSelected:function _updateAttrForSelected(){if(!this.multi){IronSelectableBehavior._updateAttrForSelected.apply(this)}else if(this.selectedItems&&0<this.selectedItems.length){this.selectedValues=this.selectedItems.map(function(selectedItem){return this._indexToValue(this.indexOf(selectedItem))},this).filter(function(unfilteredValue){return null!=unfilteredValue},this)}},_updateSelected:function _updateSelected(){if(this.multi){this._selectMulti(this.selectedValues)}else{this._selectSelected(this.selected)}},_selectMulti:function _selectMulti(values){values=values||[];var selectedItems=(this._valuesToItems(values)||[]).filter(function(item){return null!==item&&item!==void 0});// clear all but the current selected items
 this._selection.clear(selectedItems);// select only those not selected yet
 for(var i=0;i<selectedItems.length;i++){this._selection.setItemSelected(selectedItems[i],!0)}// Check for items, since this array is populated only when attached
-if(this.fallbackSelection&&!this._selection.get().length){var fallback=this._valueToItem(this.fallbackSelection);if(fallback){this.select(this.fallbackSelection)}}},_selectionChange:function(){var s=this._selection.get();if(this.multi){this._setSelectedItems(s);this._setSelectedItem(s.length?s[0]:null)}else{if(null!==s&&s!==void 0){this._setSelectedItems([s]);this._setSelectedItem(s)}else{this._setSelectedItems([]);this._setSelectedItem(null)}}},_toggleSelected:function(value){var i=this.selectedValues.indexOf(value),unselected=0>i;if(unselected){this.push("selectedValues",value)}else{this.splice("selectedValues",i,1)}},_valuesToItems:function(values){return null==values?null:values.map(function(value){return this._valueToItem(value)},this)}};/** @polymerBehavior */_exports.IronMultiSelectableBehaviorImpl=IronMultiSelectableBehaviorImpl;const IronMultiSelectableBehavior=[IronSelectableBehavior,IronMultiSelectableBehaviorImpl];_exports.IronMultiSelectableBehavior=IronMultiSelectableBehavior;var ironMultiSelectable={IronMultiSelectableBehaviorImpl:IronMultiSelectableBehaviorImpl,IronMultiSelectableBehavior:IronMultiSelectableBehavior};_exports.$ironMultiSelectable=ironMultiSelectable;const IronMenuBehaviorImpl={properties:{/**
+if(this.fallbackSelection&&!this._selection.get().length){var fallback=this._valueToItem(this.fallbackSelection);if(fallback){this.select(this.fallbackSelection)}}},_selectionChange:function _selectionChange(){var s=this._selection.get();if(this.multi){this._setSelectedItems(s);this._setSelectedItem(s.length?s[0]:null)}else{if(null!==s&&s!==void 0){this._setSelectedItems([s]);this._setSelectedItem(s)}else{this._setSelectedItems([]);this._setSelectedItem(null)}}},_toggleSelected:function _toggleSelected(value){var i=this.selectedValues.indexOf(value),unselected=0>i;if(unselected){this.push("selectedValues",value)}else{this.splice("selectedValues",i,1)}},_valuesToItems:function _valuesToItems(values){return null==values?null:values.map(function(value){return this._valueToItem(value)},this)}};/** @polymerBehavior */_exports.IronMultiSelectableBehaviorImpl=IronMultiSelectableBehaviorImpl;var IronMultiSelectableBehavior=[IronSelectableBehavior,IronMultiSelectableBehaviorImpl];_exports.IronMultiSelectableBehavior=IronMultiSelectableBehavior;var ironMultiSelectable={IronMultiSelectableBehaviorImpl:IronMultiSelectableBehaviorImpl,IronMultiSelectableBehavior:IronMultiSelectableBehavior};_exports.$ironMultiSelectable=ironMultiSelectable;var IronMenuBehaviorImpl={properties:{/**
      * Returns the currently focused item.
      * @type {?Object}
      */focusedItem:{observer:"_focusedItemChanged",readOnly:!0,type:Object},/**
@@ -1697,13 +1557,13 @@ if(this.fallbackSelection&&!this._selection.get().length){var fallback=this._val
    * @private
    */_MODIFIER_KEYS:["Alt","AltGraph","CapsLock","Control","Fn","FnLock","Hyper","Meta","NumLock","OS","ScrollLock","Shift","Super","Symbol","SymbolLock"],/** @private */_SEARCH_RESET_TIMEOUT_MS:1e3,/** @private */_previousTabIndex:0,hostAttributes:{role:"menu"},observers:["_updateMultiselectable(multi)"],listeners:{focus:"_onFocus",keydown:"_onKeydown","iron-items-changed":"_onIronItemsChanged"},/**
    * @type {!Object}
-   */keyBindings:{up:"_onUpKey",down:"_onDownKey",esc:"_onEscKey","shift+tab:keydown":"_onShiftTabDown"},attached:function(){this._resetTabindices()},/**
+   */keyBindings:{up:"_onUpKey",down:"_onDownKey",esc:"_onEscKey","shift+tab:keydown":"_onShiftTabDown"},attached:function attached(){this._resetTabindices()},/**
    * Selects the given value. If the `multi` property is true, then the selected
    * state of the `value` will be toggled; otherwise the `value` will be
    * selected.
    *
    * @param {string|number} value the value to select.
-   */select:function(value){// Cancel automatically focusing a default item if the menu received focus
+   */select:function select(value){// Cancel automatically focusing a default item if the menu received focus
 // through a user action selecting a particular item.
 if(this._defaultFocusAsync){this.cancelAsync(this._defaultFocusAsync);this._defaultFocusAsync=null}var item=this._valueToItem(value);if(item&&item.hasAttribute("disabled"))return;this._setFocusedItem(item);IronMultiSelectableBehaviorImpl.select.apply(this,arguments)},/**
    * Resets all tabindex attributes to the appropriate value based on the
@@ -1711,30 +1571,30 @@ if(this._defaultFocusAsync){this.cancelAsync(this._defaultFocusAsync);this._defa
    * the default selected item, and `-1` (not keyboard focusable) for all
    * other items. Also sets the correct initial values for aria-selected
    * attribute, true for default selected item and false for others.
-   */_resetTabindices:function(){var firstSelectedItem=this.multi?this.selectedItems&&this.selectedItems[0]:this.selectedItem;this.items.forEach(function(item){item.setAttribute("tabindex",item===firstSelectedItem?"0":"-1");item.setAttribute("aria-selected",this._selection.isSelected(item))},this)},/**
+   */_resetTabindices:function _resetTabindices(){var firstSelectedItem=this.multi?this.selectedItems&&this.selectedItems[0]:this.selectedItem;this.items.forEach(function(item){item.setAttribute("tabindex",item===firstSelectedItem?"0":"-1");item.setAttribute("aria-selected",this._selection.isSelected(item))},this)},/**
    * Sets appropriate ARIA based on whether or not the menu is meant to be
    * multi-selectable.
    *
    * @param {boolean} multi True if the menu should be multi-selectable.
-   */_updateMultiselectable:function(multi){if(multi){this.setAttribute("aria-multiselectable","true")}else{this.removeAttribute("aria-multiselectable")}},/**
+   */_updateMultiselectable:function _updateMultiselectable(multi){if(multi){this.setAttribute("aria-multiselectable","true")}else{this.removeAttribute("aria-multiselectable")}},/**
    * Given a KeyboardEvent, this method will focus the appropriate item in the
    * menu (if there is a relevant item, and it is possible to focus it).
    *
    * @param {KeyboardEvent} event A KeyboardEvent.
-   */_focusWithKeyboardEvent:function(event){// Make sure that the key pressed is not a modifier key.
+   */_focusWithKeyboardEvent:function _focusWithKeyboardEvent(event){// Make sure that the key pressed is not a modifier key.
 // getModifierState is not being used, as it is not available in Safari
 // earlier than 10.0.2 (https://trac.webkit.org/changeset/206725/webkit)
-if(-1!==this._MODIFIER_KEYS.indexOf(event.key))return;this.cancelDebouncer("_clearSearchText");var searchText=this._searchText||"",key=event.key&&1==event.key.length?event.key:String.fromCharCode(event.keyCode);searchText+=key.toLocaleLowerCase();for(var searchLength=searchText.length,i=0,item;item=this.items[i];i++){if(item.hasAttribute("disabled")){continue}var attr=this.attrForItemTitle||"textContent",title=(item[attr]||item.getAttribute(attr)||"").trim();if(title.length<searchLength){continue}if(title.slice(0,searchLength).toLocaleLowerCase()==searchText){this._setFocusedItem(item);break}}this._searchText=searchText;this.debounce("_clearSearchText",this._clearSearchText,this._SEARCH_RESET_TIMEOUT_MS)},_clearSearchText:function(){this._searchText=""},/**
+if(-1!==this._MODIFIER_KEYS.indexOf(event.key))return;this.cancelDebouncer("_clearSearchText");var searchText=this._searchText||"",key=event.key&&1==event.key.length?event.key:String.fromCharCode(event.keyCode);searchText+=key.toLocaleLowerCase();for(var searchLength=searchText.length,i=0,item;item=this.items[i];i++){if(item.hasAttribute("disabled")){continue}var attr=this.attrForItemTitle||"textContent",title=(item[attr]||item.getAttribute(attr)||"").trim();if(title.length<searchLength){continue}if(title.slice(0,searchLength).toLocaleLowerCase()==searchText){this._setFocusedItem(item);break}}this._searchText=searchText;this.debounce("_clearSearchText",this._clearSearchText,this._SEARCH_RESET_TIMEOUT_MS)},_clearSearchText:function _clearSearchText(){this._searchText=""},/**
    * Focuses the previous item (relative to the currently focused item) in the
    * menu, disabled items will be skipped.
    * Loop until length + 1 to handle case of single item in menu.
-   */_focusPrevious:function(){for(var length=this.items.length,curFocusIndex=+this.indexOf(this.focusedItem),i=1,item;i<length+1;i++){item=this.items[(curFocusIndex-i+length)%length];if(!item.hasAttribute("disabled")){var owner=(0,_natepaasApp.dom)(item).getOwnerRoot()||document;this._setFocusedItem(item);// Focus might not have worked, if the element was hidden or not
+   */_focusPrevious:function _focusPrevious(){for(var length=this.items.length,curFocusIndex=+this.indexOf(this.focusedItem),i=1,item;i<length+1;i++){item=this.items[(curFocusIndex-i+length)%length];if(!item.hasAttribute("disabled")){var owner=(0,_natepaasApp.dom)(item).getOwnerRoot()||document;this._setFocusedItem(item);// Focus might not have worked, if the element was hidden or not
 // focusable. In that case, try again.
 if((0,_natepaasApp.dom)(owner).activeElement==item){return}}}},/**
    * Focuses the next item (relative to the currently focused item) in the
    * menu, disabled items will be skipped.
    * Loop until length + 1 to handle case of single item in menu.
-   */_focusNext:function(){for(var length=this.items.length,curFocusIndex=+this.indexOf(this.focusedItem),i=1,item;i<length+1;i++){item=this.items[(curFocusIndex+i)%length];if(!item.hasAttribute("disabled")){var owner=(0,_natepaasApp.dom)(item).getOwnerRoot()||document;this._setFocusedItem(item);// Focus might not have worked, if the element was hidden or not
+   */_focusNext:function _focusNext(){for(var length=this.items.length,curFocusIndex=+this.indexOf(this.focusedItem),i=1,item;i<length+1;i++){item=this.items[(curFocusIndex+i)%length];if(!item.hasAttribute("disabled")){var owner=(0,_natepaasApp.dom)(item).getOwnerRoot()||document;this._setFocusedItem(item);// Focus might not have worked, if the element was hidden or not
 // focusable. In that case, try again.
 if((0,_natepaasApp.dom)(owner).activeElement==item){return}}}},/**
    * Mutates items in the menu based on provided selection details, so that
@@ -1743,29 +1603,29 @@ if((0,_natepaasApp.dom)(owner).activeElement==item){return}}}},/**
    * @param {Element} item An item in the menu.
    * @param {boolean} isSelected True if the item should be shown in a
    * selected state, otherwise false.
-   */_applySelection:function(item,isSelected){if(isSelected){item.setAttribute("aria-selected","true")}else{item.setAttribute("aria-selected","false")}IronSelectableBehavior._applySelection.apply(this,arguments)},/**
+   */_applySelection:function _applySelection(item,isSelected){if(isSelected){item.setAttribute("aria-selected","true")}else{item.setAttribute("aria-selected","false")}IronSelectableBehavior._applySelection.apply(this,arguments)},/**
    * Discretely updates tabindex values among menu items as the focused item
    * changes.
    *
    * @param {Element} focusedItem The element that is currently focused.
    * @param {?Element} old The last element that was considered focused, if
    * applicable.
-   */_focusedItemChanged:function(focusedItem,old){old&&old.setAttribute("tabindex","-1");if(focusedItem&&!focusedItem.hasAttribute("disabled")&&!this.disabled){focusedItem.setAttribute("tabindex","0");focusedItem.focus()}},/**
+   */_focusedItemChanged:function _focusedItemChanged(focusedItem,old){old&&old.setAttribute("tabindex","-1");if(focusedItem&&!focusedItem.hasAttribute("disabled")&&!this.disabled){focusedItem.setAttribute("tabindex","0");focusedItem.focus()}},/**
    * A handler that responds to mutation changes related to the list of items
    * in the menu.
    *
    * @param {CustomEvent} event An event containing mutation records as its
    * detail.
-   */_onIronItemsChanged:function(event){if(event.detail.addedNodes.length){this._resetTabindices()}},/**
+   */_onIronItemsChanged:function _onIronItemsChanged(event){if(event.detail.addedNodes.length){this._resetTabindices()}},/**
    * Handler that is called when a shift+tab keypress is detected by the menu.
    *
    * @param {CustomEvent} event A key combination event.
-   */_onShiftTabDown:function(event){var oldTabIndex=this.getAttribute("tabindex");IronMenuBehaviorImpl._shiftTabPressed=!0;this._setFocusedItem(null);this.setAttribute("tabindex","-1");this.async(function(){this.setAttribute("tabindex",oldTabIndex);IronMenuBehaviorImpl._shiftTabPressed=!1;// NOTE(cdata): polymer/polymer#1305
+   */_onShiftTabDown:function _onShiftTabDown(event){var oldTabIndex=this.getAttribute("tabindex");IronMenuBehaviorImpl._shiftTabPressed=!0;this._setFocusedItem(null);this.setAttribute("tabindex","-1");this.async(function(){this.setAttribute("tabindex",oldTabIndex);IronMenuBehaviorImpl._shiftTabPressed=!1;// NOTE(cdata): polymer/polymer#1305
 },1)},/**
    * Handler that is called when the menu receives focus.
    *
    * @param {FocusEvent} event A focus event.
-   */_onFocus:function(event){if(IronMenuBehaviorImpl._shiftTabPressed){// do not focus the menu itself
+   */_onFocus:function _onFocus(event){if(IronMenuBehaviorImpl._shiftTabPressed){// do not focus the menu itself
 return}// Do not focus the selected tab if the deepest target is part of the
 // menu element's local DOM and is focusable.
 var rootTarget=/** @type {?HTMLElement} */(0,_natepaasApp.dom)(event).rootTarget;if(rootTarget!==this&&"undefined"!==typeof rootTarget.tabIndex&&!this.isLightDescendant(rootTarget)){return}// clear the cached focus item
@@ -1776,52 +1636,52 @@ this._focusNext()}})},/**
    * Handler that is called when the up key is pressed.
    *
    * @param {CustomEvent} event A key combination event.
-   */_onUpKey:function(event){// up and down arrows moves the focus
+   */_onUpKey:function _onUpKey(event){// up and down arrows moves the focus
 this._focusPrevious();event.detail.keyboardEvent.preventDefault()},/**
    * Handler that is called when the down key is pressed.
    *
    * @param {CustomEvent} event A key combination event.
-   */_onDownKey:function(event){this._focusNext();event.detail.keyboardEvent.preventDefault()},/**
+   */_onDownKey:function _onDownKey(event){this._focusNext();event.detail.keyboardEvent.preventDefault()},/**
    * Handler that is called when the esc key is pressed.
    *
    * @param {CustomEvent} event A key combination event.
-   */_onEscKey:function(event){var focusedItem=this.focusedItem;if(focusedItem){focusedItem.blur()}},/**
+   */_onEscKey:function _onEscKey(event){var focusedItem=this.focusedItem;if(focusedItem){focusedItem.blur()}},/**
    * Handler that is called when a keydown event is detected.
    *
    * @param {KeyboardEvent} event A keyboard event.
-   */_onKeydown:function(event){if(!this.keyboardEventMatchesKeys(event,"up down esc")){// all other keys focus the menu item starting with that character
+   */_onKeydown:function _onKeydown(event){if(!this.keyboardEventMatchesKeys(event,"up down esc")){// all other keys focus the menu item starting with that character
 this._focusWithKeyboardEvent(event)}event.stopPropagation()},// override _activateHandler
-_activateHandler:function(event){IronSelectableBehavior._activateHandler.call(this,event);event.stopPropagation()},/**
+_activateHandler:function _activateHandler(event){IronSelectableBehavior._activateHandler.call(this,event);event.stopPropagation()},/**
    * Updates this element's tab index when it's enabled/disabled.
    * @param {boolean} disabled
-   */_disabledChanged:function(disabled){if(disabled){this._previousTabIndex=this.hasAttribute("tabindex")?this.tabIndex:0;this.removeAttribute("tabindex");// No tabindex means not tab-able or select-able.
-}else if(!this.hasAttribute("tabindex")){this.setAttribute("tabindex",this._previousTabIndex)}}};_exports.IronMenuBehaviorImpl=IronMenuBehaviorImpl;IronMenuBehaviorImpl._shiftTabPressed=!1;/** @polymerBehavior */const IronMenuBehavior=[IronMultiSelectableBehavior,IronA11yKeysBehavior,IronMenuBehaviorImpl];_exports.IronMenuBehavior=IronMenuBehavior;var ironMenuBehavior={IronMenuBehaviorImpl:IronMenuBehaviorImpl,IronMenuBehavior:IronMenuBehavior};_exports.$ironMenuBehavior=ironMenuBehavior;const NeonAnimationBehavior={properties:{/**
+   */_disabledChanged:function _disabledChanged(disabled){if(disabled){this._previousTabIndex=this.hasAttribute("tabindex")?this.tabIndex:0;this.removeAttribute("tabindex");// No tabindex means not tab-able or select-able.
+}else if(!this.hasAttribute("tabindex")){this.setAttribute("tabindex",this._previousTabIndex)}}};_exports.IronMenuBehaviorImpl=IronMenuBehaviorImpl;IronMenuBehaviorImpl._shiftTabPressed=!1;/** @polymerBehavior */var IronMenuBehavior=[IronMultiSelectableBehavior,IronA11yKeysBehavior,IronMenuBehaviorImpl];_exports.IronMenuBehavior=IronMenuBehavior;var ironMenuBehavior={IronMenuBehaviorImpl:IronMenuBehaviorImpl,IronMenuBehavior:IronMenuBehavior};_exports.$ironMenuBehavior=ironMenuBehavior;var NeonAnimationBehavior={properties:{/**
      * Defines the animation timing.
-     */animationTiming:{type:Object,value:function(){return{duration:500,easing:"cubic-bezier(0.4, 0, 0.2, 1)",fill:"both"}}}},/**
+     */animationTiming:{type:Object,value:function value(){return{duration:500,easing:"cubic-bezier(0.4, 0, 0.2, 1)",fill:"both"}}}},/**
    * Can be used to determine that elements implement this behavior.
    */isNeonAnimation:!0,/**
    * Do any animation configuration here.
    */ // configure: function(config) {
 // },
-created:function(){if(!document.body.animate){console.warn("No web animations detected. This element will not"+" function without a web animations polyfill.")}},/**
+created:function created(){if(!document.body.animate){console.warn("No web animations detected. This element will not"+" function without a web animations polyfill.")}},/**
    * Returns the animation timing by mixing in properties from `config` to the
    * defaults defined by the animation.
-   */timingFromConfig:function(config){if(config.timing){for(var property in config.timing){this.animationTiming[property]=config.timing[property]}}return this.animationTiming},/**
+   */timingFromConfig:function timingFromConfig(config){if(config.timing){for(var property in config.timing){this.animationTiming[property]=config.timing[property]}}return this.animationTiming},/**
    * Sets `transform` and `transformOrigin` properties along with the prefixed
    * versions.
-   */setPrefixedProperty:function(node,property,value){for(var map={transform:["webkitTransform"],transformOrigin:["mozTransformOrigin","webkitTransformOrigin"]},prefixes=map[property],prefix,index=0;prefix=prefixes[index];index++){node.style[prefix]=value}node.style[property]=value},/**
+   */setPrefixedProperty:function setPrefixedProperty(node,property,value){for(var map={transform:["webkitTransform"],transformOrigin:["mozTransformOrigin","webkitTransformOrigin"]},prefixes=map[property],prefix,index=0;prefix=prefixes[index];index++){node.style[prefix]=value}node.style[property]=value},/**
    * Called when the animation finishes.
-   */complete:function(config){}};_exports.NeonAnimationBehavior=NeonAnimationBehavior;var neonAnimationBehavior={NeonAnimationBehavior:NeonAnimationBehavior};_exports.$neonAnimationBehavior=neonAnimationBehavior;(0,_natepaasApp.Polymer)({is:"fade-in-animation",behaviors:[NeonAnimationBehavior],configure:function(config){var node=config.node;this._effect=new KeyframeEffect(node,[{opacity:"0"},{opacity:"1"}],this.timingFromConfig(config));return this._effect}});(0,_natepaasApp.Polymer)({is:"fade-out-animation",behaviors:[NeonAnimationBehavior],configure:function(config){var node=config.node;this._effect=new KeyframeEffect(node,[{opacity:"1"},{opacity:"0"}],this.timingFromConfig(config));return this._effect}});var Utility={distance:function(x1,y1,x2,y2){var xDelta=x1-x2,yDelta=y1-y2;return Math.sqrt(xDelta*xDelta+yDelta*yDelta)},now:window.performance&&window.performance.now?window.performance.now.bind(window.performance):Date.now};/**
+   */complete:function complete(config){}};_exports.NeonAnimationBehavior=NeonAnimationBehavior;var neonAnimationBehavior={NeonAnimationBehavior:NeonAnimationBehavior};_exports.$neonAnimationBehavior=neonAnimationBehavior;(0,_natepaasApp.Polymer)({is:"fade-in-animation",behaviors:[NeonAnimationBehavior],configure:function configure(config){var node=config.node;this._effect=new KeyframeEffect(node,[{opacity:"0"},{opacity:"1"}],this.timingFromConfig(config));return this._effect}});(0,_natepaasApp.Polymer)({is:"fade-out-animation",behaviors:[NeonAnimationBehavior],configure:function configure(config){var node=config.node;this._effect=new KeyframeEffect(node,[{opacity:"1"},{opacity:"0"}],this.timingFromConfig(config));return this._effect}});var Utility={distance:function distance(x1,y1,x2,y2){var xDelta=x1-x2,yDelta=y1-y2;return Math.sqrt(xDelta*xDelta+yDelta*yDelta)},now:window.performance&&window.performance.now?window.performance.now.bind(window.performance):Date.now};/**
     * @param {HTMLElement} element
     * @constructor
-    */function ElementMetrics(element){this.element=element;this.width=this.boundingRect.width;this.height=this.boundingRect.height;this.size=Math.max(this.width,this.height)}ElementMetrics.prototype={get boundingRect(){return this.element.getBoundingClientRect()},furthestCornerDistanceFrom:function(x,y){var topLeft=Utility.distance(x,y,0,0),topRight=Utility.distance(x,y,this.width,0),bottomLeft=Utility.distance(x,y,0,this.height),bottomRight=Utility.distance(x,y,this.width,this.height);return Math.max(topLeft,topRight,bottomLeft,bottomRight)}};/**
+    */function ElementMetrics(element){this.element=element;this.width=this.boundingRect.width;this.height=this.boundingRect.height;this.size=Math.max(this.width,this.height)}ElementMetrics.prototype={get boundingRect(){return this.element.getBoundingClientRect()},furthestCornerDistanceFrom:function furthestCornerDistanceFrom(x,y){var topLeft=Utility.distance(x,y,0,0),topRight=Utility.distance(x,y,this.width,0),bottomLeft=Utility.distance(x,y,0,this.height),bottomRight=Utility.distance(x,y,this.width,this.height);return Math.max(topLeft,topRight,bottomLeft,bottomRight)}};/**
     * @param {HTMLElement} element
     * @constructor
     */function Ripple(element){this.element=element;this.color=window.getComputedStyle(element).color;this.wave=document.createElement("div");this.waveContainer=document.createElement("div");this.wave.style.backgroundColor=this.color;this.wave.classList.add("wave");this.waveContainer.classList.add("wave-container");(0,_natepaasApp.dom)(this.waveContainer).appendChild(this.wave);this.resetInteractionState()}Ripple.MAX_RADIUS=300;Ripple.prototype={get recenters(){return this.element.recenters},get center(){return this.element.center},get mouseDownElapsed(){var elapsed;if(!this.mouseDownStart){return 0}elapsed=Utility.now()-this.mouseDownStart;if(this.mouseUpStart){elapsed-=this.mouseUpElapsed}return elapsed},get mouseUpElapsed(){return this.mouseUpStart?Utility.now()-this.mouseUpStart:0},get mouseDownElapsedSeconds(){return this.mouseDownElapsed/1e3},get mouseUpElapsedSeconds(){return this.mouseUpElapsed/1e3},get mouseInteractionSeconds(){return this.mouseDownElapsedSeconds+this.mouseUpElapsedSeconds},get initialOpacity(){return this.element.initialOpacity},get opacityDecayVelocity(){return this.element.opacityDecayVelocity},get radius(){var width2=this.containerMetrics.width*this.containerMetrics.width,height2=this.containerMetrics.height*this.containerMetrics.height,waveRadius=1.1*Math.min(Math.sqrt(width2+height2),Ripple.MAX_RADIUS)+5,duration=1.1-.2*(waveRadius/Ripple.MAX_RADIUS),timeNow=this.mouseInteractionSeconds/duration,size=waveRadius*(1-Math.pow(80,-timeNow));return Math.abs(size)},get opacity(){if(!this.mouseUpStart){return this.initialOpacity}return Math.max(0,this.initialOpacity-this.mouseUpElapsedSeconds*this.opacityDecayVelocity)},get outerOpacity(){// Linear increase in background opacity, capped at the opacity
 // of the wavefront (waveOpacity).
-var outerOpacity=.3*this.mouseUpElapsedSeconds,waveOpacity=this.opacity;return Math.max(0,Math.min(outerOpacity,waveOpacity))},get isOpacityFullyDecayed(){return .01>this.opacity&&this.radius>=Math.min(this.maxRadius,Ripple.MAX_RADIUS)},get isRestingAtMaxRadius(){return this.opacity>=this.initialOpacity&&this.radius>=Math.min(this.maxRadius,Ripple.MAX_RADIUS)},get isAnimationComplete(){return this.mouseUpStart?this.isOpacityFullyDecayed:this.isRestingAtMaxRadius},get translationFraction(){return Math.min(1,2*(this.radius/this.containerMetrics.size)/Math.sqrt(2))},get xNow(){if(this.xEnd){return this.xStart+this.translationFraction*(this.xEnd-this.xStart)}return this.xStart},get yNow(){if(this.yEnd){return this.yStart+this.translationFraction*(this.yEnd-this.yStart)}return this.yStart},get isMouseDown(){return this.mouseDownStart&&!this.mouseUpStart},resetInteractionState:function(){this.maxRadius=0;this.mouseDownStart=0;this.mouseUpStart=0;this.xStart=0;this.yStart=0;this.xEnd=0;this.yEnd=0;this.slideDistance=0;this.containerMetrics=new ElementMetrics(this.element)},draw:function(){var scale,dx,dy;this.wave.style.opacity=this.opacity;scale=this.radius/(this.containerMetrics.size/2);dx=this.xNow-this.containerMetrics.width/2;dy=this.yNow-this.containerMetrics.height/2;// 2d transform for safari because of border-radius and overflow:hidden
+var outerOpacity=.3*this.mouseUpElapsedSeconds,waveOpacity=this.opacity;return Math.max(0,Math.min(outerOpacity,waveOpacity))},get isOpacityFullyDecayed(){return .01>this.opacity&&this.radius>=Math.min(this.maxRadius,Ripple.MAX_RADIUS)},get isRestingAtMaxRadius(){return this.opacity>=this.initialOpacity&&this.radius>=Math.min(this.maxRadius,Ripple.MAX_RADIUS)},get isAnimationComplete(){return this.mouseUpStart?this.isOpacityFullyDecayed:this.isRestingAtMaxRadius},get translationFraction(){return Math.min(1,2*(this.radius/this.containerMetrics.size)/Math.sqrt(2))},get xNow(){if(this.xEnd){return this.xStart+this.translationFraction*(this.xEnd-this.xStart)}return this.xStart},get yNow(){if(this.yEnd){return this.yStart+this.translationFraction*(this.yEnd-this.yStart)}return this.yStart},get isMouseDown(){return this.mouseDownStart&&!this.mouseUpStart},resetInteractionState:function resetInteractionState(){this.maxRadius=0;this.mouseDownStart=0;this.mouseUpStart=0;this.xStart=0;this.yStart=0;this.xEnd=0;this.yEnd=0;this.slideDistance=0;this.containerMetrics=new ElementMetrics(this.element)},draw:function draw(){var scale,dx,dy;this.wave.style.opacity=this.opacity;scale=this.radius/(this.containerMetrics.size/2);dx=this.xNow-this.containerMetrics.width/2;dy=this.yNow-this.containerMetrics.height/2;// 2d transform for safari because of border-radius and overflow:hidden
 // clipping bug. https://bugs.webkit.org/show_bug.cgi?id=98538
-this.waveContainer.style.webkitTransform="translate("+dx+"px, "+dy+"px)";this.waveContainer.style.transform="translate3d("+dx+"px, "+dy+"px, 0)";this.wave.style.webkitTransform="scale("+scale+","+scale+")";this.wave.style.transform="scale3d("+scale+","+scale+",1)"},/** @param {Event=} event */downAction:function(event){var xCenter=this.containerMetrics.width/2,yCenter=this.containerMetrics.height/2;this.resetInteractionState();this.mouseDownStart=Utility.now();if(this.center){this.xStart=xCenter;this.yStart=yCenter;this.slideDistance=Utility.distance(this.xStart,this.yStart,this.xEnd,this.yEnd)}else{this.xStart=event?event.detail.x-this.containerMetrics.boundingRect.left:this.containerMetrics.width/2;this.yStart=event?event.detail.y-this.containerMetrics.boundingRect.top:this.containerMetrics.height/2}if(this.recenters){this.xEnd=xCenter;this.yEnd=yCenter;this.slideDistance=Utility.distance(this.xStart,this.yStart,this.xEnd,this.yEnd)}this.maxRadius=this.containerMetrics.furthestCornerDistanceFrom(this.xStart,this.yStart);this.waveContainer.style.top=(this.containerMetrics.height-this.containerMetrics.size)/2+"px";this.waveContainer.style.left=(this.containerMetrics.width-this.containerMetrics.size)/2+"px";this.waveContainer.style.width=this.containerMetrics.size+"px";this.waveContainer.style.height=this.containerMetrics.size+"px"},/** @param {Event=} event */upAction:function(event){if(!this.isMouseDown){return}this.mouseUpStart=Utility.now()},remove:function(){(0,_natepaasApp.dom)(this.waveContainer.parentNode).removeChild(this.waveContainer)}};/**
+this.waveContainer.style.webkitTransform="translate("+dx+"px, "+dy+"px)";this.waveContainer.style.transform="translate3d("+dx+"px, "+dy+"px, 0)";this.wave.style.webkitTransform="scale("+scale+","+scale+")";this.wave.style.transform="scale3d("+scale+","+scale+",1)"},/** @param {Event=} event */downAction:function downAction(event){var xCenter=this.containerMetrics.width/2,yCenter=this.containerMetrics.height/2;this.resetInteractionState();this.mouseDownStart=Utility.now();if(this.center){this.xStart=xCenter;this.yStart=yCenter;this.slideDistance=Utility.distance(this.xStart,this.yStart,this.xEnd,this.yEnd)}else{this.xStart=event?event.detail.x-this.containerMetrics.boundingRect.left:this.containerMetrics.width/2;this.yStart=event?event.detail.y-this.containerMetrics.boundingRect.top:this.containerMetrics.height/2}if(this.recenters){this.xEnd=xCenter;this.yEnd=yCenter;this.slideDistance=Utility.distance(this.xStart,this.yStart,this.xEnd,this.yEnd)}this.maxRadius=this.containerMetrics.furthestCornerDistanceFrom(this.xStart,this.yStart);this.waveContainer.style.top=(this.containerMetrics.height-this.containerMetrics.size)/2+"px";this.waveContainer.style.left=(this.containerMetrics.width-this.containerMetrics.size)/2+"px";this.waveContainer.style.width=this.containerMetrics.size+"px";this.waveContainer.style.height=this.containerMetrics.size+"px"},/** @param {Event=} event */upAction:function upAction(event){if(!this.isMouseDown){return}this.mouseUpStart=Utility.now()},remove:function remove(){(0,_natepaasApp.dom)(this.waveContainer.parentNode).removeChild(this.waveContainer)}};/**
    Material design: [Surface
    reaction](https://www.google.com/design/spec/animation/responsive-interaction.html#responsive-interaction-surface-reaction)
    
@@ -1884,77 +1744,7 @@ this.waveContainer.style.webkitTransform="translate("+dx+"px, "+dy+"px)";this.wa
    @element paper-ripple
    @hero hero.svg
    @demo demo/index.html
-   */(0,_natepaasApp.Polymer)({_template:_natepaasApp.html$1`
-    <style>
-      :host {
-        display: block;
-        position: absolute;
-        border-radius: inherit;
-        overflow: hidden;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-
-        /* See PolymerElements/paper-behaviors/issues/34. On non-Chrome browsers,
-         * creating a node (with a position:absolute) in the middle of an event
-         * handler "interrupts" that event handler (which happens when the
-         * ripple is created on demand) */
-        pointer-events: none;
-      }
-
-      :host([animating]) {
-        /* This resolves a rendering issue in Chrome (as of 40) where the
-           ripple is not properly clipped by its parent (which may have
-           rounded corners). See: http://jsbin.com/temexa/4
-
-           Note: We only apply this style conditionally. Otherwise, the browser
-           will create a new compositing layer for every ripple element on the
-           page, and that would be bad. */
-        -webkit-transform: translate(0, 0);
-        transform: translate3d(0, 0, 0);
-      }
-
-      #background,
-      #waves,
-      .wave-container,
-      .wave {
-        pointer-events: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      #background,
-      .wave {
-        opacity: 0;
-      }
-
-      #waves,
-      .wave {
-        overflow: hidden;
-      }
-
-      .wave-container,
-      .wave {
-        border-radius: 50%;
-      }
-
-      :host(.circle) #background,
-      :host(.circle) #waves {
-        border-radius: 50%;
-      }
-
-      :host(.circle) .wave-container {
-        overflow: hidden;
-      }
-    </style>
-
-    <div id="background"></div>
-    <div id="waves"></div>
-`,is:"paper-ripple",behaviors:[IronA11yKeysBehavior],properties:{/**
+   */(0,_natepaasApp.Polymer)({_template:(0,_natepaasApp.html$1)(_templateObject7_2937b1a0072d11eaac4ad73c7775be10()),is:"paper-ripple",behaviors:[IronA11yKeysBehavior],properties:{/**
      * The initial opacity set on the wave.
      *
      * @attribute initialOpacity
@@ -1985,7 +1775,7 @@ this.waveContainer.style.webkitTransform="translate("+dx+"px, "+dy+"px)";this.wa
      * @attribute ripples
      * @type Array
      * @default []
-     */ripples:{type:Array,value:function(){return[]}},/**
+     */ripples:{type:Array,value:function value(){return[]}},/**
      * True when there are visible ripples animating within the
      * element.
      */animating:{type:Boolean,readOnly:!0,reflectToAttribute:!0,value:!1},/**
@@ -1996,48 +1786,48 @@ this.waveContainer.style.webkitTransform="translate("+dx+"px, "+dy+"px)";this.wa
      * via pointer interaction.
      * Calling ripple's imperative api like `simulatedRipple` will
      * still generate the ripple effect.
-     */noink:{type:Boolean,value:!1},_animating:{type:Boolean},_boundAnimate:{type:Function,value:function(){return this.animate.bind(this)}}},get target(){return this.keyEventTarget},/**
+     */noink:{type:Boolean,value:!1},_animating:{type:Boolean},_boundAnimate:{type:Function,value:function value(){return this.animate.bind(this)}}},get target(){return this.keyEventTarget},/**
    * @type {!Object}
-   */keyBindings:{"enter:keydown":"_onEnterKeydown","space:keydown":"_onSpaceKeydown","space:keyup":"_onSpaceKeyup"},attached:function(){// Set up a11yKeysBehavior to listen to key events on the target,
+   */keyBindings:{"enter:keydown":"_onEnterKeydown","space:keydown":"_onSpaceKeydown","space:keyup":"_onSpaceKeyup"},attached:function attached(){// Set up a11yKeysBehavior to listen to key events on the target,
 // so that space and enter activate the ripple even if the target doesn't
 // handle key events. The key handlers deal with `noink` themselves.
 if(11==this.parentNode.nodeType){// DOCUMENT_FRAGMENT_NODE
-this.keyEventTarget=(0,_natepaasApp.dom)(this).getOwnerRoot().host}else{this.keyEventTarget=this.parentNode}var keyEventTarget=/** @type {!EventTarget} */this.keyEventTarget;this.listen(keyEventTarget,"up","uiUpAction");this.listen(keyEventTarget,"down","uiDownAction")},detached:function(){this.unlisten(this.keyEventTarget,"up","uiUpAction");this.unlisten(this.keyEventTarget,"down","uiDownAction");this.keyEventTarget=null},get shouldKeepAnimating(){for(var index=0;index<this.ripples.length;++index){if(!this.ripples[index].isAnimationComplete){return!0}}return!1},simulatedRipple:function(){this.downAction(null);// Please see polymer/polymer#1305
+this.keyEventTarget=(0,_natepaasApp.dom)(this).getOwnerRoot().host}else{this.keyEventTarget=this.parentNode}var keyEventTarget=/** @type {!EventTarget} */this.keyEventTarget;this.listen(keyEventTarget,"up","uiUpAction");this.listen(keyEventTarget,"down","uiDownAction")},detached:function detached(){this.unlisten(this.keyEventTarget,"up","uiUpAction");this.unlisten(this.keyEventTarget,"down","uiDownAction");this.keyEventTarget=null},get shouldKeepAnimating(){for(var index=0;index<this.ripples.length;++index){if(!this.ripples[index].isAnimationComplete){return!0}}return!1},simulatedRipple:function simulatedRipple(){this.downAction(null);// Please see polymer/polymer#1305
 this.async(function(){this.upAction()},1)},/**
    * Provokes a ripple down effect via a UI event,
    * respecting the `noink` property.
    * @param {Event=} event
-   */uiDownAction:function(event){if(!this.noink){this.downAction(event)}},/**
+   */uiDownAction:function uiDownAction(event){if(!this.noink){this.downAction(event)}},/**
    * Provokes a ripple down effect via a UI event,
    * *not* respecting the `noink` property.
    * @param {Event=} event
-   */downAction:function(event){if(this.holdDown&&0<this.ripples.length){return}var ripple=this.addRipple();ripple.downAction(event);if(!this._animating){this._animating=!0;this.animate()}},/**
+   */downAction:function downAction(event){if(this.holdDown&&0<this.ripples.length){return}var ripple=this.addRipple();ripple.downAction(event);if(!this._animating){this._animating=!0;this.animate()}},/**
    * Provokes a ripple up effect via a UI event,
    * respecting the `noink` property.
    * @param {Event=} event
-   */uiUpAction:function(event){if(!this.noink){this.upAction(event)}},/**
+   */uiUpAction:function uiUpAction(event){if(!this.noink){this.upAction(event)}},/**
    * Provokes a ripple up effect via a UI event,
    * *not* respecting the `noink` property.
    * @param {Event=} event
-   */upAction:function(event){if(this.holdDown){return}this.ripples.forEach(function(ripple){ripple.upAction(event)});this._animating=!0;this.animate()},onAnimationComplete:function(){this._animating=!1;this.$.background.style.backgroundColor=null;this.fire("transitionend")},addRipple:function(){var ripple=new Ripple(this);(0,_natepaasApp.dom)(this.$.waves).appendChild(ripple.waveContainer);this.$.background.style.backgroundColor=ripple.color;this.ripples.push(ripple);this._setAnimating(!0);return ripple},removeRipple:function(ripple){var rippleIndex=this.ripples.indexOf(ripple);if(0>rippleIndex){return}this.ripples.splice(rippleIndex,1);ripple.remove();if(!this.ripples.length){this._setAnimating(!1)}},/**
+   */upAction:function upAction(event){if(this.holdDown){return}this.ripples.forEach(function(ripple){ripple.upAction(event)});this._animating=!0;this.animate()},onAnimationComplete:function onAnimationComplete(){this._animating=!1;this.$.background.style.backgroundColor=null;this.fire("transitionend")},addRipple:function addRipple(){var ripple=new Ripple(this);(0,_natepaasApp.dom)(this.$.waves).appendChild(ripple.waveContainer);this.$.background.style.backgroundColor=ripple.color;this.ripples.push(ripple);this._setAnimating(!0);return ripple},removeRipple:function removeRipple(ripple){var rippleIndex=this.ripples.indexOf(ripple);if(0>rippleIndex){return}this.ripples.splice(rippleIndex,1);ripple.remove();if(!this.ripples.length){this._setAnimating(!1)}},/**
    * Deprecated. Please use animateRipple() instead.
    *
    * This method name conflicts with Element#animate().
    * https://developer.mozilla.org/en-US/docs/Web/API/Element/animate.
    *
    * @suppress {checkTypes}
-   */animate:function(){if(!this._animating){return}var index,ripple;for(index=0;index<this.ripples.length;++index){ripple=this.ripples[index];ripple.draw();this.$.background.style.opacity=ripple.outerOpacity;if(ripple.isOpacityFullyDecayed&&!ripple.isRestingAtMaxRadius){this.removeRipple(ripple)}}if(!this.shouldKeepAnimating&&0===this.ripples.length){this.onAnimationComplete()}else{window.requestAnimationFrame(this._boundAnimate)}},/**
+   */animate:function animate(){if(!this._animating){return}var index,ripple;for(index=0;index<this.ripples.length;++index){ripple=this.ripples[index];ripple.draw();this.$.background.style.opacity=ripple.outerOpacity;if(ripple.isOpacityFullyDecayed&&!ripple.isRestingAtMaxRadius){this.removeRipple(ripple)}}if(!this.shouldKeepAnimating&&0===this.ripples.length){this.onAnimationComplete()}else{window.requestAnimationFrame(this._boundAnimate)}},/**
    * An alias for animate() whose name does not conflict with the platform
    * Element.animate() method.
-   */animateRipple:function(){return this.animate()},_onEnterKeydown:function(){this.uiDownAction();this.async(this.uiUpAction,1)},_onSpaceKeydown:function(){this.uiDownAction()},_onSpaceKeyup:function(){this.uiUpAction()},// note: holdDown does not respect noink since it can be a focus based
+   */animateRipple:function animateRipple(){return this.animate()},_onEnterKeydown:function _onEnterKeydown(){this.uiDownAction();this.async(this.uiUpAction,1)},_onSpaceKeydown:function _onSpaceKeydown(){this.uiDownAction()},_onSpaceKeyup:function _onSpaceKeyup(){this.uiUpAction()},// note: holdDown does not respect noink since it can be a focus based
 // effect.
-_holdDownChanged:function(newVal,oldVal){if(oldVal===void 0){return}if(newVal){this.downAction()}else{this.upAction()}}/**
+_holdDownChanged:function _holdDownChanged(newVal,oldVal){if(oldVal===void 0){return}if(newVal){this.downAction()}else{this.upAction()}}/**
     Fired when the animation finishes.
     This is useful if you want to wait until
     the ripple animation finishes to perform some action.
      @event transitionend
     @param {{node: Object}} detail Contains the animated node.
-    */});const PaperRippleBehavior={properties:{/**
+    */});var PaperRippleBehavior={properties:{/**
      * If true, the element will not produce a ripple effect when interacted
      * with via the pointer.
      */noink:{type:Boolean,observer:"_noinkChanged"},/**
@@ -2045,15 +1835,15 @@ _holdDownChanged:function(newVal,oldVal){if(oldVal===void 0){return}if(newVal){t
      */_rippleContainer:{type:Object}},/**
    * Ensures a `<paper-ripple>` element is available when the element is
    * focused.
-   */_buttonStateChanged:function(){if(this.focused){this.ensureRipple()}},/**
+   */_buttonStateChanged:function _buttonStateChanged(){if(this.focused){this.ensureRipple()}},/**
    * In addition to the functionality provided in `IronButtonState`, ensures
    * a ripple effect is created when the element is in a `pressed` state.
-   */_downHandler:function(event){IronButtonStateImpl._downHandler.call(this,event);if(this.pressed){this.ensureRipple(event)}},/**
+   */_downHandler:function _downHandler(event){IronButtonStateImpl._downHandler.call(this,event);if(this.pressed){this.ensureRipple(event)}},/**
    * Ensures this element contains a ripple effect. For startup efficiency
    * the ripple effect is dynamically on demand when needed.
    * @param {!Event=} optTriggeringEvent (optional) event that triggered the
    * ripple.
-   */ensureRipple:function(optTriggeringEvent){if(!this.hasRipple()){this._ripple=this._createRipple();this._ripple.noink=this.noink;var rippleContainer=this._rippleContainer||this.root;if(rippleContainer){(0,_natepaasApp.dom)(rippleContainer).appendChild(this._ripple)}if(optTriggeringEvent){// Check if the event happened inside of the ripple container
+   */ensureRipple:function ensureRipple(optTriggeringEvent){if(!this.hasRipple()){this._ripple=this._createRipple();this._ripple.noink=this.noink;var rippleContainer=this._rippleContainer||this.root;if(rippleContainer){(0,_natepaasApp.dom)(rippleContainer).appendChild(this._ripple)}if(optTriggeringEvent){// Check if the event happened inside of the ripple container
 // Fall back to host instead of the root because distributed text
 // nodes are not valid event targets
 var domContainer=(0,_natepaasApp.dom)(this._rippleContainer||this),target=(0,_natepaasApp.dom)(optTriggeringEvent).rootTarget;if(domContainer.deepContains(/** @type {Node} */target)){this._ripple.uiDownAction(optTriggeringEvent)}}}},/**
@@ -2061,14 +1851,14 @@ var domContainer=(0,_natepaasApp.dom)(this._rippleContainer||this),target=(0,_na
    * ripple effects. The element's ripple is created on demand, when
    * necessary, and calling this method will force the
    * ripple to be created.
-   */getRipple:function(){this.ensureRipple();return this._ripple},/**
+   */getRipple:function getRipple(){this.ensureRipple();return this._ripple},/**
    * Returns true if this element currently contains a ripple effect.
    * @return {boolean}
-   */hasRipple:function(){return!!this._ripple},/**
+   */hasRipple:function hasRipple(){return!!this._ripple},/**
    * Create the element's ripple effect via creating a `<paper-ripple>`.
    * Override this method to customize the ripple element.
    * @return {!PaperRippleElement} Returns a `<paper-ripple>` element.
-   */_createRipple:function(){var element=/** @type {!PaperRippleElement} */document.createElement("paper-ripple");return element},_noinkChanged:function(noink){if(this.hasRipple()){this._ripple.noink=noink}}};_exports.PaperRippleBehavior=PaperRippleBehavior;var paperRippleBehavior={PaperRippleBehavior:PaperRippleBehavior};_exports.$paperRippleBehavior=paperRippleBehavior;const PaperButtonBehaviorImpl={properties:{/**
+   */_createRipple:function _createRipple(){var element=/** @type {!PaperRippleElement} */document.createElement("paper-ripple");return element},_noinkChanged:function _noinkChanged(noink){if(this.hasRipple()){this._ripple.noink=noink}}};_exports.PaperRippleBehavior=PaperRippleBehavior;var paperRippleBehavior={PaperRippleBehavior:PaperRippleBehavior};_exports.$paperRippleBehavior=paperRippleBehavior;var PaperButtonBehaviorImpl={properties:{/**
      * The z-depth of this element, from 0-5. Setting to 0 will remove the
      * shadow, and each increasing number greater than 0 will be "deeper"
      * than the last.
@@ -2076,258 +1866,22 @@ var domContainer=(0,_natepaasApp.dom)(this._rippleContainer||this),target=(0,_na
      * @attribute elevation
      * @type number
      * @default 1
-     */elevation:{type:Number,reflectToAttribute:!0,readOnly:!0}},observers:["_calculateElevation(focused, disabled, active, pressed, receivedFocusFromKeyboard)","_computeKeyboardClass(receivedFocusFromKeyboard)"],hostAttributes:{role:"button",tabindex:"0",animated:!0},_calculateElevation:function(){var e=1;if(this.disabled){e=0}else if(this.active||this.pressed){e=4}else if(this.receivedFocusFromKeyboard){e=3}this._setElevation(e)},_computeKeyboardClass:function(receivedFocusFromKeyboard){this.toggleClass("keyboard-focus",receivedFocusFromKeyboard)},/**
+     */elevation:{type:Number,reflectToAttribute:!0,readOnly:!0}},observers:["_calculateElevation(focused, disabled, active, pressed, receivedFocusFromKeyboard)","_computeKeyboardClass(receivedFocusFromKeyboard)"],hostAttributes:{role:"button",tabindex:"0",animated:!0},_calculateElevation:function _calculateElevation(){var e=1;if(this.disabled){e=0}else if(this.active||this.pressed){e=4}else if(this.receivedFocusFromKeyboard){e=3}this._setElevation(e)},_computeKeyboardClass:function _computeKeyboardClass(receivedFocusFromKeyboard){this.toggleClass("keyboard-focus",receivedFocusFromKeyboard)},/**
    * In addition to `IronButtonState` behavior, when space key goes down,
    * create a ripple down effect.
    *
    * @param {!KeyboardEvent} event .
-   */_spaceKeyDownHandler:function(event){IronButtonStateImpl._spaceKeyDownHandler.call(this,event);// Ensure that there is at most one ripple when the space key is held down.
+   */_spaceKeyDownHandler:function _spaceKeyDownHandler(event){IronButtonStateImpl._spaceKeyDownHandler.call(this,event);// Ensure that there is at most one ripple when the space key is held down.
 if(this.hasRipple()&&1>this.getRipple().ripples.length){this._ripple.uiDownAction()}},/**
    * In addition to `IronButtonState` behavior, when space key goes up,
    * create a ripple up effect.
    *
    * @param {!KeyboardEvent} event .
-   */_spaceKeyUpHandler:function(event){IronButtonStateImpl._spaceKeyUpHandler.call(this,event);if(this.hasRipple()){this._ripple.uiUpAction()}}};/** @polymerBehavior */_exports.PaperButtonBehaviorImpl=PaperButtonBehaviorImpl;const PaperButtonBehavior=[IronButtonState,IronControlState,PaperRippleBehavior,PaperButtonBehaviorImpl];_exports.PaperButtonBehavior=PaperButtonBehavior;var paperButtonBehavior={PaperButtonBehaviorImpl:PaperButtonBehaviorImpl,PaperButtonBehavior:PaperButtonBehavior};_exports.$paperButtonBehavior=paperButtonBehavior;const PaperInkyFocusBehaviorImpl={observers:["_focusedChanged(receivedFocusFromKeyboard)"],_focusedChanged:function(receivedFocusFromKeyboard){if(receivedFocusFromKeyboard){this.ensureRipple()}if(this.hasRipple()){this._ripple.holdDown=receivedFocusFromKeyboard}},_createRipple:function(){var ripple=PaperRippleBehavior._createRipple();ripple.id="ink";ripple.setAttribute("center","");ripple.classList.add("circle");return ripple}};/** @polymerBehavior */_exports.PaperInkyFocusBehaviorImpl=PaperInkyFocusBehaviorImpl;const PaperInkyFocusBehavior=[IronButtonState,IronControlState,PaperRippleBehavior,PaperInkyFocusBehaviorImpl];_exports.PaperInkyFocusBehavior=PaperInkyFocusBehavior;var paperInkyFocusBehavior={PaperInkyFocusBehaviorImpl:PaperInkyFocusBehaviorImpl,PaperInkyFocusBehavior:PaperInkyFocusBehavior};_exports.$paperInkyFocusBehavior=paperInkyFocusBehavior;const PaperCheckedElementBehaviorImpl={/**
+   */_spaceKeyUpHandler:function _spaceKeyUpHandler(event){IronButtonStateImpl._spaceKeyUpHandler.call(this,event);if(this.hasRipple()){this._ripple.uiUpAction()}}};/** @polymerBehavior */_exports.PaperButtonBehaviorImpl=PaperButtonBehaviorImpl;var PaperButtonBehavior=[IronButtonState,IronControlState,PaperRippleBehavior,PaperButtonBehaviorImpl];_exports.PaperButtonBehavior=PaperButtonBehavior;var paperButtonBehavior={PaperButtonBehaviorImpl:PaperButtonBehaviorImpl,PaperButtonBehavior:PaperButtonBehavior};_exports.$paperButtonBehavior=paperButtonBehavior;var PaperInkyFocusBehaviorImpl={observers:["_focusedChanged(receivedFocusFromKeyboard)"],_focusedChanged:function _focusedChanged(receivedFocusFromKeyboard){if(receivedFocusFromKeyboard){this.ensureRipple()}if(this.hasRipple()){this._ripple.holdDown=receivedFocusFromKeyboard}},_createRipple:function _createRipple(){var ripple=PaperRippleBehavior._createRipple();ripple.id="ink";ripple.setAttribute("center","");ripple.classList.add("circle");return ripple}};/** @polymerBehavior */_exports.PaperInkyFocusBehaviorImpl=PaperInkyFocusBehaviorImpl;var PaperInkyFocusBehavior=[IronButtonState,IronControlState,PaperRippleBehavior,PaperInkyFocusBehaviorImpl];_exports.PaperInkyFocusBehavior=PaperInkyFocusBehavior;var paperInkyFocusBehavior={PaperInkyFocusBehaviorImpl:PaperInkyFocusBehaviorImpl,PaperInkyFocusBehavior:PaperInkyFocusBehavior};_exports.$paperInkyFocusBehavior=paperInkyFocusBehavior;var PaperCheckedElementBehaviorImpl={/**
    * Synchronizes the element's checked state with its ripple effect.
-   */_checkedChanged:function(){IronCheckedElementBehaviorImpl._checkedChanged.call(this);if(this.hasRipple()){if(this.checked){this._ripple.setAttribute("checked","")}else{this._ripple.removeAttribute("checked")}}},/**
+   */_checkedChanged:function _checkedChanged(){IronCheckedElementBehaviorImpl._checkedChanged.call(this);if(this.hasRipple()){if(this.checked){this._ripple.setAttribute("checked","")}else{this._ripple.removeAttribute("checked")}}},/**
    * Synchronizes the element's `active` and `checked` state.
-   */_buttonStateChanged:function(){PaperRippleBehavior._buttonStateChanged.call(this);if(this.disabled){return}if(this.isAttached){this.checked=this.active}}};/** @polymerBehavior */_exports.PaperCheckedElementBehaviorImpl=PaperCheckedElementBehaviorImpl;const PaperCheckedElementBehavior=[PaperInkyFocusBehavior,IronCheckedElementBehavior,PaperCheckedElementBehaviorImpl];_exports.PaperCheckedElementBehavior=PaperCheckedElementBehavior;var paperCheckedElementBehavior={PaperCheckedElementBehaviorImpl:PaperCheckedElementBehaviorImpl,PaperCheckedElementBehavior:PaperCheckedElementBehavior};_exports.$paperCheckedElementBehavior=paperCheckedElementBehavior;const template=_natepaasApp.html$1`
-<custom-style>
-  <style is="custom-style">
-    html {
-
-      --shadow-transition: {
-        transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-      };
-
-      --shadow-none: {
-        box-shadow: none;
-      };
-
-      /* from http://codepen.io/shyndman/pen/c5394ddf2e8b2a5c9185904b57421cdb */
-
-      --shadow-elevation-2dp: {
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-                    0 1px 5px 0 rgba(0, 0, 0, 0.12),
-                    0 3px 1px -2px rgba(0, 0, 0, 0.2);
-      };
-
-      --shadow-elevation-3dp: {
-        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
-                    0 1px 8px 0 rgba(0, 0, 0, 0.12),
-                    0 3px 3px -2px rgba(0, 0, 0, 0.4);
-      };
-
-      --shadow-elevation-4dp: {
-        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-                    0 1px 10px 0 rgba(0, 0, 0, 0.12),
-                    0 2px 4px -1px rgba(0, 0, 0, 0.4);
-      };
-
-      --shadow-elevation-6dp: {
-        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
-                    0 1px 18px 0 rgba(0, 0, 0, 0.12),
-                    0 3px 5px -1px rgba(0, 0, 0, 0.4);
-      };
-
-      --shadow-elevation-8dp: {
-        box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-                    0 3px 14px 2px rgba(0, 0, 0, 0.12),
-                    0 5px 5px -3px rgba(0, 0, 0, 0.4);
-      };
-
-      --shadow-elevation-12dp: {
-        box-shadow: 0 12px 16px 1px rgba(0, 0, 0, 0.14),
-                    0 4px 22px 3px rgba(0, 0, 0, 0.12),
-                    0 6px 7px -4px rgba(0, 0, 0, 0.4);
-      };
-
-      --shadow-elevation-16dp: {
-        box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
-                    0  6px 30px 5px rgba(0, 0, 0, 0.12),
-                    0  8px 10px -5px rgba(0, 0, 0, 0.4);
-      };
-
-      --shadow-elevation-24dp: {
-        box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
-                    0 9px 46px 8px rgba(0, 0, 0, 0.12),
-                    0 11px 15px -7px rgba(0, 0, 0, 0.4);
-      };
-    }
-  </style>
-</custom-style>`;template.setAttribute("style","display: none;");document.head.appendChild(template.content);const template$1=_natepaasApp.html$1`
-<dom-module id="paper-material-styles">
-  <template>
-    <style>
-      html {
-        --paper-material: {
-          display: block;
-          position: relative;
-        };
-        --paper-material-elevation-1: {
-          @apply --shadow-elevation-2dp;
-        };
-        --paper-material-elevation-2: {
-          @apply --shadow-elevation-4dp;
-        };
-        --paper-material-elevation-3: {
-          @apply --shadow-elevation-6dp;
-        };
-        --paper-material-elevation-4: {
-          @apply --shadow-elevation-8dp;
-        };
-        --paper-material-elevation-5: {
-          @apply --shadow-elevation-16dp;
-        };
-      }
-      .paper-material {
-        @apply --paper-material;
-      }
-      .paper-material[elevation="1"] {
-        @apply --paper-material-elevation-1;
-      }
-      .paper-material[elevation="2"] {
-        @apply --paper-material-elevation-2;
-      }
-      .paper-material[elevation="3"] {
-        @apply --paper-material-elevation-3;
-      }
-      .paper-material[elevation="4"] {
-        @apply --paper-material-elevation-4;
-      }
-      .paper-material[elevation="5"] {
-        @apply --paper-material-elevation-5;
-      }
-
-      /* Duplicate the styles because of https://github.com/webcomponents/shadycss/issues/193 */
-      :host {
-        --paper-material: {
-          display: block;
-          position: relative;
-        };
-        --paper-material-elevation-1: {
-          @apply --shadow-elevation-2dp;
-        };
-        --paper-material-elevation-2: {
-          @apply --shadow-elevation-4dp;
-        };
-        --paper-material-elevation-3: {
-          @apply --shadow-elevation-6dp;
-        };
-        --paper-material-elevation-4: {
-          @apply --shadow-elevation-8dp;
-        };
-        --paper-material-elevation-5: {
-          @apply --shadow-elevation-16dp;
-        };
-      }
-      :host(.paper-material) {
-        @apply --paper-material;
-      }
-      :host(.paper-material[elevation="1"]) {
-        @apply --paper-material-elevation-1;
-      }
-      :host(.paper-material[elevation="2"]) {
-        @apply --paper-material-elevation-2;
-      }
-      :host(.paper-material[elevation="3"]) {
-        @apply --paper-material-elevation-3;
-      }
-      :host(.paper-material[elevation="4"]) {
-        @apply --paper-material-elevation-4;
-      }
-      :host(.paper-material[elevation="5"]) {
-        @apply --paper-material-elevation-5;
-      }
-    </style>
-  </template>
-</dom-module>`;template$1.setAttribute("style","display: none;");document.head.appendChild(template$1.content);const template$2=_natepaasApp.html`
-  <style include="paper-material-styles">
-    /* Need to specify the same specificity as the styles imported from paper-material. */
-    :host {
-      @apply --layout-inline;
-      @apply --layout-center-center;
-      position: relative;
-      box-sizing: border-box;
-      min-width: 5.14em;
-      margin: 0 0.29em;
-      background: transparent;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      -webkit-tap-highlight-color: transparent;
-      font: inherit;
-      text-transform: uppercase;
-      outline-width: 0;
-      border-radius: 3px;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      -webkit-user-select: none;
-      user-select: none;
-      cursor: pointer;
-      z-index: 0;
-      padding: 0.7em 0.57em;
-
-      @apply --paper-font-common-base;
-      @apply --paper-button;
-    }
-
-    :host([elevation="1"]) {
-      @apply --paper-material-elevation-1;
-    }
-
-    :host([elevation="2"]) {
-      @apply --paper-material-elevation-2;
-    }
-
-    :host([elevation="3"]) {
-      @apply --paper-material-elevation-3;
-    }
-
-    :host([elevation="4"]) {
-      @apply --paper-material-elevation-4;
-    }
-
-    :host([elevation="5"]) {
-      @apply --paper-material-elevation-5;
-    }
-
-    :host([hidden]) {
-      display: none !important;
-    }
-
-    :host([raised].keyboard-focus) {
-      font-weight: bold;
-      @apply --paper-button-raised-keyboard-focus;
-    }
-
-    :host(:not([raised]).keyboard-focus) {
-      font-weight: bold;
-      @apply --paper-button-flat-keyboard-focus;
-    }
-
-    :host([disabled]) {
-      background: none;
-      color: #a8a8a8;
-      cursor: auto;
-      pointer-events: none;
-
-      @apply --paper-button-disabled;
-    }
-
-    :host([disabled][raised]) {
-      background: #eaeaea;
-    }
-
-
-    :host([animated]) {
-      @apply --shadow-transition;
-    }
-
-    paper-ripple {
-      color: var(--paper-button-ink-color);
-    }
-  </style>
-
-  <slot></slot>`;template$2.setAttribute("strip-whitespace","");/**
+   */_buttonStateChanged:function _buttonStateChanged(){PaperRippleBehavior._buttonStateChanged.call(this);if(this.disabled){return}if(this.isAttached){this.checked=this.active}}};/** @polymerBehavior */_exports.PaperCheckedElementBehaviorImpl=PaperCheckedElementBehaviorImpl;var PaperCheckedElementBehavior=[PaperInkyFocusBehavior,IronCheckedElementBehavior,PaperCheckedElementBehaviorImpl];_exports.PaperCheckedElementBehavior=PaperCheckedElementBehavior;var paperCheckedElementBehavior={PaperCheckedElementBehaviorImpl:PaperCheckedElementBehaviorImpl,PaperCheckedElementBehavior:PaperCheckedElementBehavior};_exports.$paperCheckedElementBehavior=paperCheckedElementBehavior;var template=(0,_natepaasApp.html$1)(_templateObject8_2937b1a0072d11eaac4ad73c7775be10());template.setAttribute("style","display: none;");document.head.appendChild(template.content);var template$1=(0,_natepaasApp.html$1)(_templateObject9_2937b1a0072d11eaac4ad73c7775be10());template$1.setAttribute("style","display: none;");document.head.appendChild(template$1.content);var template$2=(0,_natepaasApp.html)(_templateObject10_2937b1a0072d11eaac4ad73c7775be10());template$2.setAttribute("strip-whitespace","");/**
                                                  Material design:
                                                  [Buttons](https://www.google.com/design/spec/components/buttons.html)
                                                                                                `paper-button` is a button. When the user touches the button, a ripple effect
@@ -2379,249 +1933,13 @@ if(this.hasRipple()&&1>this.getRipple().ripples.length){this._ripple.uiDownActio
                                                                                                @demo demo/index.html
                                                  */(0,_natepaasApp.Polymer)({_template:template$2,is:"paper-button",behaviors:[PaperButtonBehavior],properties:{/**
      * If true, the button should be styled with a shadow.
-     */raised:{type:Boolean,reflectToAttribute:!0,value:!1,observer:"_calculateElevation"}},_calculateElevation:function(){if(!this.raised){this._setElevation(0)}else{PaperButtonBehaviorImpl._calculateElevation.apply(this)}}/**
+     */raised:{type:Boolean,reflectToAttribute:!0,value:!1,observer:"_calculateElevation"}},_calculateElevation:function _calculateElevation(){if(!this.raised){this._setElevation(0)}else{PaperButtonBehaviorImpl._calculateElevation.apply(this)}}/**
     Fired when the animation finishes.
     This is useful if you want to wait until
     the ripple animation finishes to perform some action.
      @event transitionend
     Event param: {{node: Object}} detail Contains the animated node.
-    */});const template$3=_natepaasApp.html$1`
-<custom-style>
-  <style is="custom-style">
-    html {
-      /*
-       * You can use these generic variables in your elements for easy theming.
-       * For example, if all your elements use \`--primary-text-color\` as its main
-       * color, then switching from a light to a dark theme is just a matter of
-       * changing the value of \`--primary-text-color\` in your application.
-       */
-      --primary-text-color: var(--light-theme-text-color);
-      --primary-background-color: var(--light-theme-background-color);
-      --secondary-text-color: var(--light-theme-secondary-color);
-      --disabled-text-color: var(--light-theme-disabled-color);
-      --divider-color: var(--light-theme-divider-color);
-      --error-color: var(--paper-deep-orange-a700);
-
-      /*
-       * Primary and accent colors. Also see color.js for more colors.
-       */
-      --primary-color: var(--paper-indigo-500);
-      --light-primary-color: var(--paper-indigo-100);
-      --dark-primary-color: var(--paper-indigo-700);
-
-      --accent-color: var(--paper-pink-a200);
-      --light-accent-color: var(--paper-pink-a100);
-      --dark-accent-color: var(--paper-pink-a400);
-
-
-      /*
-       * Material Design Light background theme
-       */
-      --light-theme-background-color: #ffffff;
-      --light-theme-base-color: #000000;
-      --light-theme-text-color: var(--paper-grey-900);
-      --light-theme-secondary-color: #737373;  /* for secondary text and icons */
-      --light-theme-disabled-color: #9b9b9b;  /* disabled/hint text */
-      --light-theme-divider-color: #dbdbdb;
-
-      /*
-       * Material Design Dark background theme
-       */
-      --dark-theme-background-color: var(--paper-grey-900);
-      --dark-theme-base-color: #ffffff;
-      --dark-theme-text-color: #ffffff;
-      --dark-theme-secondary-color: #bcbcbc;  /* for secondary text and icons */
-      --dark-theme-disabled-color: #646464;  /* disabled/hint text */
-      --dark-theme-divider-color: #3c3c3c;
-
-      /*
-       * Deprecated values because of their confusing names.
-       */
-      --text-primary-color: var(--dark-theme-text-color);
-      --default-primary-color: var(--primary-color);
-    }
-  </style>
-</custom-style>`;template$3.setAttribute("style","display: none;");document.head.appendChild(template$3.content);const template$4=_natepaasApp.html$1`<style>
-  :host {
-    display: inline-block;
-    white-space: nowrap;
-    cursor: pointer;
-    --calculated-paper-checkbox-size: var(--paper-checkbox-size, 18px);
-    /* -1px is a sentinel for the default and is replaced in \`attached\`. */
-    --calculated-paper-checkbox-ink-size: var(--paper-checkbox-ink-size, -1px);
-    @apply --paper-font-common-base;
-    line-height: 0;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  :host([hidden]) {
-    display: none !important;
-  }
-
-  :host(:focus) {
-    outline: none;
-  }
-
-  .hidden {
-    display: none;
-  }
-
-  #checkboxContainer {
-    display: inline-block;
-    position: relative;
-    width: var(--calculated-paper-checkbox-size);
-    height: var(--calculated-paper-checkbox-size);
-    min-width: var(--calculated-paper-checkbox-size);
-    margin: var(--paper-checkbox-margin, initial);
-    vertical-align: var(--paper-checkbox-vertical-align, middle);
-    background-color: var(--paper-checkbox-unchecked-background-color, transparent);
-  }
-
-  #ink {
-    position: absolute;
-
-    /* Center the ripple in the checkbox by negative offsetting it by
-     * (inkWidth - rippleWidth) / 2 */
-    top: calc(0px - (var(--calculated-paper-checkbox-ink-size) - var(--calculated-paper-checkbox-size)) / 2);
-    left: calc(0px - (var(--calculated-paper-checkbox-ink-size) - var(--calculated-paper-checkbox-size)) / 2);
-    width: var(--calculated-paper-checkbox-ink-size);
-    height: var(--calculated-paper-checkbox-ink-size);
-    color: var(--paper-checkbox-unchecked-ink-color, var(--primary-text-color));
-    opacity: 0.6;
-    pointer-events: none;
-  }
-
-  #ink:dir(rtl) {
-    right: calc(0px - (var(--calculated-paper-checkbox-ink-size) - var(--calculated-paper-checkbox-size)) / 2);
-    left: auto;
-  }
-
-  #ink[checked] {
-    color: var(--paper-checkbox-checked-ink-color, var(--primary-color));
-  }
-
-  #checkbox {
-    position: relative;
-    box-sizing: border-box;
-    height: 100%;
-    border: solid 2px;
-    border-color: var(--paper-checkbox-unchecked-color, var(--primary-text-color));
-    border-radius: 2px;
-    pointer-events: none;
-    -webkit-transition: background-color 140ms, border-color 140ms;
-    transition: background-color 140ms, border-color 140ms;
-
-    -webkit-transition-duration: var(--paper-checkbox-animation-duration, 140ms);
-    transition-duration: var(--paper-checkbox-animation-duration, 140ms);
-  }
-
-  /* checkbox checked animations */
-  #checkbox.checked #checkmark {
-    -webkit-animation: checkmark-expand 140ms ease-out forwards;
-    animation: checkmark-expand 140ms ease-out forwards;
-
-    -webkit-animation-duration: var(--paper-checkbox-animation-duration, 140ms);
-    animation-duration: var(--paper-checkbox-animation-duration, 140ms);
-  }
-
-  @-webkit-keyframes checkmark-expand {
-    0% {
-      -webkit-transform: scale(0, 0) rotate(45deg);
-    }
-    100% {
-      -webkit-transform: scale(1, 1) rotate(45deg);
-    }
-  }
-
-  @keyframes checkmark-expand {
-    0% {
-      transform: scale(0, 0) rotate(45deg);
-    }
-    100% {
-      transform: scale(1, 1) rotate(45deg);
-    }
-  }
-
-  #checkbox.checked {
-    background-color: var(--paper-checkbox-checked-color, var(--primary-color));
-    border-color: var(--paper-checkbox-checked-color, var(--primary-color));
-  }
-
-  #checkmark {
-    position: absolute;
-    width: 36%;
-    height: 70%;
-    border-style: solid;
-    border-top: none;
-    border-left: none;
-    border-right-width: calc(2/15 * var(--calculated-paper-checkbox-size));
-    border-bottom-width: calc(2/15 * var(--calculated-paper-checkbox-size));
-    border-color: var(--paper-checkbox-checkmark-color, white);
-    -webkit-transform-origin: 97% 86%;
-    transform-origin: 97% 86%;
-    box-sizing: content-box; /* protect against page-level box-sizing */
-  }
-
-  #checkmark:dir(rtl) {
-    -webkit-transform-origin: 50% 14%;
-    transform-origin: 50% 14%;
-  }
-
-  /* label */
-  #checkboxLabel {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    padding-left: var(--paper-checkbox-label-spacing, 8px);
-    white-space: normal;
-    line-height: normal;
-    color: var(--paper-checkbox-label-color, var(--primary-text-color));
-    @apply --paper-checkbox-label;
-  }
-
-  :host([checked]) #checkboxLabel {
-    color: var(--paper-checkbox-label-checked-color, var(--paper-checkbox-label-color, var(--primary-text-color)));
-    @apply --paper-checkbox-label-checked;
-  }
-
-  #checkboxLabel:dir(rtl) {
-    padding-right: var(--paper-checkbox-label-spacing, 8px);
-    padding-left: 0;
-  }
-
-  #checkboxLabel[hidden] {
-    display: none;
-  }
-
-  /* disabled state */
-
-  :host([disabled]) #checkbox {
-    opacity: 0.5;
-    border-color: var(--paper-checkbox-unchecked-color, var(--primary-text-color));
-  }
-
-  :host([disabled][checked]) #checkbox {
-    background-color: var(--paper-checkbox-unchecked-color, var(--primary-text-color));
-    opacity: 0.5;
-  }
-
-  :host([disabled]) #checkboxLabel  {
-    opacity: 0.65;
-  }
-
-  /* invalid state */
-  #checkbox.invalid:not(.checked) {
-    border-color: var(--paper-checkbox-error-color, var(--error-color));
-  }
-</style>
-
-<div id="checkboxContainer">
-  <div id="checkbox" class$="[[_computeCheckboxClass(checked, invalid)]]">
-    <div id="checkmark" class$="[[_computeCheckmarkClass(checked)]]"></div>
-  </div>
-</div>
-
-<div id="checkboxLabel"><slot></slot></div>`;template$4.setAttribute("strip-whitespace","");/**
+    */});var template$3=(0,_natepaasApp.html$1)(_templateObject11_2937b1a0072d11eaac4ad73c7775be10());template$3.setAttribute("style","display: none;");document.head.appendChild(template$3.content);var template$4=(0,_natepaasApp.html$1)(_templateObject12_2937b1a0072d11eaac4ad73c7775be10());template$4.setAttribute("strip-whitespace","");/**
                                                  Material design:
                                                  [Checkbox](https://www.google.com/design/spec/components/selection-controls.html#selection-controls-checkbox)
                                                                                                `paper-checkbox` is a button that can be either checked or unchecked. User can
@@ -2663,238 +1981,13 @@ if(this.hasRipple()&&1>this.getRipple().ripples.length){this._ripple.uiDownActio
          * Fired when the checked state changes.
          *
          * @event iron-change
-         */ariaActiveAttribute:{type:String,value:"aria-checked"}},attached:function(){// Wait until styles have resolved to check for the default sentinel.
+         */ariaActiveAttribute:{type:String,value:"aria-checked"}},attached:function attached(){// Wait until styles have resolved to check for the default sentinel.
 // See polymer#4009 for more details.
 (0,_natepaasApp.afterNextRender)(this,function(){var inkSize=this.getComputedStyleValue("--calculated-paper-checkbox-ink-size").trim();// If unset, compute and set the default `--paper-checkbox-ink-size`.
 if("-1px"===inkSize){var checkboxSizeText=this.getComputedStyleValue("--calculated-paper-checkbox-size").trim(),units="px",unitsMatches=checkboxSizeText.match(/[A-Za-z]+$/);if(null!==unitsMatches){units=unitsMatches[0]}var checkboxSize=parseFloat(checkboxSizeText),defaultInkSize=8/3*checkboxSize;if("px"===units){defaultInkSize=Math.floor(defaultInkSize);// The checkbox and ripple need to have the same parity so that their
 // centers align.
-if(defaultInkSize%2!==checkboxSize%2){defaultInkSize++}}this.updateStyles({"--paper-checkbox-ink-size":defaultInkSize+units})}})},_computeCheckboxClass:function(checked,invalid){var className="";if(checked){className+="checked "}if(invalid){className+="invalid"}return className},_computeCheckmarkClass:function(checked){return checked?"":"hidden"},// create ripple inside the checkboxContainer
-_createRipple:function(){this._rippleContainer=this.$.checkboxContainer;return PaperInkyFocusBehaviorImpl._createRipple.call(this)}});const $_documentContainer=document.createElement("template");$_documentContainer.setAttribute("style","display: none;");$_documentContainer.innerHTML=`<iron-iconset-svg name="paper-dropdown-menu" size="24">
-<svg><defs>
-<g id="arrow-drop-down"><path d="M7 10l5 5 5-5z"></path></g>
-</defs></svg>
-</iron-iconset-svg>`;document.head.appendChild($_documentContainer.content);const $_documentContainer$1=document.createElement("template");$_documentContainer$1.setAttribute("style","display: none;");$_documentContainer$1.innerHTML=`<dom-module id="paper-dropdown-menu-shared-styles">
-  <template>
-    <style>
-      :host {
-        display: inline-block;
-        position: relative;
-        text-align: left;
-
-        /* NOTE(cdata): Both values are needed, since some phones require the
-         * value to be \`transparent\`.
-         */
-        -webkit-tap-highlight-color: rgba(0,0,0,0);
-        -webkit-tap-highlight-color: transparent;
-
-        --paper-input-container-input: {
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          max-width: 100%;
-          box-sizing: border-box;
-          cursor: pointer;
-        };
-
-        @apply --paper-dropdown-menu;
-      }
-
-      :host([disabled]) {
-        @apply --paper-dropdown-menu-disabled;
-      }
-
-      :host([noink]) paper-ripple {
-        display: none;
-      }
-
-      :host([no-label-float]) paper-ripple {
-        top: 8px;
-      }
-
-      paper-ripple {
-        top: 12px;
-        left: 0px;
-        bottom: 8px;
-        right: 0px;
-
-        @apply --paper-dropdown-menu-ripple;
-      }
-
-      paper-menu-button {
-        display: block;
-        padding: 0;
-
-        @apply --paper-dropdown-menu-button;
-      }
-
-      paper-input {
-        @apply --paper-dropdown-menu-input;
-      }
-
-      iron-icon {
-        color: var(--disabled-text-color);
-
-        @apply --paper-dropdown-menu-icon;
-      }
-    </style>
-  </template>
-</dom-module>`;document.head.appendChild($_documentContainer$1.content);const template$5=_natepaasApp.html$1`<custom-style>
-  <style is="custom-style">
-    html {
-
-      /* Shared Styles */
-      --paper-font-common-base: {
-        font-family: 'Roboto', 'Noto', sans-serif;
-        -webkit-font-smoothing: antialiased;
-      };
-
-      --paper-font-common-code: {
-        font-family: 'Roboto Mono', 'Consolas', 'Menlo', monospace;
-        -webkit-font-smoothing: antialiased;
-      };
-
-      --paper-font-common-expensive-kerning: {
-        text-rendering: optimizeLegibility;
-      };
-
-      --paper-font-common-nowrap: {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      };
-
-      /* Material Font Styles */
-
-      --paper-font-display4: {
-        @apply --paper-font-common-base;
-        @apply --paper-font-common-nowrap;
-
-        font-size: 112px;
-        font-weight: 300;
-        letter-spacing: -.044em;
-        line-height: 120px;
-      };
-
-      --paper-font-display3: {
-        @apply --paper-font-common-base;
-        @apply --paper-font-common-nowrap;
-
-        font-size: 56px;
-        font-weight: 400;
-        letter-spacing: -.026em;
-        line-height: 60px;
-      };
-
-      --paper-font-display2: {
-        @apply --paper-font-common-base;
-
-        font-size: 45px;
-        font-weight: 400;
-        letter-spacing: -.018em;
-        line-height: 48px;
-      };
-
-      --paper-font-display1: {
-        @apply --paper-font-common-base;
-
-        font-size: 34px;
-        font-weight: 400;
-        letter-spacing: -.01em;
-        line-height: 40px;
-      };
-
-      --paper-font-headline: {
-        @apply --paper-font-common-base;
-
-        font-size: 24px;
-        font-weight: 400;
-        letter-spacing: -.012em;
-        line-height: 32px;
-      };
-
-      --paper-font-title: {
-        @apply --paper-font-common-base;
-        @apply --paper-font-common-nowrap;
-
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 28px;
-      };
-
-      --paper-font-subhead: {
-        @apply --paper-font-common-base;
-
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-      };
-
-      --paper-font-body2: {
-        @apply --paper-font-common-base;
-
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 24px;
-      };
-
-      --paper-font-body1: {
-        @apply --paper-font-common-base;
-
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 20px;
-      };
-
-      --paper-font-caption: {
-        @apply --paper-font-common-base;
-        @apply --paper-font-common-nowrap;
-
-        font-size: 12px;
-        font-weight: 400;
-        letter-spacing: 0.011em;
-        line-height: 20px;
-      };
-
-      --paper-font-menu: {
-        @apply --paper-font-common-base;
-        @apply --paper-font-common-nowrap;
-
-        font-size: 13px;
-        font-weight: 500;
-        line-height: 24px;
-      };
-
-      --paper-font-button: {
-        @apply --paper-font-common-base;
-        @apply --paper-font-common-nowrap;
-
-        font-size: 14px;
-        font-weight: 500;
-        letter-spacing: 0.018em;
-        line-height: 24px;
-        text-transform: uppercase;
-      };
-
-      --paper-font-code2: {
-        @apply --paper-font-common-code;
-
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 20px;
-      };
-
-      --paper-font-code1: {
-        @apply --paper-font-common-code;
-
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 20px;
-      };
-
-    }
-
-  </style>
-</custom-style>`;template$5.setAttribute("style","display: none;");document.head.appendChild(template$5.content);const PaperInputAddonBehavior={attached:function(){this.fire("addon-attached")},/**
+if(defaultInkSize%2!==checkboxSize%2){defaultInkSize++}}this.updateStyles({"--paper-checkbox-ink-size":defaultInkSize+units})}})},_computeCheckboxClass:function _computeCheckboxClass(checked,invalid){var className="";if(checked){className+="checked "}if(invalid){className+="invalid"}return className},_computeCheckmarkClass:function _computeCheckmarkClass(checked){return checked?"":"hidden"},// create ripple inside the checkboxContainer
+_createRipple:function _createRipple(){this._rippleContainer=this.$.checkboxContainer;return PaperInkyFocusBehaviorImpl._createRipple.call(this)}});var $_documentContainer=document.createElement("template");$_documentContainer.setAttribute("style","display: none;");$_documentContainer.innerHTML="<iron-iconset-svg name=\"paper-dropdown-menu\" size=\"24\">\n<svg><defs>\n<g id=\"arrow-drop-down\"><path d=\"M7 10l5 5 5-5z\"></path></g>\n</defs></svg>\n</iron-iconset-svg>";document.head.appendChild($_documentContainer.content);var $_documentContainer$1=document.createElement("template");$_documentContainer$1.setAttribute("style","display: none;");$_documentContainer$1.innerHTML="<dom-module id=\"paper-dropdown-menu-shared-styles\">\n  <template>\n    <style>\n      :host {\n        display: inline-block;\n        position: relative;\n        text-align: left;\n\n        /* NOTE(cdata): Both values are needed, since some phones require the\n         * value to be `transparent`.\n         */\n        -webkit-tap-highlight-color: rgba(0,0,0,0);\n        -webkit-tap-highlight-color: transparent;\n\n        --paper-input-container-input: {\n          overflow: hidden;\n          white-space: nowrap;\n          text-overflow: ellipsis;\n          max-width: 100%;\n          box-sizing: border-box;\n          cursor: pointer;\n        };\n\n        @apply --paper-dropdown-menu;\n      }\n\n      :host([disabled]) {\n        @apply --paper-dropdown-menu-disabled;\n      }\n\n      :host([noink]) paper-ripple {\n        display: none;\n      }\n\n      :host([no-label-float]) paper-ripple {\n        top: 8px;\n      }\n\n      paper-ripple {\n        top: 12px;\n        left: 0px;\n        bottom: 8px;\n        right: 0px;\n\n        @apply --paper-dropdown-menu-ripple;\n      }\n\n      paper-menu-button {\n        display: block;\n        padding: 0;\n\n        @apply --paper-dropdown-menu-button;\n      }\n\n      paper-input {\n        @apply --paper-dropdown-menu-input;\n      }\n\n      iron-icon {\n        color: var(--disabled-text-color);\n\n        @apply --paper-dropdown-menu-icon;\n      }\n    </style>\n  </template>\n</dom-module>";document.head.appendChild($_documentContainer$1.content);var template$5=(0,_natepaasApp.html$1)(_templateObject13_2937b1a0072d11eaac4ad73c7775be10());template$5.setAttribute("style","display: none;");document.head.appendChild(template$5.content);var PaperInputAddonBehavior={attached:function attached(){this.fire("addon-attached")},/**
    * The function called by `<paper-input-container>` when the input value or
    * validity changes.
    * @param {{
@@ -2905,27 +1998,7 @@ _createRipple:function(){this._rippleContainer=this.$.checkboxContainer;return P
    *     inputElement: The input element.
    *     value: The input value.
    *     invalid: True if the input value is invalid.
-   */update:function(state){}};_exports.PaperInputAddonBehavior=PaperInputAddonBehavior;var paperInputAddonBehavior={PaperInputAddonBehavior:PaperInputAddonBehavior};_exports.$paperInputAddonBehavior=paperInputAddonBehavior;(0,_natepaasApp.Polymer)({_template:_natepaasApp.html$1`
-    <style>
-      :host {
-        display: inline-block;
-        float: right;
-
-        @apply --paper-font-caption;
-        @apply --paper-input-char-counter;
-      }
-
-      :host([hidden]) {
-        display: none !important;
-      }
-
-      :host(:dir(rtl)) {
-        float: left;
-      }
-    </style>
-
-    <span>[[_charCounterStr]]</span>
-`,is:"paper-input-char-counter",behaviors:[PaperInputAddonBehavior],properties:{_charCounterStr:{type:String,value:"0"}},/**
+   */update:function update(state){}};_exports.PaperInputAddonBehavior=PaperInputAddonBehavior;var paperInputAddonBehavior={PaperInputAddonBehavior:PaperInputAddonBehavior};_exports.$paperInputAddonBehavior=paperInputAddonBehavior;(0,_natepaasApp.Polymer)({_template:(0,_natepaasApp.html$1)(_templateObject14_2937b1a0072d11eaac4ad73c7775be10()),is:"paper-input-char-counter",behaviors:[PaperInputAddonBehavior],properties:{_charCounterStr:{type:String,value:"0"}},/**
    * This overrides the update function in PaperInputAddonBehavior.
    * @param {{
    *   inputElement: (Element|undefined),
@@ -2935,31 +2008,7 @@ _createRipple:function(){this._rippleContainer=this.$.checkboxContainer;return P
    *     inputElement: The input element.
    *     value: The input value.
    *     invalid: True if the input value is invalid.
-   */update:function(state){if(!state.inputElement){return}state.value=state.value||"";var counter=state.value.toString().length.toString();if(state.inputElement.hasAttribute("maxlength")){counter+="/"+state.inputElement.getAttribute("maxlength")}this._charCounterStr=counter}});const template$6=_natepaasApp.html$1`
-<custom-style>
-  <style is="custom-style">
-    html {
-      --paper-input-container-shared-input-style: {
-        position: relative; /* to make a stacking context */
-        outline: none;
-        box-shadow: none;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-        max-width: 100%;
-        background: transparent;
-        border: none;
-        color: var(--paper-input-container-input-color, var(--primary-text-color));
-        -webkit-appearance: none;
-        text-align: inherit;
-        vertical-align: var(--paper-input-container-input-align, bottom);
-
-        @apply --paper-font-subhead;
-      };
-    }
-  </style>
-</custom-style>
-`;template$6.setAttribute("style","display: none;");document.head.appendChild(template$6.content);/*
+   */update:function update(state){if(!state.inputElement){return}state.value=state.value||"";var counter=state.value.toString().length.toString();if(state.inputElement.hasAttribute("maxlength")){counter+="/"+state.inputElement.getAttribute("maxlength")}this._charCounterStr=counter}});var template$6=(0,_natepaasApp.html$1)(_templateObject15_2937b1a0072d11eaac4ad73c7775be10());template$6.setAttribute("style","display: none;");document.head.appendChild(template$6.content);/*
                                                `<paper-input-container>` is a container for a `<label>`, an `<iron-input>` or
                                                `<textarea>` and optional add-on elements such as an error message or character
                                                counter, used to implement Material Design text fields.
@@ -3049,247 +2098,7 @@ _createRipple:function(){this._rippleContainer=this.$.checkboxContainer;return P
                                                `--paper-input-suffix` | Mixin applied to the input suffix | `{}`
                                                                                            This element is `display:block` by default, but you can set the `inline`
                                                attribute to make it `display:inline-block`.
-                                               */(0,_natepaasApp.Polymer)({_template:_natepaasApp.html$1`
-    <style>
-      :host {
-        display: block;
-        padding: 8px 0;
-        @apply --paper-input-container;
-      }
-
-      :host([inline]) {
-        display: inline-block;
-      }
-
-      :host([disabled]) {
-        pointer-events: none;
-        opacity: 0.33;
-
-        @apply --paper-input-container-disabled;
-      }
-
-      :host([hidden]) {
-        display: none !important;
-      }
-
-      [hidden] {
-        display: none !important;
-      }
-
-      .floated-label-placeholder {
-        @apply --paper-font-caption;
-      }
-
-      .underline {
-        height: 2px;
-        position: relative;
-      }
-
-      .focused-line {
-        @apply --layout-fit;
-        border-bottom: 2px solid var(--paper-input-container-focus-color, var(--primary-color));
-
-        -webkit-transform-origin: center center;
-        transform-origin: center center;
-        -webkit-transform: scale3d(0,1,1);
-        transform: scale3d(0,1,1);
-
-        @apply --paper-input-container-underline-focus;
-      }
-
-      .underline.is-highlighted .focused-line {
-        -webkit-transform: none;
-        transform: none;
-        -webkit-transition: -webkit-transform 0.25s;
-        transition: transform 0.25s;
-
-        @apply --paper-transition-easing;
-      }
-
-      .underline.is-invalid .focused-line {
-        border-color: var(--paper-input-container-invalid-color, var(--error-color));
-        -webkit-transform: none;
-        transform: none;
-        -webkit-transition: -webkit-transform 0.25s;
-        transition: transform 0.25s;
-
-        @apply --paper-transition-easing;
-      }
-
-      .unfocused-line {
-        @apply --layout-fit;
-        border-bottom: 1px solid var(--paper-input-container-color, var(--secondary-text-color));
-        @apply --paper-input-container-underline;
-      }
-
-      :host([disabled]) .unfocused-line {
-        border-bottom: 1px dashed;
-        border-color: var(--paper-input-container-color, var(--secondary-text-color));
-        @apply --paper-input-container-underline-disabled;
-      }
-
-      .input-wrapper {
-        @apply --layout-horizontal;
-        @apply --layout-center;
-        position: relative;
-      }
-
-      .input-content {
-        @apply --layout-flex-auto;
-        @apply --layout-relative;
-        max-width: 100%;
-      }
-
-      .input-content ::slotted(label),
-      .input-content ::slotted(.paper-input-label) {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        font: inherit;
-        color: var(--paper-input-container-color, var(--secondary-text-color));
-        -webkit-transition: -webkit-transform 0.25s, width 0.25s;
-        transition: transform 0.25s, width 0.25s;
-        -webkit-transform-origin: left top;
-        transform-origin: left top;
-        /* Fix for safari not focusing 0-height date/time inputs with -webkit-apperance: none; */
-        min-height: 1px;
-
-        @apply --paper-font-common-nowrap;
-        @apply --paper-font-subhead;
-        @apply --paper-input-container-label;
-        @apply --paper-transition-easing;
-      }
-
-      .input-content.label-is-floating ::slotted(label),
-      .input-content.label-is-floating ::slotted(.paper-input-label) {
-        -webkit-transform: translateY(-75%) scale(0.75);
-        transform: translateY(-75%) scale(0.75);
-
-        /* Since we scale to 75/100 of the size, we actually have 100/75 of the
-        original space now available */
-        width: 133%;
-
-        @apply --paper-input-container-label-floating;
-      }
-
-      :host(:dir(rtl)) .input-content.label-is-floating ::slotted(label),
-      :host(:dir(rtl)) .input-content.label-is-floating ::slotted(.paper-input-label) {
-        right: 0;
-        left: auto;
-        -webkit-transform-origin: right top;
-        transform-origin: right top;
-      }
-
-      .input-content.label-is-highlighted ::slotted(label),
-      .input-content.label-is-highlighted ::slotted(.paper-input-label) {
-        color: var(--paper-input-container-focus-color, var(--primary-color));
-
-        @apply --paper-input-container-label-focus;
-      }
-
-      .input-content.is-invalid ::slotted(label),
-      .input-content.is-invalid ::slotted(.paper-input-label) {
-        color: var(--paper-input-container-invalid-color, var(--error-color));
-      }
-
-      .input-content.label-is-hidden ::slotted(label),
-      .input-content.label-is-hidden ::slotted(.paper-input-label) {
-        visibility: hidden;
-      }
-
-      .input-content ::slotted(input),
-      .input-content ::slotted(iron-input),
-      .input-content ::slotted(textarea),
-      .input-content ::slotted(iron-autogrow-textarea),
-      .input-content ::slotted(.paper-input-input) {
-        @apply --paper-input-container-shared-input-style;
-        /* The apply shim doesn't apply the nested color custom property,
-          so we have to re-apply it here. */
-        color: var(--paper-input-container-input-color, var(--primary-text-color));
-        @apply --paper-input-container-input;
-      }
-
-      .input-content ::slotted(input)::-webkit-outer-spin-button,
-      .input-content ::slotted(input)::-webkit-inner-spin-button {
-        @apply --paper-input-container-input-webkit-spinner;
-      }
-
-      .input-content.focused ::slotted(input),
-      .input-content.focused ::slotted(iron-input),
-      .input-content.focused ::slotted(textarea),
-      .input-content.focused ::slotted(iron-autogrow-textarea),
-      .input-content.focused ::slotted(.paper-input-input) {
-        @apply --paper-input-container-input-focus;
-      }
-
-      .input-content.is-invalid ::slotted(input),
-      .input-content.is-invalid ::slotted(iron-input),
-      .input-content.is-invalid ::slotted(textarea),
-      .input-content.is-invalid ::slotted(iron-autogrow-textarea),
-      .input-content.is-invalid ::slotted(.paper-input-input) {
-        @apply --paper-input-container-input-invalid;
-      }
-
-      .prefix ::slotted(*) {
-        display: inline-block;
-        @apply --paper-font-subhead;
-        @apply --layout-flex-none;
-        @apply --paper-input-prefix;
-      }
-
-      .suffix ::slotted(*) {
-        display: inline-block;
-        @apply --paper-font-subhead;
-        @apply --layout-flex-none;
-
-        @apply --paper-input-suffix;
-      }
-
-      /* Firefox sets a min-width on the input, which can cause layout issues */
-      .input-content ::slotted(input) {
-        min-width: 0;
-      }
-
-      .input-content ::slotted(textarea) {
-        resize: none;
-      }
-
-      .add-on-content {
-        position: relative;
-      }
-
-      .add-on-content.is-invalid ::slotted(*) {
-        color: var(--paper-input-container-invalid-color, var(--error-color));
-      }
-
-      .add-on-content.is-highlighted ::slotted(*) {
-        color: var(--paper-input-container-focus-color, var(--primary-color));
-      }
-    </style>
-
-    <div class="floated-label-placeholder" aria-hidden="true" hidden="[[noLabelFloat]]">&nbsp;</div>
-
-    <div class="input-wrapper">
-      <span class="prefix"><slot name="prefix"></slot></span>
-
-      <div class$="[[_computeInputContentClass(noLabelFloat,alwaysFloatLabel,focused,invalid,_inputHasContent)]]" id="labelAndInputContainer">
-        <slot name="label"></slot>
-        <slot name="input"></slot>
-      </div>
-
-      <span class="suffix"><slot name="suffix"></slot></span>
-    </div>
-
-    <div class$="[[_computeUnderlineClass(focused,invalid)]]">
-      <div class="unfocused-line"></div>
-      <div class="focused-line"></div>
-    </div>
-
-    <div class$="[[_computeAddOnContentClass(focused,invalid)]]">
-      <slot name="add-on"></slot>
-    </div>
-`,is:"paper-input-container",properties:{/**
+                                               */(0,_natepaasApp.Polymer)({_template:(0,_natepaasApp.html$1)(_templateObject16_2937b1a0072d11eaac4ad73c7775be10()),is:"paper-input-container",properties:{/**
      * Set to true to disable the floating label. The label disappears when the
      * input value is not null.
      */noLabelFloat:{type:Boolean,value:!1},/**
@@ -3307,66 +2116,26 @@ _createRipple:function(){this._rippleContainer=this.$.checkboxContainer;return P
      */focused:{readOnly:!0,type:Boolean,value:!1,notify:!0},_addons:{type:Array// do not set a default value here intentionally - it will be initialized
 // lazily when a distributed child is attached, which may occur before
 // configuration for this element in polyfill.
-},_inputHasContent:{type:Boolean,value:!1},_inputSelector:{type:String,value:"input,iron-input,textarea,.paper-input-input"},_boundOnFocus:{type:Function,value:function(){return this._onFocus.bind(this)}},_boundOnBlur:{type:Function,value:function(){return this._onBlur.bind(this)}},_boundOnInput:{type:Function,value:function(){return this._onInput.bind(this)}},_boundValueChanged:{type:Function,value:function(){return this._onValueChanged.bind(this)}}},listeners:{"addon-attached":"_onAddonAttached","iron-input-validate":"_onIronInputValidate"},get _valueChangedEvent(){return this.attrForValue+"-changed"},get _propertyForValue(){return(0,_natepaasApp.dashToCamelCase)(this.attrForValue)},get _inputElement(){return(0,_natepaasApp.dom)(this).querySelector(this._inputSelector)},get _inputElementValue(){return this._inputElement[this._propertyForValue]||this._inputElement.value},ready:function(){// Paper-input treats a value of undefined differently at startup than
+},_inputHasContent:{type:Boolean,value:!1},_inputSelector:{type:String,value:"input,iron-input,textarea,.paper-input-input"},_boundOnFocus:{type:Function,value:function value(){return this._onFocus.bind(this)}},_boundOnBlur:{type:Function,value:function value(){return this._onBlur.bind(this)}},_boundOnInput:{type:Function,value:function value(){return this._onInput.bind(this)}},_boundValueChanged:{type:Function,value:function value(){return this._onValueChanged.bind(this)}}},listeners:{"addon-attached":"_onAddonAttached","iron-input-validate":"_onIronInputValidate"},get _valueChangedEvent(){return this.attrForValue+"-changed"},get _propertyForValue(){return(0,_natepaasApp.dashToCamelCase)(this.attrForValue)},get _inputElement(){return(0,_natepaasApp.dom)(this).querySelector(this._inputSelector)},get _inputElementValue(){return this._inputElement[this._propertyForValue]||this._inputElement.value},ready:function ready(){// Paper-input treats a value of undefined differently at startup than
 // the rest of the time (specifically: it does not validate it at startup,
 // but it does after that. We need to track whether the first time we
 // encounter the value is basically this first time, so that we can validate
 // it correctly the rest of the time. See
 // https://github.com/PolymerElements/paper-input/issues/605
-this.__isFirstValueUpdate=!0;if(!this._addons){this._addons=[]}this.addEventListener("focus",this._boundOnFocus,!0);this.addEventListener("blur",this._boundOnBlur,!0)},attached:function(){if(this.attrForValue){this._inputElement.addEventListener(this._valueChangedEvent,this._boundValueChanged)}else{this.addEventListener("input",this._onInput)}// Only validate when attached if the input already has a value.
-if(this._inputElementValue&&""!=this._inputElementValue){this._handleValueAndAutoValidate(this._inputElement)}else{this._handleValue(this._inputElement)}},/** @private */_onAddonAttached:function(event){if(!this._addons){this._addons=[]}var target=event.target;if(-1===this._addons.indexOf(target)){this._addons.push(target);if(this.isAttached){this._handleValue(this._inputElement)}}},/** @private */_onFocus:function(){this._setFocused(!0)},/** @private */_onBlur:function(){this._setFocused(!1);this._handleValueAndAutoValidate(this._inputElement)},/** @private */_onInput:function(event){this._handleValueAndAutoValidate(event.target)},/** @private */_onValueChanged:function(event){var input=event.target;// Paper-input treats a value of undefined differently at startup than
+this.__isFirstValueUpdate=!0;if(!this._addons){this._addons=[]}this.addEventListener("focus",this._boundOnFocus,!0);this.addEventListener("blur",this._boundOnBlur,!0)},attached:function attached(){if(this.attrForValue){this._inputElement.addEventListener(this._valueChangedEvent,this._boundValueChanged)}else{this.addEventListener("input",this._onInput)}// Only validate when attached if the input already has a value.
+if(this._inputElementValue&&""!=this._inputElementValue){this._handleValueAndAutoValidate(this._inputElement)}else{this._handleValue(this._inputElement)}},/** @private */_onAddonAttached:function _onAddonAttached(event){if(!this._addons){this._addons=[]}var target=event.target;if(-1===this._addons.indexOf(target)){this._addons.push(target);if(this.isAttached){this._handleValue(this._inputElement)}}},/** @private */_onFocus:function _onFocus(){this._setFocused(!0)},/** @private */_onBlur:function _onBlur(){this._setFocused(!1);this._handleValueAndAutoValidate(this._inputElement)},/** @private */_onInput:function _onInput(event){this._handleValueAndAutoValidate(event.target)},/** @private */_onValueChanged:function _onValueChanged(event){var input=event.target;// Paper-input treats a value of undefined differently at startup than
 // the rest of the time (specifically: it does not validate it at startup,
 // but it does after that. If this is in fact the bootup case, ignore
 // validation, just this once.
-if(this.__isFirstValueUpdate){this.__isFirstValueUpdate=!1;if(input.value===void 0||""===input.value){return}}this._handleValueAndAutoValidate(event.target)},/** @private */_handleValue:function(inputElement){var value=this._inputElementValue;// type="number" hack needed because this.value is empty until it's valid
-if(value||0===value||"number"===inputElement.type&&!inputElement.checkValidity()){this._inputHasContent=!0}else{this._inputHasContent=!1}this.updateAddons({inputElement:inputElement,value:value,invalid:this.invalid})},/** @private */_handleValueAndAutoValidate:function(inputElement){if(this.autoValidate&&inputElement){var valid;if(inputElement.validate){valid=inputElement.validate(this._inputElementValue)}else{valid=inputElement.checkValidity()}this.invalid=!valid}// Call this last to notify the add-ons.
-this._handleValue(inputElement)},/** @private */_onIronInputValidate:function(event){this.invalid=this._inputElement.invalid},/** @private */_invalidChanged:function(){if(this._addons){this.updateAddons({invalid:this.invalid})}},/**
+if(this.__isFirstValueUpdate){this.__isFirstValueUpdate=!1;if(input.value===void 0||""===input.value){return}}this._handleValueAndAutoValidate(event.target)},/** @private */_handleValue:function _handleValue(inputElement){var value=this._inputElementValue;// type="number" hack needed because this.value is empty until it's valid
+if(value||0===value||"number"===inputElement.type&&!inputElement.checkValidity()){this._inputHasContent=!0}else{this._inputHasContent=!1}this.updateAddons({inputElement:inputElement,value:value,invalid:this.invalid})},/** @private */_handleValueAndAutoValidate:function _handleValueAndAutoValidate(inputElement){if(this.autoValidate&&inputElement){var valid;if(inputElement.validate){valid=inputElement.validate(this._inputElementValue)}else{valid=inputElement.checkValidity()}this.invalid=!valid}// Call this last to notify the add-ons.
+this._handleValue(inputElement)},/** @private */_onIronInputValidate:function _onIronInputValidate(event){this.invalid=this._inputElement.invalid},/** @private */_invalidChanged:function _invalidChanged(){if(this._addons){this.updateAddons({invalid:this.invalid})}},/**
    * Call this to update the state of add-ons.
    * @param {Object} state Add-on state.
-   */updateAddons:function(state){for(var addon,index=0;addon=this._addons[index];index++){addon.update(state)}},/** @private */_computeInputContentClass:function(noLabelFloat,alwaysFloatLabel,focused,invalid,_inputHasContent){var cls="input-content";if(!noLabelFloat){var label=this.querySelector("label");if(alwaysFloatLabel||_inputHasContent){cls+=" label-is-floating";// If the label is floating, ignore any offsets that may have been
+   */updateAddons:function updateAddons(state){for(var addon,index=0;addon=this._addons[index];index++){addon.update(state)}},/** @private */_computeInputContentClass:function _computeInputContentClass(noLabelFloat,alwaysFloatLabel,focused,invalid,_inputHasContent){var cls="input-content";if(!noLabelFloat){var label=this.querySelector("label");if(alwaysFloatLabel||_inputHasContent){cls+=" label-is-floating";// If the label is floating, ignore any offsets that may have been
 // applied from a prefix element.
 this.$.labelAndInputContainer.style.position="static";if(invalid){cls+=" is-invalid"}else if(focused){cls+=" label-is-highlighted"}}else{// When the label is not floating, it should overlap the input element.
-if(label){this.$.labelAndInputContainer.style.position="relative"}if(invalid){cls+=" is-invalid"}}}else{if(_inputHasContent){cls+=" label-is-hidden"}if(invalid){cls+=" is-invalid"}}if(focused){cls+=" focused"}return cls},/** @private */_computeUnderlineClass:function(focused,invalid){var cls="underline";if(invalid){cls+=" is-invalid"}else if(focused){cls+=" is-highlighted"}return cls},/** @private */_computeAddOnContentClass:function(focused,invalid){var cls="add-on-content";if(invalid){cls+=" is-invalid"}else if(focused){cls+=" is-highlighted"}return cls}});(0,_natepaasApp.Polymer)({_template:_natepaasApp.html$1`
-    <style>
-      :host {
-        display: inline-block;
-        visibility: hidden;
-
-        color: var(--paper-input-container-invalid-color, var(--error-color));
-
-        @apply --paper-font-caption;
-        @apply --paper-input-error;
-        position: absolute;
-        left:0;
-        right:0;
-      }
-
-      :host([invalid]) {
-        visibility: visible;
-      }
-
-      #a11yWrapper {
-        visibility: hidden;
-      }
-
-      :host([invalid]) #a11yWrapper {
-        visibility: visible;
-      }
-    </style>
-
-    <!--
-    If the paper-input-error element is directly referenced by an
-    \`aria-describedby\` attribute, such as when used as a paper-input add-on,
-    then applying \`visibility: hidden;\` to the paper-input-error element itself
-    does not hide the error.
-
-    For more information, see:
-    https://www.w3.org/TR/accname-1.1/#mapping_additional_nd_description
-    -->
-    <div id="a11yWrapper">
-      <slot></slot>
-    </div>
-`,is:"paper-input-error",behaviors:[PaperInputAddonBehavior],properties:{/**
+if(label){this.$.labelAndInputContainer.style.position="relative"}if(invalid){cls+=" is-invalid"}}}else{if(_inputHasContent){cls+=" label-is-hidden"}if(invalid){cls+=" is-invalid"}}if(focused){cls+=" focused"}return cls},/** @private */_computeUnderlineClass:function _computeUnderlineClass(focused,invalid){var cls="underline";if(invalid){cls+=" is-invalid"}else if(focused){cls+=" is-highlighted"}return cls},/** @private */_computeAddOnContentClass:function _computeAddOnContentClass(focused,invalid){var cls="add-on-content";if(invalid){cls+=" is-invalid"}else if(focused){cls+=" is-highlighted"}return cls}});(0,_natepaasApp.Polymer)({_template:(0,_natepaasApp.html$1)(_templateObject17_2937b1a0072d11eaac4ad73c7775be10()),is:"paper-input-error",behaviors:[PaperInputAddonBehavior],properties:{/**
      * True if the error is showing.
      */invalid:{readOnly:!0,reflectToAttribute:!0,type:Boolean}},/**
    * This overrides the update function in PaperInputAddonBehavior.
@@ -3378,8 +2147,8 @@ if(label){this.$.labelAndInputContainer.style.position="relative"}if(invalid){cl
    *     inputElement: The input element.
    *     value: The input value.
    *     invalid: True if the input value is invalid.
-   */update:function(state){this._setInvalid(state.invalid)}});// aria-labelledby) and add-ons.
-const PaperInputHelper={};_exports.PaperInputHelper=PaperInputHelper;PaperInputHelper.NextLabelID=1;PaperInputHelper.NextAddonID=1;PaperInputHelper.NextInputID=1;/**
+   */update:function update(state){this._setInvalid(state.invalid)}});// aria-labelledby) and add-ons.
+var PaperInputHelper={};_exports.PaperInputHelper=PaperInputHelper;PaperInputHelper.NextLabelID=1;PaperInputHelper.NextAddonID=1;PaperInputHelper.NextInputID=1;/**
                                    * Use `PaperInputBehavior` to implement inputs with `<paper-input-container>`.
                                    * This behavior is implemented by `<paper-input>`. It exposes a number of
                                    * properties from `<paper-input-container>` and `<input is="iron-input">` and
@@ -3388,7 +2157,7 @@ const PaperInputHelper={};_exports.PaperInputHelper=PaperInputHelper;PaperInputH
                                    * The input element can be accessed by the `inputElement` property if you need
                                    * to access properties or methods that are not exposed.
                                    * @polymerBehavior PaperInputBehavior
-                                   */const PaperInputBehaviorImpl={properties:{/**
+                                   */var PaperInputBehaviorImpl={properties:{/**
      * Fired when the input changes due to user interaction.
      *
      * @event change
@@ -3550,38 +2319,38 @@ value:""},/**
 if(!this.$){this.$={}}if(!this.$.input){this._generateInputId();this.$.input=this.$$("#"+this._inputId)}return this.$.input},/**
    * Returns a reference to the focusable element.
    * @return {!HTMLElement}
-   */get _focusableElement(){return this.inputElement},created:function(){// These types have some default placeholder text; overlapping
+   */get _focusableElement(){return this.inputElement},created:function created(){// These types have some default placeholder text; overlapping
 // the label on top of it looks terrible. Auto-float the label in this case.
-this._typesThatHaveText=["date","datetime","datetime-local","month","time","week","file"]},attached:function(){this._updateAriaLabelledBy();// In the 2.0 version of the element, this is handled in `onIronInputReady`,
+this._typesThatHaveText=["date","datetime","datetime-local","month","time","week","file"]},attached:function attached(){this._updateAriaLabelledBy();// In the 2.0 version of the element, this is handled in `onIronInputReady`,
 // i.e. after the native input has finished distributing. In the 1.0
 // version, the input is in the shadow tree, so it's already available.
-if(!_natepaasApp.PolymerElement&&this.inputElement&&-1!==this._typesThatHaveText.indexOf(this.inputElement.type)){this.alwaysFloatLabel=!0}},_appendStringWithSpace:function(str,more){if(str){str=str+" "+more}else{str=more}return str},_onAddonAttached:function(event){var target=(0,_natepaasApp.dom)(event).rootTarget;if(target.id){this._ariaDescribedBy=this._appendStringWithSpace(this._ariaDescribedBy,target.id)}else{var id="paper-input-add-on-"+PaperInputHelper.NextAddonID++;target.id=id;this._ariaDescribedBy=this._appendStringWithSpace(this._ariaDescribedBy,id)}},/**
+if(!_natepaasApp.PolymerElement&&this.inputElement&&-1!==this._typesThatHaveText.indexOf(this.inputElement.type)){this.alwaysFloatLabel=!0}},_appendStringWithSpace:function _appendStringWithSpace(str,more){if(str){str=str+" "+more}else{str=more}return str},_onAddonAttached:function _onAddonAttached(event){var target=(0,_natepaasApp.dom)(event).rootTarget;if(target.id){this._ariaDescribedBy=this._appendStringWithSpace(this._ariaDescribedBy,target.id)}else{var id="paper-input-add-on-"+PaperInputHelper.NextAddonID++;target.id=id;this._ariaDescribedBy=this._appendStringWithSpace(this._ariaDescribedBy,id)}},/**
    * Validates the input element and sets an error style if needed.
    *
    * @return {boolean}
-   */validate:function(){return this.inputElement.validate()},/**
+   */validate:function validate(){return this.inputElement.validate()},/**
    * Forward focus to inputElement. Overriden from IronControlState.
-   */_focusBlurHandler:function(event){IronControlState._focusBlurHandler.call(this,event);// Forward the focus to the nested input.
+   */_focusBlurHandler:function _focusBlurHandler(event){IronControlState._focusBlurHandler.call(this,event);// Forward the focus to the nested input.
 if(this.focused&&!this._shiftTabPressed&&this._focusableElement){this._focusableElement.focus()}},/**
    * Handler that is called when a shift+tab keypress is detected by the menu.
    *
    * @param {CustomEvent} event A key combination event.
-   */_onShiftTabDown:function(event){var oldTabIndex=this.getAttribute("tabindex");this._shiftTabPressed=!0;this.setAttribute("tabindex","-1");this.async(function(){this.setAttribute("tabindex",oldTabIndex);this._shiftTabPressed=!1},1)},/**
+   */_onShiftTabDown:function _onShiftTabDown(event){var oldTabIndex=this.getAttribute("tabindex");this._shiftTabPressed=!0;this.setAttribute("tabindex","-1");this.async(function(){this.setAttribute("tabindex",oldTabIndex);this._shiftTabPressed=!1},1)},/**
    * If `autoValidate` is true, then validates the element.
-   */_handleAutoValidate:function(){if(this.autoValidate)this.validate()},/**
+   */_handleAutoValidate:function _handleAutoValidate(){if(this.autoValidate)this.validate()},/**
    * Restores the cursor to its original position after updating the value.
    * @param {string} newValue The value that should be saved.
-   */updateValueAndPreserveCaret:function(newValue){// Not all elements might have selection, and even if they have the
+   */updateValueAndPreserveCaret:function updateValueAndPreserveCaret(newValue){// Not all elements might have selection, and even if they have the
 // right properties, accessing them might throw an exception (like for
 // <input type=number>)
 try{var start=this.inputElement.selectionStart;this.value=newValue;// The cursor automatically jumps to the end after re-setting the value,
 // so restore it to its original position.
 this.inputElement.selectionStart=start;this.inputElement.selectionEnd=start}catch(e){// Just set the value and give up on the caret.
-this.value=newValue}},_computeAlwaysFloatLabel:function(alwaysFloatLabel,placeholder){return placeholder||alwaysFloatLabel},_updateAriaLabelledBy:function(){var label=(0,_natepaasApp.dom)(this.root).querySelector("label");if(!label){this._ariaLabelledBy="";return}var labelledBy;if(label.id){labelledBy=label.id}else{labelledBy="paper-input-label-"+PaperInputHelper.NextLabelID++;label.id=labelledBy}this._ariaLabelledBy=labelledBy},_generateInputId:function(){if(!this._inputId||""===this._inputId){this._inputId="input-"+PaperInputHelper.NextInputID++}},_onChange:function(event){// In the Shadow DOM, the `change` event is not leaked into the
+this.value=newValue}},_computeAlwaysFloatLabel:function _computeAlwaysFloatLabel(alwaysFloatLabel,placeholder){return placeholder||alwaysFloatLabel},_updateAriaLabelledBy:function _updateAriaLabelledBy(){var label=(0,_natepaasApp.dom)(this.root).querySelector("label");if(!label){this._ariaLabelledBy="";return}var labelledBy;if(label.id){labelledBy=label.id}else{labelledBy="paper-input-label-"+PaperInputHelper.NextLabelID++;label.id=labelledBy}this._ariaLabelledBy=labelledBy},_generateInputId:function _generateInputId(){if(!this._inputId||""===this._inputId){this._inputId="input-"+PaperInputHelper.NextInputID++}},_onChange:function _onChange(event){// In the Shadow DOM, the `change` event is not leaked into the
 // ancestor tree, so we must do this manually.
 // See
 // https://w3c.github.io/webcomponents/spec/shadow/#events-that-are-not-leaked-into-ancestor-trees.
-if(this.shadowRoot){this.fire(event.type,{sourceEvent:event},{node:this,bubbles:event.bubbles,cancelable:event.cancelable})}},_autofocusChanged:function(){// Firefox doesn't respect the autofocus attribute if it's applied after
+if(this.shadowRoot){this.fire(event.type,{sourceEvent:event},{node:this,bubbles:event.bubbles,cancelable:event.cancelable})}},_autofocusChanged:function _autofocusChanged(){// Firefox doesn't respect the autofocus attribute if it's applied after
 // the page is loaded (Chrome/WebKit do respect it), preventing an
 // autofocus attribute specified in markup from taking effect when the
 // element is upgraded. As a workaround, if the autofocus property is set,
@@ -3591,112 +2360,8 @@ if(this.autofocus&&this._focusableElement){// In IE 11, the default document.act
 // polyfill?) in which the activeElement is not a real HTMLElement, but
 // just a plain object. We identify the latter case as having no valid
 // activeElement.
-var activeElement=document.activeElement,isActiveElementValid=activeElement instanceof HTMLElement,isSomeElementActive=isActiveElementValid&&activeElement!==document.body&&activeElement!==document.documentElement;/* IE 11 */if(!isSomeElementActive){// No specific element has taken the focus yet, so we can take it.
-this._focusableElement.focus()}}}};/** @polymerBehavior */_exports.PaperInputBehaviorImpl=PaperInputBehaviorImpl;const PaperInputBehavior=[IronControlState,IronA11yKeysBehavior,PaperInputBehaviorImpl];_exports.PaperInputBehavior=PaperInputBehavior;var paperInputBehavior={PaperInputHelper:PaperInputHelper,PaperInputBehaviorImpl:PaperInputBehaviorImpl,PaperInputBehavior:PaperInputBehavior};_exports.$paperInputBehavior=paperInputBehavior;(0,_natepaasApp.Polymer)({is:"paper-input",_template:_natepaasApp.html$1`
-    <style>
-      :host {
-        display: block;
-      }
-
-      :host([focused]) {
-        outline: none;
-      }
-
-      :host([hidden]) {
-        display: none !important;
-      }
-
-      input {
-        /* Firefox sets a min-width on the input, which can cause layout issues */
-        min-width: 0;
-      }
-
-      /* In 1.x, the <input> is distributed to paper-input-container, which styles it.
-      In 2.x the <iron-input> is distributed to paper-input-container, which styles
-      it, but in order for this to work correctly, we need to reset some
-      of the native input's properties to inherit (from the iron-input) */
-      iron-input > input {
-        @apply --paper-input-container-shared-input-style;
-        font-family: inherit;
-        font-weight: inherit;
-        font-size: inherit;
-        letter-spacing: inherit;
-        word-spacing: inherit;
-        line-height: inherit;
-        text-shadow: inherit;
-        color: inherit;
-        cursor: inherit;
-      }
-
-      input:disabled {
-        @apply --paper-input-container-input-disabled;
-      }
-
-      input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-        @apply --paper-input-container-input-webkit-spinner;
-      }
-
-      input::-webkit-clear-button {
-        @apply --paper-input-container-input-webkit-clear;
-      }
-
-      input::-webkit-calendar-picker-indicator {
-        @apply --paper-input-container-input-webkit-calendar-picker-indicator;
-      }
-
-      input::-webkit-input-placeholder {
-        color: var(--paper-input-container-color, var(--secondary-text-color));
-      }
-
-      input:-moz-placeholder {
-        color: var(--paper-input-container-color, var(--secondary-text-color));
-      }
-
-      input::-moz-placeholder {
-        color: var(--paper-input-container-color, var(--secondary-text-color));
-      }
-
-      input::-ms-clear {
-        @apply --paper-input-container-ms-clear;
-      }
-
-      input::-ms-reveal {
-        @apply --paper-input-container-ms-reveal;
-      }
-
-      input:-ms-input-placeholder {
-        color: var(--paper-input-container-color, var(--secondary-text-color));
-      }
-
-      label {
-        pointer-events: none;
-      }
-    </style>
-
-    <paper-input-container id="container" no-label-float="[[noLabelFloat]]" always-float-label="[[_computeAlwaysFloatLabel(alwaysFloatLabel,placeholder)]]" auto-validate$="[[autoValidate]]" disabled$="[[disabled]]" invalid="[[invalid]]">
-
-      <slot name="prefix" slot="prefix"></slot>
-
-      <label hidden$="[[!label]]" aria-hidden="true" for$="[[_inputId]]" slot="label">[[label]]</label>
-
-      <!-- Need to bind maxlength so that the paper-input-char-counter works correctly -->
-      <iron-input bind-value="{{value}}" slot="input" class="input-element" id$="[[_inputId]]" maxlength$="[[maxlength]]" allowed-pattern="[[allowedPattern]]" invalid="{{invalid}}" validator="[[validator]]">
-        <input aria-labelledby$="[[_ariaLabelledBy]]" aria-describedby$="[[_ariaDescribedBy]]" disabled$="[[disabled]]" title$="[[title]]" type$="[[type]]" pattern$="[[pattern]]" required$="[[required]]" autocomplete$="[[autocomplete]]" autofocus$="[[autofocus]]" inputmode$="[[inputmode]]" minlength$="[[minlength]]" maxlength$="[[maxlength]]" min$="[[min]]" max$="[[max]]" step$="[[step]]" name$="[[name]]" placeholder$="[[placeholder]]" readonly$="[[readonly]]" list$="[[list]]" size$="[[size]]" autocapitalize$="[[autocapitalize]]" autocorrect$="[[autocorrect]]" on-change="_onChange" tabindex$="[[tabIndex]]" autosave$="[[autosave]]" results$="[[results]]" accept$="[[accept]]" multiple$="[[multiple]]">
-      </iron-input>
-
-      <slot name="suffix" slot="suffix"></slot>
-
-      <template is="dom-if" if="[[errorMessage]]">
-        <paper-input-error aria-live="assertive" slot="add-on">[[errorMessage]]</paper-input-error>
-      </template>
-
-      <template is="dom-if" if="[[charCounter]]">
-        <paper-input-char-counter slot="add-on"></paper-input-char-counter>
-      </template>
-
-    </paper-input-container>
-  `,behaviors:[PaperInputBehavior,IronFormElementBehavior],properties:{value:{// Required for the correct TypeScript type-generation
+var activeElement=document.activeElement,isActiveElementValid=babelHelpers.instanceof(activeElement,HTMLElement),isSomeElementActive=isActiveElementValid&&activeElement!==document.body&&activeElement!==document.documentElement;/* IE 11 */if(!isSomeElementActive){// No specific element has taken the focus yet, so we can take it.
+this._focusableElement.focus()}}}};/** @polymerBehavior */_exports.PaperInputBehaviorImpl=PaperInputBehaviorImpl;var PaperInputBehavior=[IronControlState,IronA11yKeysBehavior,PaperInputBehaviorImpl];_exports.PaperInputBehavior=PaperInputBehavior;var paperInputBehavior={PaperInputHelper:PaperInputHelper,PaperInputBehaviorImpl:PaperInputBehaviorImpl,PaperInputBehavior:PaperInputBehavior};_exports.$paperInputBehavior=paperInputBehavior;(0,_natepaasApp.Polymer)({is:"paper-input",_template:(0,_natepaasApp.html$1)(_templateObject18_2937b1a0072d11eaac4ad73c7775be10()),behaviors:[PaperInputBehavior,IronFormElementBehavior],properties:{value:{// Required for the correct TypeScript type-generation
 type:String}},/**
    * Returns a reference to the focusable element. Overridden from
    * PaperInputBehavior to correctly focus the native input.
@@ -3705,109 +2370,10 @@ type:String}},/**
    */get _focusableElement(){return this.inputElement._inputElement},// Note: This event is only available in the 1.0 version of this element.
 // In 2.0, the functionality of `_onIronInputReady` is done in
 // PaperInputBehavior::attached.
-listeners:{"iron-input-ready":"_onIronInputReady"},_onIronInputReady:function(){// Even though this is only used in the next line, save this for
+listeners:{"iron-input-ready":"_onIronInputReady"},_onIronInputReady:function _onIronInputReady(){// Even though this is only used in the next line, save this for
 // backwards compatibility, since the native input had this ID until 2.0.5.
 if(!this.$.nativeInput){this.$.nativeInput=this.$$("input")}if(this.inputElement&&-1!==this._typesThatHaveText.indexOf(this.$.nativeInput.type)){this.alwaysFloatLabel=!0}// Only validate when attached if the input already has a value.
-if(!!this.inputElement.bindValue){this.$.container._handleValueAndAutoValidate(this.inputElement)}}});(0,_natepaasApp.Polymer)({is:"paper-menu-grow-height-animation",behaviors:[NeonAnimationBehavior],configure:function(config){var node=config.node,rect=node.getBoundingClientRect(),height=rect.height;this._effect=new KeyframeEffect(node,[{height:height/2+"px"},{height:height+"px"}],this.timingFromConfig(config));return this._effect}});(0,_natepaasApp.Polymer)({is:"paper-menu-grow-width-animation",behaviors:[NeonAnimationBehavior],configure:function(config){var node=config.node,rect=node.getBoundingClientRect(),width=rect.width;this._effect=new KeyframeEffect(node,[{width:width/2+"px"},{width:width+"px"}],this.timingFromConfig(config));return this._effect}});(0,_natepaasApp.Polymer)({is:"paper-menu-shrink-width-animation",behaviors:[NeonAnimationBehavior],configure:function(config){var node=config.node,rect=node.getBoundingClientRect(),width=rect.width;this._effect=new KeyframeEffect(node,[{width:width+"px"},{width:width-width/20+"px"}],this.timingFromConfig(config));return this._effect}});(0,_natepaasApp.Polymer)({is:"paper-menu-shrink-height-animation",behaviors:[NeonAnimationBehavior],configure:function(config){var node=config.node,rect=node.getBoundingClientRect(),height=rect.height;this.setPrefixedProperty(node,"transformOrigin","0 0");this._effect=new KeyframeEffect(node,[{height:height+"px",transform:"translateY(0)"},{height:height/2+"px",transform:"translateY(-20px)"}],this.timingFromConfig(config));return this._effect}});var config={ANIMATION_CUBIC_BEZIER:"cubic-bezier(.3,.95,.5,1)",MAX_ANIMATION_TIME_MS:400};/**
-   Material design: [Dropdown
-   buttons](https://www.google.com/design/spec/components/buttons.html#buttons-dropdown-buttons)
-   
-   `paper-menu-button` allows one to compose a designated "trigger" element with
-   another element that represents "content", to create a dropdown menu that
-   displays the "content" when the "trigger" is clicked.
-   
-   The child element assigned to the `dropdown-trigger` slot will be used as the
-   "trigger" element. The child element assigned to the `dropdown-content` slot
-   will be used as the "content" element.
-   
-   The `paper-menu-button` is sensitive to its content's `iron-select` events. If
-   the "content" element triggers an `iron-select` event, the `paper-menu-button`
-   will close automatically.
-   
-   Example:
-   
-       <paper-menu-button>
-         <paper-icon-button icon="menu"
-   slot="dropdown-trigger"></paper-icon-button> <paper-listbox
-   slot="dropdown-content"> <paper-item>Share</paper-item>
-           <paper-item>Settings</paper-item>
-           <paper-item>Help</paper-item>
-         </paper-listbox>
-       </paper-menu-button>
-   
-   ### Styling
-   
-   The following custom properties and mixins are also available for styling:
-   
-   Custom property | Description | Default
-   ----------------|-------------|----------
-   `--paper-menu-button-dropdown-background` | Background color of the paper-menu-button dropdown | `--primary-background-color`
-   `--paper-menu-button` | Mixin applied to the paper-menu-button | `{}`
-   `--paper-menu-button-disabled` | Mixin applied to the paper-menu-button when disabled | `{}`
-   `--paper-menu-button-dropdown` | Mixin applied to the paper-menu-button dropdown | `{}`
-   `--paper-menu-button-content` | Mixin applied to the paper-menu-button content | `{}`
-   
-   @hero hero.svg
-   @demo demo/index.html
-   */const PaperMenuButton=(0,_natepaasApp.Polymer)({_template:_natepaasApp.html$1`
-    <style>
-      :host {
-        display: inline-block;
-        position: relative;
-        padding: 8px;
-        outline: none;
-
-        @apply --paper-menu-button;
-      }
-
-      :host([disabled]) {
-        cursor: auto;
-        color: var(--disabled-text-color);
-
-        @apply --paper-menu-button-disabled;
-      }
-
-      iron-dropdown {
-        @apply --paper-menu-button-dropdown;
-      }
-
-      .dropdown-content {
-        @apply --shadow-elevation-2dp;
-
-        position: relative;
-        border-radius: 2px;
-        background-color: var(--paper-menu-button-dropdown-background, var(--primary-background-color));
-
-        @apply --paper-menu-button-content;
-      }
-
-      :host([vertical-align="top"]) .dropdown-content {
-        margin-bottom: 20px;
-        margin-top: -10px;
-        top: 10px;
-      }
-
-      :host([vertical-align="bottom"]) .dropdown-content {
-        bottom: 10px;
-        margin-bottom: -10px;
-        margin-top: 20px;
-      }
-
-      #trigger {
-        cursor: pointer;
-      }
-    </style>
-
-    <div id="trigger" on-tap="toggle">
-      <slot name="dropdown-trigger"></slot>
-    </div>
-
-    <iron-dropdown id="dropdown" opened="{{opened}}" horizontal-align="[[horizontalAlign]]" vertical-align="[[verticalAlign]]" dynamic-align="[[dynamicAlign]]" horizontal-offset="[[horizontalOffset]]" vertical-offset="[[verticalOffset]]" no-overlap="[[noOverlap]]" open-animation-config="[[openAnimationConfig]]" close-animation-config="[[closeAnimationConfig]]" no-animations="[[noAnimations]]" focus-target="[[_dropdownContent]]" allow-outside-scroll="[[allowOutsideScroll]]" restore-focus-on-close="[[restoreFocusOnClose]]" on-iron-overlay-canceled="__onIronOverlayCanceled">
-      <div slot="dropdown-content" class="dropdown-content">
-        <slot id="content" name="dropdown-content"></slot>
-      </div>
-    </iron-dropdown>
-`,is:"paper-menu-button",/**
+if(!!this.inputElement.bindValue){this.$.container._handleValueAndAutoValidate(this.inputElement)}}});(0,_natepaasApp.Polymer)({is:"paper-menu-grow-height-animation",behaviors:[NeonAnimationBehavior],configure:function configure(config){var node=config.node,rect=node.getBoundingClientRect(),height=rect.height;this._effect=new KeyframeEffect(node,[{height:height/2+"px"},{height:height+"px"}],this.timingFromConfig(config));return this._effect}});(0,_natepaasApp.Polymer)({is:"paper-menu-grow-width-animation",behaviors:[NeonAnimationBehavior],configure:function configure(config){var node=config.node,rect=node.getBoundingClientRect(),width=rect.width;this._effect=new KeyframeEffect(node,[{width:width/2+"px"},{width:width+"px"}],this.timingFromConfig(config));return this._effect}});(0,_natepaasApp.Polymer)({is:"paper-menu-shrink-width-animation",behaviors:[NeonAnimationBehavior],configure:function configure(config){var node=config.node,rect=node.getBoundingClientRect(),width=rect.width;this._effect=new KeyframeEffect(node,[{width:width+"px"},{width:width-width/20+"px"}],this.timingFromConfig(config));return this._effect}});(0,_natepaasApp.Polymer)({is:"paper-menu-shrink-height-animation",behaviors:[NeonAnimationBehavior],configure:function configure(config){var node=config.node,rect=node.getBoundingClientRect(),height=rect.height;this.setPrefixedProperty(node,"transformOrigin","0 0");this._effect=new KeyframeEffect(node,[{height:height+"px",transform:"translateY(0)"},{height:height/2+"px",transform:"translateY(-20px)"}],this.timingFromConfig(config));return this._effect}});var config={ANIMATION_CUBIC_BEZIER:"cubic-bezier(.3,.95,.5,1)",MAX_ANIMATION_TIME_MS:400},PaperMenuButton=(0,_natepaasApp.Polymer)({_template:(0,_natepaasApp.html$1)(_templateObject19_2937b1a0072d11eaac4ad73c7775be10()),is:"paper-menu-button",/**
    * Fired when the dropdown opens.
    *
    * @event paper-dropdown-open
@@ -3851,10 +2417,10 @@ if(!!this.inputElement.bindValue){this.$.container._handleValueAndAutoValidate(t
      */closeOnActivate:{type:Boolean,value:!1},/**
      * An animation config. If provided, this will be used to animate the
      * opening of the dropdown.
-     */openAnimationConfig:{type:Object,value:function(){return[{name:"fade-in-animation",timing:{delay:100,duration:200}},{name:"paper-menu-grow-width-animation",timing:{delay:100,duration:150,easing:config.ANIMATION_CUBIC_BEZIER}},{name:"paper-menu-grow-height-animation",timing:{delay:100,duration:275,easing:config.ANIMATION_CUBIC_BEZIER}}]}},/**
+     */openAnimationConfig:{type:Object,value:function value(){return[{name:"fade-in-animation",timing:{delay:100,duration:200}},{name:"paper-menu-grow-width-animation",timing:{delay:100,duration:150,easing:config.ANIMATION_CUBIC_BEZIER}},{name:"paper-menu-grow-height-animation",timing:{delay:100,duration:275,easing:config.ANIMATION_CUBIC_BEZIER}}]}},/**
      * An animation config. If provided, this will be used to animate the
      * closing of the dropdown.
-     */closeAnimationConfig:{type:Object,value:function(){return[{name:"fade-out-animation",timing:{duration:150}},{name:"paper-menu-shrink-width-animation",timing:{delay:100,duration:50,easing:config.ANIMATION_CUBIC_BEZIER}},{name:"paper-menu-shrink-height-animation",timing:{duration:200,easing:"ease-in"}}]}},/**
+     */closeAnimationConfig:{type:Object,value:function value(){return[{name:"fade-out-animation",timing:{duration:150}},{name:"paper-menu-shrink-width-animation",timing:{delay:100,duration:50,easing:config.ANIMATION_CUBIC_BEZIER}},{name:"paper-menu-shrink-height-animation",timing:{duration:200,easing:"ease-in"}}]}},/**
      * By default, the dropdown will constrain scrolling on the page
      * to itself when opened.
      * Set to true in order to prevent scroll from being constrained
@@ -3869,29 +2435,29 @@ if(!!this.inputElement.bindValue){this.$.container._handleValueAndAutoValidate(t
    */get contentElement(){// Polymer 2.x returns slot.assignedNodes which can contain text nodes.
 for(var nodes=(0,_natepaasApp.dom)(this.$.content).getDistributedNodes(),i=0,l=nodes.length;i<l;i++){if(nodes[i].nodeType===Node.ELEMENT_NODE){return nodes[i]}}},/**
    * Toggles the dropdown content between opened and closed.
-   */toggle:function(){if(this.opened){this.close()}else{this.open()}},/**
+   */toggle:function toggle(){if(this.opened){this.close()}else{this.open()}},/**
    * Make the dropdown content appear as an overlay positioned relative
    * to the dropdown trigger.
-   */open:function(){if(this.disabled){return}this.$.dropdown.open()},/**
+   */open:function open(){if(this.disabled){return}this.$.dropdown.open()},/**
    * Hide the dropdown content.
-   */close:function(){this.$.dropdown.close()},/**
+   */close:function close(){this.$.dropdown.close()},/**
    * When an `iron-select` event is received, the dropdown should
    * automatically close on the assumption that a value has been chosen.
    *
    * @param {CustomEvent} event A CustomEvent instance with type
    * set to `"iron-select"`.
-   */_onIronSelect:function(event){if(!this.ignoreSelect){this.close()}},/**
+   */_onIronSelect:function _onIronSelect(event){if(!this.ignoreSelect){this.close()}},/**
    * Closes the dropdown when an `iron-activate` event is received if
    * `closeOnActivate` is true.
    *
    * @param {CustomEvent} event A CustomEvent of type 'iron-activate'.
-   */_onIronActivate:function(event){if(this.closeOnActivate){this.close()}},/**
+   */_onIronActivate:function _onIronActivate(event){if(this.closeOnActivate){this.close()}},/**
    * When the dropdown opens, the `paper-menu-button` fires `paper-open`.
    * When the dropdown closes, the `paper-menu-button` fires `paper-close`.
    *
    * @param {boolean} opened True if the dropdown is opened, otherwise false.
    * @param {boolean} oldOpened The previous value of `opened`.
-   */_openedChanged:function(opened,oldOpened){if(opened){// TODO(cdata): Update this when we can measure changes in distributed
+   */_openedChanged:function _openedChanged(opened,oldOpened){if(opened){// TODO(cdata): Update this when we can measure changes in distributed
 // children in an idiomatic way.
 // We poke this property in case the element has changed. This will
 // cause the focus target for the `iron-dropdown` to be updated as
@@ -3901,24 +2467,48 @@ this._dropdownContent=this.contentElement;this.fire("paper-dropdown-open")}else 
    * dropdown.
    *
    * @param {boolean} disabled True if disabled, otherwise false.
-   */_disabledChanged:function(disabled){IronControlState._disabledChanged.apply(this,arguments);if(disabled&&this.opened){this.close()}},__onIronOverlayCanceled:function(event){var uiEvent=event.detail,trigger=this.$.trigger,path=(0,_natepaasApp.dom)(uiEvent).path;if(-1<path.indexOf(trigger)){event.preventDefault()}}});_exports.PaperMenuButton=PaperMenuButton;Object.keys(config).forEach(function(key){PaperMenuButton[key]=config[key]});var paperMenuButton={PaperMenuButton:PaperMenuButton};_exports.$paperMenuButton=paperMenuButton;(0,_natepaasApp.Polymer)({_template:_natepaasApp.html$1`
-    <style include="paper-dropdown-menu-shared-styles"></style>
-
-    <!-- this div fulfills an a11y requirement for combobox, do not remove -->
-    <span role="button"></span>
-    <paper-menu-button id="menuButton" vertical-align="[[verticalAlign]]" horizontal-align="[[horizontalAlign]]" dynamic-align="[[dynamicAlign]]" vertical-offset="[[_computeMenuVerticalOffset(noLabelFloat, verticalOffset)]]" disabled="[[disabled]]" no-animations="[[noAnimations]]" on-iron-select="_onIronSelect" on-iron-deselect="_onIronDeselect" opened="{{opened}}" close-on-activate allow-outside-scroll="[[allowOutsideScroll]]" restore-focus-on-close="[[restoreFocusOnClose]]">
-      <!-- support hybrid mode: user might be using paper-menu-button 1.x which distributes via <content> -->
-      <div class="dropdown-trigger" slot="dropdown-trigger">
-        <paper-ripple></paper-ripple>
-        <!-- paper-input has type="text" for a11y, do not remove -->
-        <paper-input type="text" invalid="[[invalid]]" readonly disabled="[[disabled]]" value="[[value]]" placeholder="[[placeholder]]" error-message="[[errorMessage]]" always-float-label="[[alwaysFloatLabel]]" no-label-float="[[noLabelFloat]]" label="[[label]]">
-          <!-- support hybrid mode: user might be using paper-input 1.x which distributes via <content> -->
-          <iron-icon icon="paper-dropdown-menu:arrow-drop-down" suffix slot="suffix"></iron-icon>
-        </paper-input>
-      </div>
-      <slot id="content" name="dropdown-content" slot="dropdown-content"></slot>
-    </paper-menu-button>
-`,is:"paper-dropdown-menu",behaviors:[IronButtonState,IronControlState,IronFormElementBehavior,IronValidatableBehavior],properties:{/**
+   */_disabledChanged:function _disabledChanged(disabled){IronControlState._disabledChanged.apply(this,arguments);if(disabled&&this.opened){this.close()}},__onIronOverlayCanceled:function __onIronOverlayCanceled(event){var uiEvent=event.detail,trigger=this.$.trigger,path=(0,_natepaasApp.dom)(uiEvent).path;if(-1<path.indexOf(trigger)){event.preventDefault()}}});/**
+   Material design: [Dropdown
+   buttons](https://www.google.com/design/spec/components/buttons.html#buttons-dropdown-buttons)
+   
+   `paper-menu-button` allows one to compose a designated "trigger" element with
+   another element that represents "content", to create a dropdown menu that
+   displays the "content" when the "trigger" is clicked.
+   
+   The child element assigned to the `dropdown-trigger` slot will be used as the
+   "trigger" element. The child element assigned to the `dropdown-content` slot
+   will be used as the "content" element.
+   
+   The `paper-menu-button` is sensitive to its content's `iron-select` events. If
+   the "content" element triggers an `iron-select` event, the `paper-menu-button`
+   will close automatically.
+   
+   Example:
+   
+       <paper-menu-button>
+         <paper-icon-button icon="menu"
+   slot="dropdown-trigger"></paper-icon-button> <paper-listbox
+   slot="dropdown-content"> <paper-item>Share</paper-item>
+           <paper-item>Settings</paper-item>
+           <paper-item>Help</paper-item>
+         </paper-listbox>
+       </paper-menu-button>
+   
+   ### Styling
+   
+   The following custom properties and mixins are also available for styling:
+   
+   Custom property | Description | Default
+   ----------------|-------------|----------
+   `--paper-menu-button-dropdown-background` | Background color of the paper-menu-button dropdown | `--primary-background-color`
+   `--paper-menu-button` | Mixin applied to the paper-menu-button | `{}`
+   `--paper-menu-button-disabled` | Mixin applied to the paper-menu-button when disabled | `{}`
+   `--paper-menu-button-dropdown` | Mixin applied to the paper-menu-button dropdown | `{}`
+   `--paper-menu-button-content` | Mixin applied to the paper-menu-button content | `{}`
+   
+   @hero hero.svg
+   @demo demo/index.html
+   */_exports.PaperMenuButton=PaperMenuButton;Object.keys(config).forEach(function(key){PaperMenuButton[key]=config[key]});var paperMenuButton={PaperMenuButton:PaperMenuButton};_exports.$paperMenuButton=paperMenuButton;(0,_natepaasApp.Polymer)({_template:(0,_natepaasApp.html$1)(_templateObject20_2937b1a0072d11eaac4ad73c7775be10()),is:"paper-dropdown-menu",behaviors:[IronButtonState,IronControlState,IronFormElementBehavior,IronValidatableBehavior],properties:{/**
      * The derived "label" of the currently selected item. This value
      * is the `label` property on the selected item if set, or else the
      * trimmed text content of the selected item.
@@ -3972,7 +2562,7 @@ this._dropdownContent=this.contentElement;this.fire("paper-dropdown-open")}else 
      * Whether focus should be restored to the dropdown when the menu closes.
      */restoreFocusOnClose:{type:Boolean,value:!0}},listeners:{tap:"_onTap"},/**
    * @type {!Object}
-   */keyBindings:{"up down":"open",esc:"close"},hostAttributes:{role:"combobox","aria-autocomplete":"none","aria-haspopup":"true"},observers:["_selectedItemChanged(selectedItem)"],attached:function(){// NOTE(cdata): Due to timing, a preselected value in a `IronSelectable`
+   */keyBindings:{"up down":"open",esc:"close"},hostAttributes:{role:"combobox","aria-autocomplete":"none","aria-haspopup":"true"},observers:["_selectedItemChanged(selectedItem)"],attached:function attached(){// NOTE(cdata): Due to timing, a preselected value in a `IronSelectable`
 // child will cause an `iron-select` event to fire while the element is
 // still in a `DocumentFragment`. This has the effect of causing
 // handlers not to fire. So, we double check this value on attached:
@@ -3981,33 +2571,33 @@ var contentElement=this.contentElement;if(contentElement&&contentElement.selecte
    */get contentElement(){// Polymer 2.x returns slot.assignedNodes which can contain text nodes.
 for(var nodes=(0,_natepaasApp.dom)(this.$.content).getDistributedNodes(),i=0,l=nodes.length;i<l;i++){if(nodes[i].nodeType===Node.ELEMENT_NODE){return nodes[i]}}},/**
    * Show the dropdown content.
-   */open:function(){this.$.menuButton.open()},/**
+   */open:function open(){this.$.menuButton.open()},/**
    * Hide the dropdown content.
-   */close:function(){this.$.menuButton.close()},/**
+   */close:function close(){this.$.menuButton.close()},/**
    * A handler that is called when `iron-select` is fired.
    *
    * @param {CustomEvent} event An `iron-select` event.
-   */_onIronSelect:function(event){this._setSelectedItem(event.detail.item)},/**
+   */_onIronSelect:function _onIronSelect(event){this._setSelectedItem(event.detail.item)},/**
    * A handler that is called when `iron-deselect` is fired.
    *
    * @param {CustomEvent} event An `iron-deselect` event.
-   */_onIronDeselect:function(event){this._setSelectedItem(null)},/**
+   */_onIronDeselect:function _onIronDeselect(event){this._setSelectedItem(null)},/**
    * A handler that is called when the dropdown is tapped.
    *
    * @param {CustomEvent} event A tap event.
-   */_onTap:function(event){if((0,_natepaasApp.findOriginalTarget)(event)===this){this.open()}},/**
+   */_onTap:function _onTap(event){if((0,_natepaasApp.findOriginalTarget)(event)===this){this.open()}},/**
    * Compute the label for the dropdown given a selected item.
    *
    * @param {Element} selectedItem A selected Element item, with an
    * optional `label` property.
-   */_selectedItemChanged:function(selectedItem){var value="";if(!selectedItem){value=""}else{value=selectedItem.label||selectedItem.getAttribute("label")||selectedItem.textContent.trim()}this.value=value;this._setSelectedItemLabel(value)},/**
+   */_selectedItemChanged:function _selectedItemChanged(selectedItem){var value="";if(!selectedItem){value=""}else{value=selectedItem.label||selectedItem.getAttribute("label")||selectedItem.textContent.trim()}this.value=value;this._setSelectedItemLabel(value)},/**
    * Compute the vertical offset of the menu based on the value of
    * `noLabelFloat`.
    *
    * @param {boolean} noLabelFloat True if the label should not float
    * @param {number=} opt_verticalOffset Optional offset from the user
    * above the input, otherwise false.
-   */_computeMenuVerticalOffset:function(noLabelFloat,opt_verticalOffset){// Override offset if it's passed from the user.
+   */_computeMenuVerticalOffset:function _computeMenuVerticalOffset(noLabelFloat,opt_verticalOffset){// Override offset if it's passed from the user.
 if(opt_verticalOffset){return opt_verticalOffset}// NOTE(cdata): These numbers are somewhat magical because they are
 // derived from the metrics of elements internal to `paper-input`'s
 // template. The metrics will change depending on whether or not the
@@ -4018,99 +2608,7 @@ return noLabelFloat?-4:8},/**
    * @param {*=} _value Ignored.
    * @return {boolean} true if `required` is false, or if `required` is true
    * and the element has a valid selection.
-   */_getValidity:function(_value){return this.disabled||!this.required||this.required&&!!this.value},_openedChanged:function(){var openState=this.opened?"true":"false",e=this.contentElement;if(e){e.setAttribute("aria-expanded",openState)}}});const PaperItemBehaviorImpl={hostAttributes:{role:"option",tabindex:"0"}};/** @polymerBehavior */_exports.PaperItemBehaviorImpl=PaperItemBehaviorImpl;const PaperItemBehavior=[IronButtonState,IronControlState,PaperItemBehaviorImpl];_exports.PaperItemBehavior=PaperItemBehavior;var paperItemBehavior={PaperItemBehaviorImpl:PaperItemBehaviorImpl,PaperItemBehavior:PaperItemBehavior};_exports.$paperItemBehavior=paperItemBehavior;const $_documentContainer$2=document.createElement("template");$_documentContainer$2.setAttribute("style","display: none;");$_documentContainer$2.innerHTML=`<dom-module id="paper-item-shared-styles">
-  <template>
-    <style>
-      :host, .paper-item {
-        display: block;
-        position: relative;
-        min-height: var(--paper-item-min-height, 48px);
-        padding: 0px 16px;
-      }
-
-      .paper-item {
-        @apply --paper-font-subhead;
-        border:none;
-        outline: none;
-        background: white;
-        width: 100%;
-        text-align: left;
-      }
-
-      :host([hidden]), .paper-item[hidden] {
-        display: none !important;
-      }
-
-      :host(.iron-selected), .paper-item.iron-selected {
-        font-weight: var(--paper-item-selected-weight, bold);
-
-        @apply --paper-item-selected;
-      }
-
-      :host([disabled]), .paper-item[disabled] {
-        color: var(--paper-item-disabled-color, var(--disabled-text-color));
-
-        @apply --paper-item-disabled;
-      }
-
-      :host(:focus), .paper-item:focus {
-        position: relative;
-        outline: 0;
-
-        @apply --paper-item-focused;
-      }
-
-      :host(:focus):before, .paper-item:focus:before {
-        @apply --layout-fit;
-
-        background: currentColor;
-        content: '';
-        opacity: var(--dark-divider-opacity);
-        pointer-events: none;
-
-        @apply --paper-item-focused-before;
-      }
-    </style>
-  </template>
-</dom-module>`;document.head.appendChild($_documentContainer$2.content);(0,_natepaasApp.Polymer)({_template:_natepaasApp.html$1`
-    <style include="paper-item-shared-styles">
-      :host {
-        @apply --layout-horizontal;
-        @apply --layout-center;
-        @apply --paper-font-subhead;
-
-        @apply --paper-item;
-      }
-    </style>
-    <slot></slot>
-`,is:"paper-item",behaviors:[PaperItemBehavior]});(0,_natepaasApp.Polymer)({_template:_natepaasApp.html$1`
-    <style>
-      :host {
-        display: block;
-        padding: 8px 0;
-
-        background: var(--paper-listbox-background-color, var(--primary-background-color));
-        color: var(--paper-listbox-color, var(--primary-text-color));
-
-        @apply --paper-listbox;
-      }
-    </style>
-
-    <slot></slot>
-`,is:"paper-listbox",behaviors:[IronMenuBehavior],/** @private */hostAttributes:{role:"listbox"}});const template$7=_natepaasApp.html$1`
-  <style include="paper-spinner-styles"></style>
-
-  <div id="spinnerContainer" class-name="[[__computeContainerClasses(active, __coolingDown)]]" on-animationend="__reset" on-webkit-animation-end="__reset">
-    <div class="spinner-layer">
-      <div class="circle-clipper left">
-        <div class="circle"></div>
-      </div>
-      <div class="circle-clipper right">
-        <div class="circle"></div>
-      </div>
-    </div>
-  </div>
-`;template$7.setAttribute("strip-whitespace","");/**
+   */_getValidity:function _getValidity(_value){return this.disabled||!this.required||this.required&&!!this.value},_openedChanged:function _openedChanged(){var openState=this.opened?"true":"false",e=this.contentElement;if(e){e.setAttribute("aria-expanded",openState)}}});var PaperItemBehaviorImpl={hostAttributes:{role:"option",tabindex:"0"}};/** @polymerBehavior */_exports.PaperItemBehaviorImpl=PaperItemBehaviorImpl;var PaperItemBehavior=[IronButtonState,IronControlState,PaperItemBehaviorImpl];_exports.PaperItemBehavior=PaperItemBehavior;var paperItemBehavior={PaperItemBehaviorImpl:PaperItemBehaviorImpl,PaperItemBehavior:PaperItemBehavior};_exports.$paperItemBehavior=paperItemBehavior;var $_documentContainer$2=document.createElement("template");$_documentContainer$2.setAttribute("style","display: none;");$_documentContainer$2.innerHTML="<dom-module id=\"paper-item-shared-styles\">\n  <template>\n    <style>\n      :host, .paper-item {\n        display: block;\n        position: relative;\n        min-height: var(--paper-item-min-height, 48px);\n        padding: 0px 16px;\n      }\n\n      .paper-item {\n        @apply --paper-font-subhead;\n        border:none;\n        outline: none;\n        background: white;\n        width: 100%;\n        text-align: left;\n      }\n\n      :host([hidden]), .paper-item[hidden] {\n        display: none !important;\n      }\n\n      :host(.iron-selected), .paper-item.iron-selected {\n        font-weight: var(--paper-item-selected-weight, bold);\n\n        @apply --paper-item-selected;\n      }\n\n      :host([disabled]), .paper-item[disabled] {\n        color: var(--paper-item-disabled-color, var(--disabled-text-color));\n\n        @apply --paper-item-disabled;\n      }\n\n      :host(:focus), .paper-item:focus {\n        position: relative;\n        outline: 0;\n\n        @apply --paper-item-focused;\n      }\n\n      :host(:focus):before, .paper-item:focus:before {\n        @apply --layout-fit;\n\n        background: currentColor;\n        content: '';\n        opacity: var(--dark-divider-opacity);\n        pointer-events: none;\n\n        @apply --paper-item-focused-before;\n      }\n    </style>\n  </template>\n</dom-module>";document.head.appendChild($_documentContainer$2.content);(0,_natepaasApp.Polymer)({_template:(0,_natepaasApp.html$1)(_templateObject21_2937b1a0072d11eaac4ad73c7775be10()),is:"paper-item",behaviors:[PaperItemBehavior]});(0,_natepaasApp.Polymer)({_template:(0,_natepaasApp.html$1)(_templateObject22_2937b1a0072d11eaac4ad73c7775be10()),is:"paper-listbox",behaviors:[IronMenuBehavior],/** @private */hostAttributes:{role:"listbox"}});var template$7=(0,_natepaasApp.html$1)(_templateObject23_2937b1a0072d11eaac4ad73c7775be10());template$7.setAttribute("strip-whitespace","");/**
                                                  Material design: [Progress &
                                                  activity](https://www.google.com/design/spec/components/progress-activity.html)
                                                                                                Element providing a single color material design circular spinner.
@@ -4132,83 +2630,4 @@ return noLabelFloat?-4:8},/**
                                                  @element paper-spinner-lite
                                                  @hero hero.svg
                                                  @demo demo/index.html
-                                                 */(0,_natepaasApp.Polymer)({_template:template$7,is:"paper-spinner-lite",behaviors:[_natepaasApp.PaperSpinnerBehavior]});const ADD_GUEST="ADD_GUEST";_exports.ADD_GUEST=ADD_GUEST;const register=guest=>dispatch=>{const url="https://europe-west1-natepaas.cloudfunctions.net/register";dispatch((0,_natepaasApp.updateIsRegLoading)(!0));fetch(url,{method:"POST",mode:"cors",headers:{"Content-Type":"application/json"},body:JSON.stringify({guests:[guest]})}).then(response=>response.json()).then(data=>{dispatch({type:ADD_GUEST,guest});const snackbarText="Danke f\xFCr die R\xFCckmeldung "+guest.name;dispatch((0,_natepaasApp.showSnackbar)(snackbarText));dispatch((0,_natepaasApp.updateIsRegLoading)(!1))}).catch(error=>{console.error(error);dispatch((0,_natepaasApp.updateIsRegLoading)(!1))})};_exports.register=register;var register$1={ADD_GUEST:ADD_GUEST,register:register};_exports.$register=register$1;class NatePaasOverview extends(0,_natepaasApp.connect)(_natepaasApp.store)(_natepaasApp.PageViewElement){static get properties(){return{_images:{type:Array},_texts:{type:Array},_lang:{type:String},_key:{type:String},_isRegLoading:{type:Boolean}}}static get styles(){return[_natepaasApp.SharedStyles]}render(){const img=this._images?this._images:{},txt=this._texts?this._texts[this._lang+".json"]:null,legal_path=this._key?"/"+this._key+"/legal":"/legal";if(txt&&img){return _natepaasApp.html$2`
-        <section>
-          ${img["natepaas.JPG"]?_natepaasApp.html$2`
-            <div class="centered img">
-              <img
-                width="300px"
-                src="data:image/jpeg;base64, ${img["natepaas.JPG"]}"/>
-            </div>`:_natepaasApp.html$2``}
-          ${txt.ovw?_natepaasApp.html$2`
-            <h2>
-              ${txt.ovw.title}
-            </h2>
-            <hr></hr>
-            <p>
-              ${txt.ovw["content-1"]}
-            </p>
-            <p>
-              ${txt.ovw["content-1"]}
-            </p>`:_natepaasApp.html$2``}
-        </section>
-
-        ${txt.std?_natepaasApp.html$2`
-          <section>
-            <h2>
-              ${txt.std.title}
-            </h2>
-            <div class="separator">
-              <div class="icons icons-even">
-                <div class="mauve">&#9733;</div>
-                <div class="navy">&#9733;</div>
-                <div class="plum">&#9733;</div>
-                <div class="rosegold">&#9733;</div>
-              </div>
-            </div>
-            <p class="date">
-              ${txt.std["content-1"]}
-            </p>
-          </section>`:_natepaasApp.html$2``}
-        
-        ${txt.fdb?_natepaasApp.html$2`
-          <section>
-            <h2>
-              ${txt.fdb.title}
-            </h2>
-            <hr></hr>
-            <p>
-              ${txt.fdb["content-1"]}
-              ${txt.fdb.fields.map(i=>_natepaasApp.html$2`<paper-input
-                            name="${i.name}"
-                            label="${i.label}">
-                          </paper-input>`)}
-            </p>
-            <p>
-              <paper-checkbox
-                checked>
-                ${txt.fdb["content-2"]}
-                <a href="${legal_path}">
-                  ${txt.fdb["content-3"]}
-                </a>
-              </paper-checkbox>
-            </p>
-            <br></br>
-            <p>
-              <paper-button
-                @click="${this._btnClicked}"
-                class="register-btn"
-                ?disabled="${this._isRegLoading}">
-                ${this._isRegLoading?_natepaasApp.html$2`
-                    <paper-spinner-lite class="white" active>
-                    </paper-spinner-lite>`:_natepaasApp.html$2`
-                    ${txt.fdb.btn}`}
-              </paper-button>
-            </p>
-          </section>`:_natepaasApp.html$2``}
-      `}else{return _natepaasApp.html$2`
-        <section>
-          <p class="centered">
-            <paper-spinner active></paper-spinner>
-          </p>
-        </section>`}}stateChanged(state){this._key=state.app.key;this._lang=state.app.lang;this._images=state.assets.images;this._texts=state.assets.texts;this._isRegLoading=state.app.isRegLoading}_btnClicked(e){const cb=this.shadowRoot.querySelector("paper-checkbox");if(cb.checked){cb.removeAttribute("invalid");const inputs=this.shadowRoot.querySelectorAll("paper-input");let data={},valid=!0;inputs.forEach(item=>{if(item.value){data[item.name]=item.value;item.removeAttribute("invalid")}else{valid=!1;item.setAttribute("invalid",!0)}});if(valid){_natepaasApp.store.dispatch(register(data))}}else{cb.setAttribute("invalid",!0)}}}window.customElements.define("natepaas-overview",NatePaasOverview)});
+                                                 */(0,_natepaasApp.Polymer)({_template:template$7,is:"paper-spinner-lite",behaviors:[_natepaasApp.PaperSpinnerBehavior]});var ADD_GUEST="ADD_GUEST";_exports.ADD_GUEST=ADD_GUEST;var register=function register(guest){return function(dispatch){var url="https://europe-west1-natepaas.cloudfunctions.net/register";dispatch((0,_natepaasApp.updateIsRegLoading)(!0));fetch(url,{method:"POST",mode:"cors",headers:{"Content-Type":"application/json"},body:JSON.stringify({guests:[guest]})}).then(function(response){return response.json()}).then(function(data){dispatch({type:ADD_GUEST,guest:guest});var snackbarText="Danke f\xFCr die R\xFCckmeldung "+guest.name;dispatch((0,_natepaasApp.showSnackbar)(snackbarText));dispatch((0,_natepaasApp.updateIsRegLoading)(!1))}).catch(function(error){console.error(error);dispatch((0,_natepaasApp.updateIsRegLoading)(!1))})}};_exports.register=register;var register$1={ADD_GUEST:ADD_GUEST,register:register};_exports.$register=register$1;var NatePaasOverview=/*#__PURE__*/function(_connect){babelHelpers.inherits(NatePaasOverview,_connect);function NatePaasOverview(){babelHelpers.classCallCheck(this,NatePaasOverview);return babelHelpers.possibleConstructorReturn(this,babelHelpers.getPrototypeOf(NatePaasOverview).apply(this,arguments))}babelHelpers.createClass(NatePaasOverview,[{key:"render",value:function render(){var img=this._images?this._images:{},txt=this._texts?this._texts[this._lang+".json"]:null,legal_path=this._key?"/"+this._key+"/legal":"/legal";if(txt&&img){return(0,_natepaasApp.html$2)(_templateObject24_2937b1a0072d11eaac4ad73c7775be10(),img["natepaas.JPG"]?(0,_natepaasApp.html$2)(_templateObject25_2937b1a0072d11eaac4ad73c7775be10(),img["natepaas.JPG"]):(0,_natepaasApp.html$2)(_templateObject26_2937b1a0072d11eaac4ad73c7775be10()),txt.ovw?(0,_natepaasApp.html$2)(_templateObject27_2937b1a0072d11eaac4ad73c7775be10(),txt.ovw.title,txt.ovw["content-1"],txt.ovw["content-1"]):(0,_natepaasApp.html$2)(_templateObject28_2937b1a0072d11eaac4ad73c7775be10()),txt.std?(0,_natepaasApp.html$2)(_templateObject29_2937b1a0072d11eaac4ad73c7775be10(),txt.std.title,txt.std["content-1"]):(0,_natepaasApp.html$2)(_templateObject30_2937b1a0072d11eaac4ad73c7775be10()),txt.fdb?(0,_natepaasApp.html$2)(_templateObject31_2937b1a0072d11eaac4ad73c7775be10(),txt.fdb.title,txt.fdb["content-1"],txt.fdb.fields.map(function(i){return(0,_natepaasApp.html$2)(_templateObject32_2937b1a0072d11eaac4ad73c7775be10(),i.name,i.label)}),txt.fdb["content-2"],legal_path,txt.fdb["content-3"],this._btnClicked,this._isRegLoading,this._isRegLoading?(0,_natepaasApp.html$2)(_templateObject33_2937b1a0072d11eaac4ad73c7775be10()):(0,_natepaasApp.html$2)(_templateObject34_2937b1a0072d11eaac4ad73c7775be10(),txt.fdb.btn)):(0,_natepaasApp.html$2)(_templateObject35_2937b1a0072d11eaac4ad73c7775be10()))}else{return(0,_natepaasApp.html$2)(_templateObject36_2937b1a0072d11eaac4ad73c7775be10())}}},{key:"stateChanged",value:function stateChanged(state){this._key=state.app.key;this._lang=state.app.lang;this._images=state.assets.images;this._texts=state.assets.texts;this._isRegLoading=state.app.isRegLoading}},{key:"_btnClicked",value:function _btnClicked(e){var cb=this.shadowRoot.querySelector("paper-checkbox");if(cb.checked){cb.removeAttribute("invalid");var inputs=this.shadowRoot.querySelectorAll("paper-input"),data={},valid=!0;inputs.forEach(function(item){if(item.value){data[item.name]=item.value;item.removeAttribute("invalid")}else{valid=!1;item.setAttribute("invalid",!0)}});if(valid){_natepaasApp.store.dispatch(register(data))}}else{cb.setAttribute("invalid",!0)}}}],[{key:"properties",get:function get(){return{_images:{type:Array},_texts:{type:Array},_lang:{type:String},_key:{type:String},_isRegLoading:{type:Boolean}}}},{key:"styles",get:function get(){return[_natepaasApp.SharedStyles]}}]);return NatePaasOverview}((0,_natepaasApp.connect)(_natepaasApp.store)(_natepaasApp.PageViewElement));window.customElements.define("natepaas-overview",NatePaasOverview)});
